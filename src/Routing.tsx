@@ -1,0 +1,31 @@
+import { createBrowserRouter } from "react-router-dom";
+import App from "./App";
+import Home from "./Pages/Home";
+import Navbar from "./Components/Navbar/Navbar";
+import PublicationStandards from "./Pages/PublicationStandards";
+import PublicationSteps from "./Pages/PublicationSteps";
+import PublicationEthics from "./Pages/PublicationEthics";
+import AddVolume from "./Pages/AddVolume";
+
+export const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Home />,
+    },
+    {
+        path: "/publication-standards",
+        element: <PublicationStandards/>
+    },
+    {
+        path: "/publication-steps",
+        element: <PublicationSteps/>
+    },
+    {
+        path: "/publication-ethics",
+        element: <PublicationEthics/>
+    },
+    {
+        path: "/add-volume",
+        element: <AddVolume/>
+    }
+])
