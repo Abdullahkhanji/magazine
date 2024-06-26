@@ -47,6 +47,24 @@ body {
   padding: 10px;
 }
 
+.Button {
+  background-color: #578128;
+  border: none;
+  color: white;
+  padding: 16px 18px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 5px 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 2px;
+  width: 30%;
+}
+
+.Button:hover {
+  opacity: 0.75;
+}
+
 /* Navbar */
 
 body {
@@ -158,24 +176,6 @@ nav .NavbarList {
   color: white;
 }
 
-.About button {
-  background-color: #578128;
-  border: none;
-  color: white;
-  padding: 16px 18px;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 0px 10px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 2px;
-  width: 30%;
-}
-
-.About button:hover {
-  opacity: 0.75;
-}
-
 .Contact {
   padding: 20px;
   width: 20%;
@@ -209,26 +209,39 @@ nav .NavbarList {
 
 /*                                                       Add Volume                                                               */
 
-.Research {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  width: 30%;
+.AddResearch {
   margin-right: 29%;
-  align-items: center;
+  width: 40%;
 }
 
 .VolumeInfo {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  width: 30%;
-  margin-right: 29%;
   align-items: center;
 }
 
 .VolumeInfo input {
-  width: 50%;
+  width: 250px;
+  padding: 7px;
+  margin: 10px;
+}
+
+.Research {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Research div {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
+}
+
+.Research input {
+  width: 250px;
   padding: 7px;
   margin: 10px;
 }
@@ -247,7 +260,15 @@ nav .NavbarList {
   margin: 10px;
 }
 
-.InputFields div {
-  padding: 10px;
+.ResearchInfo{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+.ResearchInfo textarea {
+  width: 500px;
+  height: 80px;
+  padding: 7px;
+  margin: 10px;
+}

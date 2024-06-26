@@ -21,7 +21,7 @@ const Footer = (props: Props) => {
             في العلوم التربوية والنفسية ودراسات علم الاجتماع، التي تتميّز
             بالأصالة، والمعاصرة، كما تُسهم في تطوير الحقل المعرفي موضوع الاختصاص
           </p>
-          <button>قراءة المزيد</button>
+          <button className="Button">قراءة المزيد</button>
           <p className="Copyright">Copyright Midad Center</p>
         </li>
         <li className="Contact">
