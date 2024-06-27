@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "D:/magazine-website/magazine/src/img/logo.png";
-import "D:/magazine-website/magazine/src/index.css";
+import "../../index.css"
 
 type Props = {};
 

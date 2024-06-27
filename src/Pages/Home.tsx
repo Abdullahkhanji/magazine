@@ -7,18 +7,20 @@ import { collection, doc, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 
 const Home = () => {
+
+
   const volumes: any[] = [];
   const getVolumes = async () => {
     const storage = getStorage();
     const getData = await getDocs(collection(db, "volumes"));
-    getData.forEach((doc: any) => {
+    getData.forEach(async (doc: any) => {
       console.log(doc.id, " => ", doc.data());
       const coverRef = ref(storage, `${doc.data()['volumeCover']}`);
-      getDownloadURL(coverRef).then((url) => {
+      await getDownloadURL(coverRef).then((url) => {
         doc.cover = url;
       });
       const fileRef = ref(storage, `${doc.data()['volumeFile']}`);
-      getDownloadURL(fileRef).then((url) => {
+      await getDownloadURL(fileRef).then((url) => {
         doc.File = url;
       });
       volumes.push(doc)
@@ -42,3 +44,4 @@ const Home = () => {
 };
 
 export default Home;
+
