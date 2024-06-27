@@ -7,27 +7,20 @@ import { collection, doc, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 
 const Home = () => {
-
-
   const volumes: any[] = [];
   const getVolumes = async () => {
     const storage = getStorage();
     const getData = await getDocs(collection(db, "volumes"));
     getData.forEach(async (doc: any) => {
       console.log(doc.id, " => ", doc.data());
-      const coverRef = ref(storage, `${doc.data()['volumeCover']}`);
-      await getDownloadURL(coverRef).then((url) => {
-        doc.cover = url;
-      });
-      const fileRef = ref(storage, `${doc.data()['volumeFile']}`);
-      await getDownloadURL(fileRef).then((url) => {
-        doc.File = url;
-      });
-      volumes.push(doc)
+      const coverRef = ref(storage, `${doc.data()["volumeCover"]}`);
+      doc.cover = coverRef.fullPath
+      const fileRef = ref(storage, `${doc.data()["volumeFile"]}`);
+      doc.file = fileRef.fullPath
+      volumes.push(doc);
     });
-    console.log(volumes)
-
-  }
+    console.log(volumes);
+  };
   useEffect(() => {
     getVolumes();
   }, []);
@@ -36,7 +29,6 @@ const Home = () => {
       <Navbar />
       <div className="logo">
         <i className="fa-solid fa-bars"></i>
-        
       </div>
       <Footer />
     </>
@@ -44,4 +36,3 @@ const Home = () => {
 };
 
 export default Home;
-
