@@ -1,11 +1,15 @@
 import React from "react";
-import logo from "D:/magazine-website/magazine/src/img/logo.png";
+import logo from "../../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+
 import "../../index.css"
+
+
+
 
 type Props = {};
 
