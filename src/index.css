@@ -151,10 +151,12 @@ nav .NavbarList {
 
 .Footer p {
   text-decoration: white;
+  
 }
 
 .FooterList {
   list-style: none;
+  
 }
 
 .About {
@@ -164,13 +166,12 @@ nav .NavbarList {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   margin-right: 250px;
 }
 
 .About p {
   padding: 0 10px;
-
+  
   font-size: 20px;
   color: white;
 }
@@ -179,6 +180,7 @@ nav .NavbarList {
   padding: 20px;
   width: 20%;
   float: right;
+  
 }
 
 .ContactList {
@@ -186,24 +188,29 @@ nav .NavbarList {
   display: flex;
   flex-direction: column;
   padding: 20px 5px;
+  
 }
 
 .ContactList li {
   padding: 20px 5px;
   color: white;
+  
 }
 
 .IconList {
   display: flex;
+  
 }
 
 .IconList div {
   padding: 5px 20px;
   font-size: 30px;
+  
 }
 
 .Copyright {
   margin-top: 10%;
+  
 }
 
 /*                                                       Add Volume                                                               */

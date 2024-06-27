@@ -52,8 +52,9 @@ const AddVolume = (props: Props) => {
     setSearchData(
       searchData.map(() => {
         if (research.No === i + 1) {
-          const sCoverRef = ref(storage, `researchCover/${research.rTitle}`);
+          const sCoverRef = ref(storage, `researchCover/${research.No}`);
           uploadBytes(sCoverRef, e);
+          console.log(research)
           return {
             ...research,
             rImage: sCoverRef.fullPath,
@@ -68,7 +69,7 @@ const AddVolume = (props: Props) => {
     setSearchData(
       searchData.map(() => {
         if (research.No === i + 1) {
-          const sFileRef = ref(storage, `researchFile/${research.rTitle}`);
+          const sFileRef = ref(storage, `researchFile/${i}`);
           uploadBytes(sFileRef, e);
           return {
             ...research,
@@ -82,13 +83,25 @@ const AddVolume = (props: Props) => {
   };
 
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]; // Access the uploaded file from input
+
+    if (file) {
+      const vCoverRef = ref(storage, `volumeCover/${file.name}`);
+      uploadBytes(vCoverRef, file).then((snapshot) => {
+        setCover(snapshot.ref.fullPath); // Update state with the full path in Storage
+      }).catch((error) => {
+        console.error('Error uploading file:', error);
+      });
+    }
+  };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]; // Access the uploaded file from input
 
     if (file) {
-      const vCoverRef = ref(storage, `volumeCover/${title}`);
-      uploadBytes(vCoverRef, file).then((snapshot) => {
-        setCover(snapshot.ref.fullPath); // Update state with the full path in Storage
+      const vFileRef = ref(storage, `volumeFile/${file.name}`);
+      uploadBytes(vFileRef, file).then((snapshot) => {
+        setFile(snapshot.ref.fullPath); // Update state with the full path in Storage
       }).catch((error) => {
         console.error('Error uploading file:', error);
       });
@@ -117,7 +130,7 @@ const AddVolume = (props: Props) => {
           <input
             className="AddImage"
             type="file"
-            onChange={handleFileChange}
+            onChange={handleImageChange}
 
             
           />
@@ -126,11 +139,7 @@ const AddVolume = (props: Props) => {
           <input
             className="AddImage"
             type="file"
-            onChange={(e: any) => {
-              const vFileRef = ref(storage, `volumeFile/${title}`);
-              uploadBytes(vFileRef, e);
-              setFile(vFileRef.fullPath)
-            }}
+            onChange={handleFileChange}
           />
         </div>
         <div className="Research" id="Research">

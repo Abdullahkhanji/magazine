@@ -9,17 +9,27 @@ import { getDownloadURL, getStorage, ref } from "firebase/storage";
 const Home = () => {
   const volumes: any[] = [];
   const getVolumes = async () => {
+    const index:any = {};
     const storage = getStorage();
     const getData = await getDocs(collection(db, "volumes"));
     getData.forEach(async (doc: any) => {
-      console.log(doc.id, " => ", doc.data());
-      const coverRef = ref(storage, `${doc.data()["volumeCover"]}`);
-      doc.cover = coverRef.fullPath
-      const fileRef = ref(storage, `${doc.data()["volumeFile"]}`);
-      doc.file = fileRef.fullPath
-      volumes.push(doc);
+      index.title = doc.data().title;
+      index.researches = doc.data().researches;
+
+      const coverRef = ref(storage, `${doc.data()["cover"]}`);
+      await getDownloadURL(coverRef).then((url) => {
+        index.cover = url;
+
+      });
+      const fileRef = ref(storage, `${doc.data()["file"]}`);
+      await getDownloadURL(fileRef).then((url) => {
+        index.file = url;
+      });
+
+      volumes.push(index);
+
     });
-    console.log(volumes);
+    console.log(volumes)
   };
   useEffect(() => {
     getVolumes();
@@ -27,6 +37,11 @@ const Home = () => {
   return (
     <>
       <Navbar />
+      {volumes.map((volume) => (
+        <>
+          <img src={volume.cover} alt="" />
+        </>
+      ))}
       <div className="logo">
         <i className="fa-solid fa-bars"></i>
       </div>
