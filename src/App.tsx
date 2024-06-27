@@ -4,7 +4,7 @@ import Footer from "./Components/Footer/Footer";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
-
+import "./index.css";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCNMWXYGPY6N1UM987mhjxhPw3-cjhpKKs",
