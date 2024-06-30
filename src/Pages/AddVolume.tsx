@@ -31,8 +31,6 @@ const AddVolume = (props: Props) => {
   };
 
   const addVolume = async (e: any) => {
-
-
     const volume = {
       title,
       cover,
@@ -48,13 +46,13 @@ const AddVolume = (props: Props) => {
     console.log(volume);
   };
 
-  const setSearchImage = (e: any, research: typeof Research, i: number) => {
+  const setSearchImage = (e: any, i: number) => {
     setSearchData(
-      searchData.map(() => {
+      searchData.map((research) => {
         if (research.No === i + 1) {
           const sCoverRef = ref(storage, `researchCover/${research.No}`);
           uploadBytes(sCoverRef, e);
-          console.log(research)
+          console.log(research);
           return {
             ...research,
             rImage: sCoverRef.fullPath,
@@ -65,9 +63,9 @@ const AddVolume = (props: Props) => {
       })
     );
   };
-  const setSearchFile = (e: any, research: typeof Research, i: number) => {
+  const setSearchFile = (e: any, i: number) => {
     setSearchData(
-      searchData.map(() => {
+      searchData.map((research) => {
         if (research.No === i + 1) {
           const sFileRef = ref(storage, `researchFile/${i}`);
           uploadBytes(sFileRef, e);
@@ -82,17 +80,18 @@ const AddVolume = (props: Props) => {
     );
   };
 
-
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]; // Access the uploaded file from input
 
     if (file) {
       const vCoverRef = ref(storage, `volumeCover/${file.name}`);
-      uploadBytes(vCoverRef, file).then((snapshot) => {
-        setCover(snapshot.ref.fullPath); // Update state with the full path in Storage
-      }).catch((error) => {
-        console.error('Error uploading file:', error);
-      });
+      uploadBytes(vCoverRef, file)
+        .then((snapshot) => {
+          setCover(snapshot.ref.fullPath); // Update state with the full path in Storage
+        })
+        .catch((error) => {
+          console.error("Error uploading file:", error);
+        });
     }
   };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -100,11 +99,13 @@ const AddVolume = (props: Props) => {
 
     if (file) {
       const vFileRef = ref(storage, `volumeFile/${file.name}`);
-      uploadBytes(vFileRef, file).then((snapshot) => {
-        setFile(snapshot.ref.fullPath); // Update state with the full path in Storage
-      }).catch((error) => {
-        console.error('Error uploading file:', error);
-      });
+      uploadBytes(vFileRef, file)
+        .then((snapshot) => {
+          setFile(snapshot.ref.fullPath); // Update state with the full path in Storage
+        })
+        .catch((error) => {
+          console.error("Error uploading file:", error);
+        });
     }
   };
 
@@ -131,16 +132,10 @@ const AddVolume = (props: Props) => {
             className="AddImage"
             type="file"
             onChange={handleImageChange}
-
-            
           />
 
           <label htmlFor="">ملف المجلة</label>
-          <input
-            className="AddImage"
-            type="file"
-            onChange={handleFileChange}
-          />
+          <input className="AddImage" type="file" onChange={handleFileChange} />
         </div>
         <div className="Research" id="Research">
           {searchData.map(
@@ -265,7 +260,7 @@ const AddVolume = (props: Props) => {
                         className="AddImage"
                         name="rImage"
                         type="file"
-                        onChange={(e) => setSearchImage(e, research, i)}
+                        onChange={(e) => setSearchImage(e, i)}
                       />
                     </div>
                     <div>
@@ -274,7 +269,7 @@ const AddVolume = (props: Props) => {
                         className="AddImage"
                         name="rFile"
                         type="file"
-                        onChange={(e) => setSearchFile(e, research, i)}
+                        onChange={(e) => setSearchFile(e, i)}
                       />
                     </div>
                   </div>
