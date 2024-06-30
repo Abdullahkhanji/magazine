@@ -8,6 +8,7 @@ import { getDownloadURL, getStorage, ref } from "firebase/storage";
 
 const Home = () => {
   const volumes: any[] = [];
+  const researches: any[] = [];
   const getVolumes = async () => {
     const index:any = {};
     const storage = getStorage();
@@ -25,11 +26,12 @@ const Home = () => {
       await getDownloadURL(fileRef).then((url) => {
         index.file = url;
       });
-
+      researches.push(doc.data().researches);
       volumes.push(index);
+      console.log(researches)
 
     });
-    console.log(volumes)
+    // console.log(volumes)
   };
   useEffect(() => {
     getVolumes();
