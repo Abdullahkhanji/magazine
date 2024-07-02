@@ -6,26 +6,36 @@ import PublicationStandards from "./Pages/PublicationStandards";
 import PublicationSteps from "./Pages/PublicationSteps";
 import PublicationEthics from "./Pages/PublicationEthics";
 import AddVolume from "./Pages/AddVolume";
+import Login from "./Pages/Login";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Home />,
-    },
-    {
-        path: "/publication-standards",
-        element: <PublicationStandards/>
-    },
-    {
-        path: "/publication-steps",
-        element: <PublicationSteps/>
-    },
-    {
-        path: "/publication-ethics",
-        element: <PublicationEthics/>
-    },
-    {
-        path: "/add-volume",
-        element: <AddVolume/>
-    }
-])
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/publication-standards",
+    element: <PublicationStandards />,
+  },
+  {
+    path: "/publication-steps",
+    element: <PublicationSteps />,
+  },
+  {
+    path: "/publication-ethics",
+    element: <PublicationEthics />,
+  },
+  {
+    path: "/add-volume",
+    element: (
+      <ProtectedRoute>
+        <AddVolume />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);

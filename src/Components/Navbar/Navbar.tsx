@@ -3,14 +3,22 @@ import React from "react";
 import logo from "../../img/logo.png";
 
 import "../../index.css";
+import { getAuth, signOut } from "firebase/auth";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const auth = getAuth();
+  const logout = () => {
+    signOut(auth);
+  };
   return (
     <div className="Navbar">
-      <div>
+      <div className="LogoBar">
         <img className="logo" src={logo} />
+        <div className="logout" onClick={logout}>
+          logout
+        </div>
       </div>
       <nav>
         <ul className="NavbarList">

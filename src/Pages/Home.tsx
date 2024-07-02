@@ -28,7 +28,7 @@ const Home = () => {
       });
       researches.push(doc.data().researches);
       volumes.push(index);
-      console.log(researches)
+      console.log({...researches})
 
     });
     // console.log(volumes)
