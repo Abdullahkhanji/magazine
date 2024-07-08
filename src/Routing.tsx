@@ -8,6 +8,7 @@ import PublicationEthics from "./Pages/PublicationEthics";
 import AddVolume from "./Pages/AddVolume";
 import Login from "./Pages/Login";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import AllVolumes from "./Pages/AllVolumes";
 
 export const router = createBrowserRouter([
   {
@@ -38,4 +39,8 @@ export const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+  {
+    path: "/all-volumes",
+    element: <AllVolumes/>
+  }
 ]);

@@ -37,7 +37,7 @@ const Navbar = (props: Props) => {
             </ul>
           </li>
           <li>
-            <a href="#">أعداد المجلة </a>
+            <a href="/all-volumes">أعداد المجلة </a>
             <ul className="NavbarDropdown">
               <li>
                 <a href="#">العدد الأول</a>
