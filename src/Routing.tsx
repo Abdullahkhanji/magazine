@@ -9,6 +9,7 @@ import AddVolume from "./Pages/AddVolume";
 import Login from "./Pages/Login";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import AllVolumes from "./Pages/AllVolumes";
+import Volume from "./Pages/Volume";
 
 export const router = createBrowserRouter([
   {
@@ -42,5 +43,9 @@ export const router = createBrowserRouter([
   {
     path: "/all-volumes",
     element: <AllVolumes/>
+  },
+  {
+    path: "/volume-page/:id",
+    element: <Volume/>
   }
 ]);

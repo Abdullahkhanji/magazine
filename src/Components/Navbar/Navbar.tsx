@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import logo from "../../img/logo.png";
 
 import "../../index.css";
 import { getAuth, signOut } from "firebase/auth";
+import { db } from "../../App";
+import { getStorage } from "firebase/storage";
+import { Volume } from "../../Pages/Home";
+import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
 
 type Props = {};
 
@@ -12,6 +16,25 @@ const Navbar = (props: Props) => {
   const logout = () => {
     signOut(auth);
   };
+
+  const [volumes, setVolumes] = useState<Volume[]>([]);
+
+  useEffect(() => {
+    const getVolumes = async () => {
+      const getData = await getDocs(collection(db, "volumes"));
+
+      const volumesTemp = getData.docs.map((doc: QueryDocumentSnapshot) => {
+        return doc.data() as Volume;
+      });
+
+      setVolumes(volumesTemp);
+    };
+
+    getVolumes();
+  }, []);
+  useEffect(() => {
+    console.log(volumes);
+  }, [volumes]);
   return (
     <div className="Navbar">
       <div className="LogoBar">
@@ -39,12 +62,11 @@ const Navbar = (props: Props) => {
           <li>
             <a href="/all-volumes">أعداد المجلة </a>
             <ul className="NavbarDropdown">
-              <li>
-                <a href="#">العدد الأول</a>
-              </li>
-              <li>
-                <a href="#">العدد الثاني</a>
-              </li>
+              {volumes.map((volume) => (
+                <li key={volume.title}>
+                  <a href="#">{volume.title}</a>
+                </li>
+              ))}
             </ul>
           </li>
           <li>

@@ -4,28 +4,10 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { db } from "../App";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-
-interface Research {
-  No: number;
-  rTitle: string;
-  publisherName: string;
-  publisherJob: string;
-  publisherEmail: string;
-  summary: string;
-  rImage?: string;
-  rFile?: string;
-}
-
-interface Volume {
-  title: string;
-  researches: Research[];
-  cover?: string;
-  file?: string;
-}
+import { Research, Volume } from "./Home";
 
 const AllVolumes = () => {
   const [loading, setLoading] = useState(true);
-  const [volumes, setVolumes] = useState<Volume[]>([]);
   const [researches, setResearches] = useState<Research[]>([]);
 
   useEffect(() => {
@@ -33,18 +15,12 @@ const AllVolumes = () => {
       try {
         const storage = getStorage();
         const getData = await getDocs(collection(db, "volumes"));
-        const volumesTemp: Volume[] = [];
-        const researchesTemp: Research[] = [];
 
-        const volumePromises = getData.docs.map(async (doc: QueryDocumentSnapshot) => {
+        getData.docs.map(async (doc: QueryDocumentSnapshot) => {
           const docData = doc.data() as Volume;
-          const index: Volume = {
-            title: docData.title,
-            researches: docData.researches,
-          };
 
-          const researchPromises = docData.researches.map(async (research: Research) => {
-            if (!researchesTemp.some((e) => e.rTitle === research.rTitle)) {
+          const researchesTemp = await Promise.all(
+            docData.researches.map((research: Research) => {
               const resData: Research = {
                 No: research.No,
                 rTitle: research.rTitle,
@@ -54,35 +30,23 @@ const AllVolumes = () => {
                 summary: research.summary,
               };
 
-              const [covURL, fURL] = await Promise.all([
-                research.rImage ? getDownloadURL(ref(storage, research.rImage)) : null,
-                research.rFile ? getDownloadURL(ref(storage, research.rFile)) : null,
-              ]);
+              const getImages = async () => {
+                const coverRef = ref(storage, `${doc.data()["cover"]}`);
+                await getDownloadURL(coverRef).then((url) => {
+                  resData.rImage = url;
+                });
+                const fileRef = ref(storage, `${doc.data()["file"]}`);
+                await getDownloadURL(fileRef).then((url) => {
+                  resData.rFile = url;
+                });
+              };
+              getImages();
+              return resData;
+            })
+          );
 
-              if (covURL) resData.rImage = covURL;
-              if (fURL) resData.rFile = fURL;
-
-              researchesTemp.push(resData);
-            }
-          });
-
-          await Promise.all(researchPromises);
-
-          // const [coverURL, fileURL] = await Promise.all([
-          //   docData.cover ? getDownloadURL(ref(storage, docData.cover)) : null,
-          //   docData.file ? getDownloadURL(ref(storage, docData.file)) : null,
-          // ]);
-
-          // if (coverURL) index.cover = coverURL;
-          // if (fileURL) index.file = fileURL;
-
-          volumesTemp.push(index);
+          setResearches(researchesTemp);
         });
-
-        await Promise.all(volumePromises);
-
-        setVolumes(volumesTemp);
-        setResearches(researchesTemp);
       } catch (error) {
         console.error("Error fetching volumes:", error);
       } finally {
@@ -92,8 +56,9 @@ const AllVolumes = () => {
 
     getVolumes();
   }, []);
-
-
+  useEffect(() => {
+    console.log(researches);
+  }, [researches]);
   if (loading) {
     return <h1>loading</h1>;
   }
@@ -105,29 +70,25 @@ const AllVolumes = () => {
       <div className="allVolumes">
         <section className="articles">
           {researches.map((research) => (
-            <React.Fragment key={research.rTitle}>
+            <article key={research.No}>
+              <div className="article-wrapper">
+                <figure>
+                  <img src={research.rImage} alt="" />
+                </figure>
+                <div className="article-body">
+                  <h2>{research.rTitle}</h2>
+                  <a href="#" className="read-more">
+                    <span className="sr-only">about this is some title</span>
 
-              <article>
-                <div className="article-wrapper">
-                  <figure>
-                    <img src={research.rImage} alt="" />
-                  </figure>
-                  <div className="article-body">
-                    <h2>{research.rTitle}</h2>
-                    <a href="#" className="read-more">
-                      <span className="sr-only">about this is some title</span>
-
-                        <path
-                          fillRule="evenodd"
-                          d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-
-                    </a>
-                  </div>
+                    <path
+                      fillRule="evenodd"
+                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </a>
                 </div>
-              </article>
-            </React.Fragment>
+              </div>
+            </article>
           ))}
         </section>
       </div>

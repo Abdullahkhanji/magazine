@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 
-interface Research {
+export interface Research {
   No: number;
   rTitle: string;
   publisherName: string;
@@ -22,7 +22,7 @@ interface Research {
   rFile?: string;
 }
 
-interface Volume {
+export interface Volume {
   title: string;
   researches: Research[];
   cover?: string;
@@ -39,27 +39,26 @@ const Home = () => {
       try {
         const storage = getStorage();
         const getData = await getDocs(collection(db, "volumes"));
-        const volumesTemp: Volume[] = [];
-        const researchesTemp: Research[] = []; 
 
-        const volumePromises = getData.docs.map(async (doc: QueryDocumentSnapshot) => {
-          const docData = doc.data() as Volume;
-          const index: Volume = {
-            title: docData.title,
-            researches: docData.researches,
-          };
+        const volumeTemp = await Promise.all(
+          getData.docs.map(async (doc: QueryDocumentSnapshot) => {
+            const docData = doc.data() as Volume;
+            const index: Volume = {
+              title: docData.title,
+              researches: docData.researches,
+            };
 
-          const researchPromises = docData.researches.map(async (research: Research) => {
-            if (!researchesTemp.some((e) => e.rTitle === research.rTitle)) {
-              const resData: Research = {
-                No: research.No,
-                rTitle: research.rTitle,
-                publisherName: research.publisherName,
-                publisherJob: research.publisherJob,
-                publisherEmail: research.publisherEmail,
-                summary: research.summary,
-              };
-              if (research.rFile != null && research.rImage != null) {
+            const researchTemp = await Promise.all(
+              docData.researches.map(async (research: Research) => {
+                const resData: Research = {
+                  No: research.No,
+                  rTitle: research.rTitle,
+                  publisherName: research.publisherName,
+                  publisherJob: research.publisherJob,
+                  publisherEmail: research.publisherEmail,
+                  summary: research.summary,
+                };
+
                 const covRef = ref(storage, research.rImage);
                 const covURL = await getDownloadURL(covRef);
                 resData.rImage = covURL;
@@ -67,28 +66,25 @@ const Home = () => {
                 const fRef = ref(storage, research.rFile);
                 const fURL = await getDownloadURL(fRef);
                 resData.rFile = fURL;
-                researchesTemp.push(resData);
-              }
-            }
-          });
 
-          await Promise.all(researchPromises);
+                return resData;
+              })
+            );
+            setResearches(researchTemp);
 
-          const coverRef = ref(storage, docData.cover);
-          const coverURL = await getDownloadURL(coverRef);
-          index.cover = coverURL;
+            const coverRef = ref(storage, docData.cover);
+            const coverURL = await getDownloadURL(coverRef);
+            index.cover = coverURL;
 
-          const fileRef = ref(storage, docData.file);
-          const fileURL = await getDownloadURL(fileRef);
-          index.file = fileURL;
+            const fileRef = ref(storage, docData.file);
+            const fileURL = await getDownloadURL(fileRef);
+            index.file = fileURL;
 
-          volumesTemp.push(index);
-        });
+            return index;
+          })
+        );
 
-        await Promise.all(volumePromises);
-
-        setVolumes(volumesTemp);
-        setResearches(researchesTemp);
+        setVolumes(volumeTemp);
       } catch (error) {
         console.error("Error fetching volumes:", error);
       } finally {
@@ -98,17 +94,21 @@ const Home = () => {
 
     getVolumes();
   }, []);
-
+  useEffect(() => {
+    console.log(volumes);
+  }, [volumes]);
   if (loading) {
     return <h1>loading</h1>;
   }
-  console.log(volumes);
+
+
   return (
     <>
       <Navbar />
       {volumes.map((volume) => (
         <>
-          <img src={volume.cover} alt="" />
+        <p>{volume.title}</p>
+          <img src={volume.cover} alt=""/>
         </>
       ))}
       <div className="logo">
