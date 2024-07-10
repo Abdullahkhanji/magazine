@@ -35,10 +35,6 @@ const AllVolumes = () => {
                 await getDownloadURL(coverRef).then((url) => {
                   resData.rImage = url;
                 });
-                const fileRef = ref(storage, `${doc.data()["file"]}`);
-                await getDownloadURL(fileRef).then((url) => {
-                  resData.rFile = url;
-                });
               };
               getImages();
               return resData;

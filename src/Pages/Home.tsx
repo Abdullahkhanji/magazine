@@ -63,10 +63,6 @@ const Home = () => {
                 const covURL = await getDownloadURL(covRef);
                 resData.rImage = covURL;
 
-                const fRef = ref(storage, research.rFile);
-                const fURL = await getDownloadURL(fRef);
-                resData.rFile = fURL;
-
                 return resData;
               })
             );
@@ -75,10 +71,6 @@ const Home = () => {
             const coverRef = ref(storage, docData.cover);
             const coverURL = await getDownloadURL(coverRef);
             index.cover = coverURL;
-
-            const fileRef = ref(storage, docData.file);
-            const fileURL = await getDownloadURL(fileRef);
-            index.file = fileURL;
 
             return index;
           })
@@ -101,14 +93,13 @@ const Home = () => {
     return <h1>loading</h1>;
   }
 
-
   return (
     <>
       <Navbar />
       {volumes.map((volume) => (
         <>
-        <p>{volume.title}</p>
-          <img src={volume.cover} alt=""/>
+          <p>{volume.title}</p>
+          <img src={volume.cover} alt="" />
         </>
       ))}
       <div className="logo">
