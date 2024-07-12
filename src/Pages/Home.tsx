@@ -23,6 +23,7 @@ export interface Research {
 }
 
 export interface Volume {
+  id: string;
   title: string;
   researches: Research[];
   cover?: string;
@@ -44,6 +45,7 @@ const Home = () => {
           getData.docs.map(async (doc: QueryDocumentSnapshot) => {
             const docData = doc.data() as Volume;
             const index: Volume = {
+              id: doc.id,
               title: docData.title,
               researches: docData.researches,
             };

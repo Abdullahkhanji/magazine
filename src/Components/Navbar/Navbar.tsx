@@ -5,17 +5,20 @@ import logo from "../../img/logo.png";
 import "../../index.css";
 import { getAuth, signOut } from "firebase/auth";
 import { db } from "../../App";
-import { getStorage } from "firebase/storage";
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { Volume } from "../../Pages/Home";
-import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
+import { QueryDocumentSnapshot, collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { useParams } from "react-router";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+
   const auth = getAuth();
   const logout = () => {
     signOut(auth);
   };
+
 
   const [volumes, setVolumes] = useState<Volume[]>([]);
 
@@ -24,7 +27,12 @@ const Navbar = (props: Props) => {
       const getData = await getDocs(collection(db, "volumes"));
 
       const volumesTemp = getData.docs.map((doc: QueryDocumentSnapshot) => {
-        return doc.data() as Volume;
+        const index: Volume = {
+          id: doc.id,
+          title: doc.data().title,
+          researches: doc.data().researches,
+        };
+        return index as Volume;
       });
 
       setVolumes(volumesTemp);
@@ -64,7 +72,7 @@ const Navbar = (props: Props) => {
             <ul className="NavbarDropdown">
               {volumes.map((volume) => (
                 <li key={volume.title}>
-                  <a href="#">{volume.title}</a>
+                  <a href={`/volume-page/${volume.id}`}>{volume.title}</a>
                 </li>
               ))}
             </ul>
