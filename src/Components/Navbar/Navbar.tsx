@@ -64,7 +64,7 @@ const Navbar = (props: Props) => {
             <a href="#">عن المجلة </a>
             <ul className="NavbarDropdown">
               <li>
-                <a href="#">عن مجلة تبيان</a>
+                <a href="/about-tibyan">عن مجلة تبيان</a>
               </li>
               <li>
                 <a href="#">عن مركز مداد</a>

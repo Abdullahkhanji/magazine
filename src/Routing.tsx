@@ -10,6 +10,7 @@ import Login from "./Pages/Login";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import AllVolumes from "./Pages/AllVolumes";
 import VolumePage from "./Pages/VolumePage";
+import AboutTibyan from "./Pages/AboutTibyan";
 
 
 
@@ -49,5 +50,8 @@ export const router = createBrowserRouter([
   {
     path: "/volume-page/:id",
     element: <VolumePage/>
+  },{
+    path: "/about-tibyan",
+    element: <AboutTibyan/>
   }
 ]);
