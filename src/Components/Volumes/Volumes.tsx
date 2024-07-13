@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
+
 import { db } from "../../App";
 import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
@@ -91,7 +90,6 @@ const Volumes = () => {
 
   return (
     <>
-      <Navbar />
       {volumes.map((volume) => (
         <>
           <p>{volume.title}</p>
@@ -101,7 +99,6 @@ const Volumes = () => {
       <div className="logo">
         <i className="fa-solid fa-bars"></i>
       </div>
-      <Footer />
     </>
   );
 };

@@ -6,19 +6,23 @@ import "../../index.css";
 import { getAuth, signOut } from "firebase/auth";
 import { db } from "../../App";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import { Volume } from "../../Pages/Home";
-import { QueryDocumentSnapshot, collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { Volume } from "../Volumes/Volumes";
+import {
+  QueryDocumentSnapshot,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+} from "firebase/firestore";
 import { useParams } from "react-router";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
-
   const auth = getAuth();
   const logout = () => {
     signOut(auth);
   };
-
 
   const [volumes, setVolumes] = useState<Volume[]>([]);
 
