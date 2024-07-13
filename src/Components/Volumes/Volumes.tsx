@@ -22,7 +22,7 @@ export interface Volume {
   cover?: string;
   file?: string;
 }
-export const Volumes = () => {
+const Volumes = () => {
   const [loading, setLoading] = useState(true);
   const [volumes, setVolumes] = useState<Volume[]>([]);
   const [researches, setResearches] = useState<Research[]>([]);
@@ -81,7 +81,7 @@ export const Volumes = () => {
     getVolumes();
   }, []);
   useEffect(() => {
-    console.log(volumes);
+ 
   }, [volumes]);
   if (loading) {
     return <h1>loading</h1>;
