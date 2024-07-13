@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
 import { db } from "../../App";
 import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
@@ -90,14 +89,20 @@ const Volumes = () => {
 
   return (
     <>
-      {volumes.map((volume) => (
-        <>
-          <p>{volume.title}</p>
-          <img src={volume.cover} className="max-h-14" alt="" />
-        </>
-      ))}
+      <div className="flex justify-center items-center">
+        {volumes.map((volume) => (
+          <div className="flex flex-col items-center justify-center gap-5 max-w-[170px] text-center">
+            <img
+              src={volume.cover}
+              className="max-h-[270] max-w-[170px] "
+              alt=""
+            />
+            <p className="text-[27px] font-bold">{volume.title}</p>
+          </div>
+        ))}
+      </div>
       <div className="logo">
-        <i className="fa-solid fa-bars"></i>
+        <i className=""></i>
       </div>
     </>
   );

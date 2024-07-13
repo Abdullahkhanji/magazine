@@ -40,6 +40,7 @@ const config = {
         64: "100px",
         "08": "0.65rem",
         10: "10px",
+        1140: "1140px",
       },
     },
     fontSize: {
