@@ -101,7 +101,7 @@ const Home = () => {
       {volumes.map((volume) => (
         <>
           <p>{volume.title}</p>
-          <img src={volume.cover} alt="" />
+          <img src={volume.cover} className="max-h-14" alt="" />
         </>
       ))}
       <div className="logo">
