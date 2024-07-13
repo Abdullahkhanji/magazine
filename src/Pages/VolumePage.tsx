@@ -6,6 +6,7 @@ import { db } from "../App";
 import { Volume } from "./../Components/Volumes/Volumes";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
+import { NavLink } from "react-router-dom"
 
 const VolumePage = () => {
   const [volume, setVolume] = useState<Volume>();
@@ -48,8 +49,11 @@ const VolumePage = () => {
   return (
     <>
       <Navbar />
-      <div>{volume?.title}</div>
-      <img src={volume?.cover} alt="" />
+      <div>
+        <div>{volume?.title}</div>
+
+        <img src={volume?.cover} alt="" />
+      </div>
       <Footer />
     </>
   );
