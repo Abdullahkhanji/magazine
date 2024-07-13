@@ -22,7 +22,7 @@ export interface Volume {
   cover?: string;
   file?: string;
 }
-const Volumes = () => {
+export const Volumes = () => {
   const [loading, setLoading] = useState(true);
   const [volumes, setVolumes] = useState<Volume[]>([]);
   const [researches, setResearches] = useState<Research[]>([]);

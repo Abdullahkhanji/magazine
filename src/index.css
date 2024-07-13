@@ -149,7 +149,7 @@ nav .NavbarList {
 }
 
 .NavbarList li > a:after {
-  content: " ↓";
+  content: "↓";
 }
 
 .NavbarList li > a:only-child:after {
@@ -161,6 +161,7 @@ nav .NavbarList {
   display: inline-block;
   color: white;
   text-decoration: none;
+  transition: 300ms;
 }
 
 .NavbarList li a:hover {
@@ -168,22 +169,28 @@ nav .NavbarList {
 }
 
 .NavbarDropdown {
-  display: none;
   position: absolute;
-  background: #77af38;
-  width: 150px;
+  background: #25a244;
+  width: 200px;
   padding: 0px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px); 
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s, transform 0.4s ease; 
+}
+
+.NavbarList li:hover .NavbarDropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); 
+  transition-delay: 0s;
 }
 
 .NavbarDropdown li {
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease; 
 }
-
-.NavbarList li:hover ul {
-  display: block;
-}
-
 @media (max-width: 768px) {
   nav .NavbarList {
     display: flex;
