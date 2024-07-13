@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   direction: rtl;
 }
@@ -83,7 +82,7 @@ body {
 
 /* Button */
 .Button {
-  background-color: #578128;
+  background-color: #2dc653;
   border: none;
   color: white;
   padding: 16px 18px;
@@ -132,7 +131,7 @@ nav {
   width: 100%;
   height: auto;
   display: inline-block;
-  background: #77af38;
+  background: #25a244;
   text-align: center;
   height: 70px;
 }
@@ -199,7 +198,7 @@ nav .NavbarList {
 
 /* Footer */
 .Footer {
-  background-color: #77af38;
+  background-color: #25a244;
   width: 100%;
   display: block;
   height: 500px;
@@ -261,7 +260,8 @@ nav .NavbarList {
 }
 
 @media (max-width: 768px) {
-  .About, .Contact {
+  .About,
+  .Contact {
     width: 80%;
     float: none;
     margin: 0 auto;
@@ -349,7 +349,7 @@ nav .NavbarList {
 }
 
 /* Login */
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 
 * {
   box-sizing: border-box;
@@ -399,7 +399,7 @@ nav .NavbarList {
 .screen__background__shape1 {
   height: 520px;
   width: 520px;
-  background: #FFF;
+  background: #fff;
   top: -50px;
   right: 120px;
   border-radius: 0 72px 0 0;
@@ -451,13 +451,13 @@ nav .NavbarList {
 
 .login__input {
   border: none;
-  border-bottom: 2px solid #D1D1D4;
+  border-bottom: 2px solid #d1d1d4;
   background: none;
   padding: 10px;
   padding-left: 24px;
   font-weight: 700;
   width: 75%;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .login__input:active,
@@ -473,7 +473,7 @@ nav .NavbarList {
   margin-top: 30px;
   padding: 16px 20px;
   border-radius: 26px;
-  border: 1px solid #D4D3E8;
+  border: 1px solid #d4d3e8;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
@@ -482,7 +482,7 @@ nav .NavbarList {
   color: #578128;
   box-shadow: 0px 2px 2px #578128;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .login__submit:active,
@@ -619,7 +619,8 @@ article:has(:hover, :focus) {
   --title-color: #28666e;
   --link-icon-translate: 0;
   --link-icon-opacity: 1;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 *,

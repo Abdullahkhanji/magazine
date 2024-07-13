@@ -89,10 +89,13 @@ const Volumes = () => {
 
   return (
     <div className="flex-col flex  justify-center items-center">
+      <div className="min-h-7"></div>
       <div className="flex gap-2 items-center justify-center">
-        <div className="min-h-[2px]  max-h-[2px] bg-background min-w-570 mt-2"></div>
-        <p className="font-semibold mt-2 text-[#a9e466]">أعداد المجلة</p>
-        <div className="min-h-[2px] max-h-[2px] bg-background min-w-570 mt-2"></div>
+        <div className="min-h-[2px]  max-h-[2px] bg-forest min-w-570 mt-2 pointer-events-none select-none"></div>
+        <p className="font-semibold mt-2 text-pigment pointer-events-none select-none">
+          أعداد المجلة
+        </p>
+        <div className="min-h-[2px] max-h-[2px] bg-forest min-w-570 mt-2 pointer-events-none select-none"></div>
       </div>
       <div className="min-h-7"></div>
       <div className="flex gap-5 items-center justify-center flex-wrap max-w-1140  mr-auto ml-auto">
@@ -103,7 +106,7 @@ const Volumes = () => {
               className="max-h-[270] max-w-[170px]  select-none group-hover:scale-110 duration-300"
               alt=""
             />
-            <p className="text-[27px] font-bold group-hover:text-logoColor duration-300">
+            <p className="text-[27px] font-bold group-hover:text-darkpastal duration-300 text-darkspring">
               {volume.title}
             </p>
           </div>
