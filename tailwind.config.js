@@ -41,6 +41,7 @@ const config = {
         "08": "0.65rem",
         10: "10px",
         1140: "1140px",
+        570: "570px",
       },
     },
     fontSize: {
@@ -54,7 +55,7 @@ const config = {
       20: "20px",
     },
     colors: {
-      background: "#1D2021",
+      background: "#578128",
       content: "#848687",
       darkText: "#606262",
       logoColor: "#D0D1D1",
@@ -74,6 +75,16 @@ const config = {
       Warning400: "#FDB022",
       Warning300: "#FEC84B",
       subtleNeutral: "#1D2021",
+      pakistan: "#10451D",
+      dartmouth: "#155D27",
+      darkspring: "#1A7431",
+      forest: "#208B3A",
+      pigment: "#25A244",
+      darkpastal: "#2DC653",
+      malachite: "#4AD66D",
+      light: "#6EDE8A",
+      celadon: "#92E6A7",
+      lightceladon: "#B7EFC5",
     },
     inset: {
       0: "0px",
