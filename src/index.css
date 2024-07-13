@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   direction: rtl;
 }
 
-/* Header */
 .Header {
   background-color: #578128;
   width: 100%;
@@ -21,15 +19,6 @@ body {
   font-size: 35px;
 }
 
-@media (max-width: 768px) {
-  .Header h1 {
-    padding: 40px 50px;
-    font-size: 25px;
-    text-align: center;
-  }
-}
-
-/* AltHeader */
 .AltHeader h2 {
   margin-right: 25%;
   padding: 30px 0 8px;
@@ -50,18 +39,14 @@ body {
   z-index: -1;
 }
 
-@media (max-width: 768px) {
-  .AltHeader h2 {
-    margin-right: 10%;
-    font-size: 25px;
-  }
-}
-
-/* List */
 .List {
   width: 40%;
   margin-right: 29%;
   margin-bottom: 5%;
+}
+
+.List ul li:before {
+  content: url('../src/img/x-mark-green-hi.png');
 }
 
 .List li {
@@ -70,18 +55,6 @@ body {
   padding: 10px;
 }
 
-@media (max-width: 768px) {
-  .List {
-    width: 80%;
-    margin-right: 10%;
-  }
-
-  .List li {
-    font-size: 18px;
-  }
-}
-
-/* Button */
 .Button {
   background-color: #578128;
   border: none;
@@ -100,14 +73,8 @@ body {
   opacity: 0.75;
 }
 
-@media (max-width: 768px) {
-  .Button {
-    width: 80%;
-    font-size: 14px;
-  }
-}
-
 /* Navbar */
+
 body {
   margin: 0;
 }
@@ -125,6 +92,9 @@ body {
   width: 220px;
   length: 140px;
   padding: 25px;
+}
+
+.logout {
 }
 
 nav {
@@ -185,19 +155,8 @@ nav .NavbarList {
   display: block;
 }
 
-@media (max-width: 768px) {
-  nav .NavbarList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .NavbarDropdown {
-    position: static;
-  }
-}
-
 /* Footer */
+
 .Footer {
   background-color: #77af38;
   width: 100%;
@@ -225,6 +184,7 @@ nav .NavbarList {
 
 .About p {
   padding: 0 10px;
+
   font-size: 20px;
   color: white;
 }
@@ -260,20 +220,8 @@ nav .NavbarList {
   margin-top: 10%;
 }
 
-@media (max-width: 768px) {
-  .About, .Contact {
-    width: 80%;
-    float: none;
-    margin: 0 auto;
-    padding: 10px 0;
-  }
+/*                                                       Add Volume                                                               */
 
-  .IconList {
-    justify-content: center;
-  }
-}
-
-/* Add Volume */
 .AddResearch {
   margin-right: 29%;
   width: 40%;
@@ -337,19 +285,9 @@ nav .NavbarList {
   margin: 10px;
 }
 
-@media (max-width: 768px) {
-  .AddResearch {
-    width: 80%;
-    margin-right: 10%;
-  }
+/*                     Login                        */
 
-  .ResearchInfo textarea {
-    width: 90%;
-  }
-}
-
-/* Login */
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 
 * {
   box-sizing: border-box;
@@ -399,7 +337,7 @@ nav .NavbarList {
 .screen__background__shape1 {
   height: 520px;
   width: 520px;
-  background: #FFF;
+  background: #fff;
   top: -50px;
   right: 120px;
   border-radius: 0 72px 0 0;
@@ -451,13 +389,13 @@ nav .NavbarList {
 
 .login__input {
   border: none;
-  border-bottom: 2px solid #D1D1D4;
+  border-bottom: 2px solid #d1d1d4;
   background: none;
   padding: 10px;
   padding-left: 24px;
   font-weight: 700;
   width: 75%;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .login__input:active,
@@ -473,7 +411,7 @@ nav .NavbarList {
   margin-top: 30px;
   padding: 16px 20px;
   border-radius: 26px;
-  border: 1px solid #D4D3E8;
+  border: 1px solid #d4d3e8;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
@@ -482,7 +420,7 @@ nav .NavbarList {
   color: #578128;
   box-shadow: 0px 2px 2px #578128;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .login__submit:active,
@@ -525,23 +463,10 @@ nav .NavbarList {
   transform: scale(1.5);
 }
 
-@media (max-width: 768px) {
-  .screen {
-    width: 100%;
-    height: auto;
-    box-shadow: none;
-  }
-
-  .login {
-    padding-top: 50px;
-  }
-}
-
-/* All Volumes */
+/*                           All Volumes                          */
 .allVolumes {
   margin: 50px;
 }
-
 article {
   --img-scale: 1.001;
   --title-color: black;
@@ -619,7 +544,8 @@ article:has(:hover, :focus) {
   --title-color: #28666e;
   --link-icon-translate: 0;
   --link-icon-opacity: 1;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 *,
@@ -641,7 +567,6 @@ article:has(:hover, :focus) {
   article {
     container: card/inline-size;
   }
-
   .article-body p {
     display: none;
   }
@@ -653,17 +578,14 @@ article:has(:hover, :focus) {
     grid-template-columns: 100px 1fr;
     gap: 16px;
   }
-
   .article-body {
     padding-left: 0;
   }
-
   figure {
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
-
   figure img {
     height: 100%;
     aspect-ratio: 1;
