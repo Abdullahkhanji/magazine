@@ -53,5 +53,7 @@ export const router = createBrowserRouter([
   },{
     path: "/about-tibyan",
     element: <AboutTibyan/>
+  },{
+    path: "/research-page/:id"
   }
 ]);
