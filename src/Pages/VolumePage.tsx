@@ -3,7 +3,7 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { db } from "../App";
-import { Volume } from "./Home";
+import { Volume } from "./../Components/Volumes/Volumes";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 import { NavLink } from "react-router-dom"

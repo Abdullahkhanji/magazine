@@ -4,7 +4,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { db } from "../App";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-import { Research, Volume } from "./Home";
+import { Research, Volume } from "./../Components/Volumes/Volumes";
 
 const AllVolumes = () => {
   const [loading, setLoading] = useState(true);
