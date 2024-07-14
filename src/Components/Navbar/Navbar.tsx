@@ -102,7 +102,7 @@ const Navbar = (props: Props) => {
             <a href="#">أعضاء هيئة التحرير</a>
           </li>
           <li>
-            <a href="#">تواصل معنا</a>
+            <a href="/CommunicateWithUs">تواصل معنا</a>
           </li>
         </ul>
       </nav>

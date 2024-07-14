@@ -11,7 +11,7 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import AllVolumes from "./Pages/AllVolumes";
 import VolumePage from "./Pages/VolumePage";
 import AboutTibyan from "./Pages/AboutTibyan";
-
+import CommunicateWithUs from "./Pages/CommunicateWithUs"
 
 
 export const router = createBrowserRouter([
@@ -55,5 +55,8 @@ export const router = createBrowserRouter([
     element: <AboutTibyan/>
   },{
     path: "/research-page/:id"
+  },{
+    path: "/CommunicateWithUs",
+    element: <CommunicateWithUs/>
   }
 ]);
