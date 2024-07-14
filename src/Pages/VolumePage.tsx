@@ -6,8 +6,6 @@ import { db } from "../App";
 import { Volume, Research } from "./../Components/Volumes/Volumes";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-import { NavLink } from "react-router-dom";
-
 
 const VolumePage = () => {
   const [volume, setVolume] = useState<Volume>();
@@ -22,7 +20,7 @@ const VolumePage = () => {
         const docData = docSnap.data();
 
         const index: Volume = {
-          id: docData.id,
+          id: id,
           title: docData.title,
           researches: docData.researches,
         };
@@ -67,7 +65,7 @@ const VolumePage = () => {
             </section>
             {volume?.researches.map((research: Research) => (
               <section className="pr-8 mr-[20%]">
-                <a href="/any">
+                <a href={`/research-page/${id}/${research.Id}`}>
                   <button className=" p-10  text-28  hover:text-background duration-300">
                   {research.rTitle}
                   </button>

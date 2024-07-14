@@ -5,6 +5,7 @@ import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 
 export interface Research {
+  Id: number;
   No: number;
   rTitle: string;
   publisherName: string;
@@ -45,6 +46,7 @@ const Volumes = () => {
             const researchTemp = await Promise.all(
               docData.researches.map(async (research: Research) => {
                 const resData: Research = {
+                  Id: research.Id,
                   No: research.No,
                   rTitle: research.rTitle,
                   publisherName: research.publisherName,
