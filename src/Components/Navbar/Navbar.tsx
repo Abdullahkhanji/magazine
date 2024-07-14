@@ -99,7 +99,7 @@ const Navbar = (props: Props) => {
             <a href="#">تقديم الأبحاث</a>
           </li>
           <li>
-            <a href="#">أعضاء هيئة التحرير</a>
+            <a href="/MembersOfTheProgram">أعضاء هيئة التحرير</a>
           </li>
           <li>
             <a href="/CommunicateWithUs">تواصل معنا</a>

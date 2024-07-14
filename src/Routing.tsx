@@ -12,7 +12,7 @@ import AllVolumes from "./Pages/AllVolumes";
 import VolumePage from "./Pages/VolumePage";
 import AboutTibyan from "./Pages/AboutTibyan";
 import CommunicateWithUs from "./Pages/CommunicateWithUs"
-
+import MembersOfTheProgram from "./Pages/MembersOfTheProgram"
 
 export const router = createBrowserRouter([
   {
@@ -58,5 +58,8 @@ export const router = createBrowserRouter([
   },{
     path: "/CommunicateWithUs",
     element: <CommunicateWithUs/>
+  },{
+    path: "/MembersOfTheProgram",
+    element: <MembersOfTheProgram/>
   }
 ]);
