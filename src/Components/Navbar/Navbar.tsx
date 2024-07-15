@@ -69,8 +69,11 @@ const Navbar = (props: Props) => {
         </div>
       </div>
 
-      <div className="LogoBar">
-        <img className="logo" src={logo} />
+      <div
+        onClick={() => handleClick("/")}
+        className="LogoBar select-none cursor-pointer"
+      >
+        <img className="logo select-none" src={logo} />
       </div>
       <nav>
         <ul className="NavbarList">
@@ -79,7 +82,7 @@ const Navbar = (props: Props) => {
               onClick={() => handleClick("/")}
               className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
             >
-              <div className="font-bold group-hover:opacity-50 duration-300">
+              <div className="font-bold group-hover:opacity-50 duration-300 ">
                 الرئيسية
               </div>
             </div>

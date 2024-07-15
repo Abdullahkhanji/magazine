@@ -6,10 +6,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
-import "../../index.css"
-
-
-
+import "../../index.css";
 
 type Props = {};
 
@@ -18,14 +15,16 @@ const Footer = (props: Props) => {
     <div className="Footer">
       <ul className="FooterList">
         <li className="About">
-          <img className="logo" src={logo} alt="" />
+          <img className="logo cursor-pointer select-none" src={logo} alt="" />
           <p>
             مجلّة علميّة دورية نصف سنوية محكّمة، تصدر عن مركز مداد للدراسات
             والبحوث التربوية، باللغة العربية والإنجليزية، وتُعنى بنشر الدراسات
             في العلوم التربوية والنفسية ودراسات علم الاجتماع، التي تتميّز
             بالأصالة، والمعاصرة، كما تُسهم في تطوير الحقل المعرفي موضوع الاختصاص
           </p>
-          <button className="Button">قراءة المزيد</button>
+          <button className="Button rounded-lg select-none">
+            قراءة المزيد
+          </button>
           <p className="Copyright">Copyright Midad Center</p>
         </li>
         <li className="Contact">

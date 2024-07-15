@@ -102,7 +102,7 @@ const ResearchesHomePage = () => {
         {researches.map((research) => (
           <div className="flex   gap-10 min-w-[450px] max-w-[450px] border-forest border-[1px] rounded-md">
             <img
-              className="max-w-[190px] min-w-[190px] rounded-r-md rounded-b-md"
+              className="max-w-[190px] min-w-[190px] rounded-r-md rounded-b-md pointer-events-none select-none"
               src={research.rImage}
               alt=""
             />
