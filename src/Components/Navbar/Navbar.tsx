@@ -16,7 +16,10 @@ import {
 } from "firebase/firestore";
 import { To, useNavigate, useParams } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCaretDown,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 
 type Props = {};
 
@@ -57,6 +60,15 @@ const Navbar = (props: Props) => {
   }, [volumes]);
   return (
     <div className="Navbar">
+      <div
+        onClick={logout}
+        className="flex justify-center items-center  text-[#dc2626] cursor-pointer group bg-[#9a1a1a] hover:opacity-70 duration-300 mt-2 rounded-lg w-[50px]  absolute left-[10px] max-h-[50px] min-h-[50px]"
+      >
+        <div className="font-bold group-hover:opacity-70 duration-300  ">
+          <FontAwesomeIcon icon={faRightFromBracket} />
+        </div>
+      </div>
+
       <div className="LogoBar">
         <img className="logo" src={logo} />
       </div>
@@ -162,17 +174,7 @@ const Navbar = (props: Props) => {
               className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
             >
               <div className="font-bold group-hover:opacity-50 duration-300">
-                تواصل معنا{" "}
-              </div>
-            </div>
-          </li>
-          <li>
-            <div
-              onClick={logout}
-              className="flex justify-center items-center gap-2 flex-row p-4 text-[#fff] cursor-pointer group bg-darkspring hover:opacity-50 duration-300 mt-2 rounded-lg"
-            >
-              <div className="font-bold group-hover:opacity-50 duration-300  ">
-                Logout{" "}
+                تواصل معنا
               </div>
             </div>
           </li>
