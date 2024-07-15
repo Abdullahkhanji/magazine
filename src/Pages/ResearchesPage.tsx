@@ -3,7 +3,9 @@ import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../App";
-import { Research, Volume } from "../Components/Volumes/Volumes";
+import Volumes, { Research, Volume } from "../Components/Volumes/Volumes";
+import Footer from "../Components/Footer/Footer";
+import Navbar from "../Components/Navbar/Navbar";
 
 const ResearchesPage = () => {
   const [research, setResearch] = useState<Research | null>(null);
@@ -66,12 +68,31 @@ const ResearchesPage = () => {
 
   return (
     <>
-      <div>{research?.rTitle}</div>
-      {research?.rImage ? (
-        <img src={research.rImage} alt={research.rTitle} />
-      ) : (
-        <div>No Image Available</div>
-      )}
+      <Navbar />
+
+      <div className="Header">
+        <h1>{research?.rTitle}</h1>
+      </div>
+      <div className="max-w-[75%] mr-auto ml-auto mt-14 mb-14 flex justify-center relative">
+        <section className="">
+          {research?.rImage ? (
+            <img className="w-100%] h-[100%] rounded-xl shadow-2xl blur-sm backdrop-brightness-0 brightness-50 pointer-events-none select-none" src={research.rImage} alt={research.rTitle} />
+          ) : (
+            <div>No Image Available</div>
+          )}
+        </section>
+
+        <section className="absolute pt-24 text-logoColor max-w-[60%] ">
+          <h1 className="text-48 flex justify-center pb-24 ">{research?.rTitle}</h1>
+
+          <div className="text-24">
+          يسر هيئة تحرير مجلة تبيان للعلوم التربوية والاجتماعية، التي تصدر عن مركز مداد للدراسات والبحوث التربوية، أن تُقدّم للقراء الكرام العدد السابع من المجلة، وهو العدد الأول من المجلد الرابع للعام 2024. وقد احتوى هذا العدد على سبعة أبحاث متميزة، تناولت مواضيع مهمة وحديثة في مجالات العلوم التربوية والنفسية والاجتماعية، وتم نشرها بعد مرورها بعملية التحكيم العلمي الدقيقة والموضوعية، والتعديل اللغوي والفني، وفقاً للمعايير الأكاديمية المتبعة في المجلة.
+          {research?.summary}
+          </div>
+        </section>
+
+      </div>
+      <Footer />
     </>
   );
 };

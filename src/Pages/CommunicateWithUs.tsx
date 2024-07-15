@@ -6,21 +6,23 @@ const CommunicateWithUs = () => {
         <>
             <Navbar />
             <div className="Header ">
-                        <h1>اتصل بنا</h1>
-                    </div >
+                <h1>اتصل بنا</h1>
+            </div >
             <div className="flex p-16" >
                 <div>
 
                     <div className="pr-80 ">
-                        <div className="AltHeader">
-                            <h2 >Communicate with us</h2>
-                            <p className="text-20  pr-200 pt-6 ">For any suggestions or enquiries, feel free to contact us through Midad whatsapp or Tel. No. of the center</p>
-                        </div>
+                        <div>
+                            <div className="AltHeader">
+                                <h2 >Communicate with us</h2>
+                                <p className="text-20  pr-200 pt-6 ">For any suggestions or enquiries, feel free to contact us through Midad whatsapp or Tel. No. of the center</p>
+                            </div>
 
-                        <section className="text-20 pr-200 pt-16 ">
-                            <p className="">00905541822114</p>
-                            <p className="pt-5">s.research@edumidad.org</p>
-                        </section>
+                            <section className="text-20 pr-200 pt-16 ">
+                                <p className="">00905541822114</p>
+                                <p className="pt-5">s.research@edumidad.org</p>
+                            </section>
+                        </div>
                         <section className="AltHeader pl-10 pt-36 w-9/12">
                             <h2>Submission of researches</h2>
                             <h2>Presenting the research</h2>
