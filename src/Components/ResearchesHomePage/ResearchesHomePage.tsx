@@ -60,6 +60,7 @@ const ResearchesHomePage = () => {
 
         // Sort allResearches by uploadDate in descending order
         allResearches = allResearches.sort((a, b) => b.Id - a.Id);
+        allResearches = allResearches.slice(0, 8);
 
         setVolumes(volumeTemp);
         setResearches(allResearches);
