@@ -14,7 +14,9 @@ import {
   getDoc,
   getDocs,
 } from "firebase/firestore";
-import { useParams } from "react-router";
+import { To, useNavigate, useParams } from "react-router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {};
 
@@ -25,6 +27,12 @@ const Navbar = (props: Props) => {
   };
 
   const [volumes, setVolumes] = useState<Volume[]>([]);
+
+  const navigate = useNavigate();
+
+  const handleClick = (path: To) => {
+    navigate(path);
+  };
 
   useEffect(() => {
     const getVolumes = async () => {
@@ -51,17 +59,29 @@ const Navbar = (props: Props) => {
     <div className="Navbar">
       <div className="LogoBar">
         <img className="logo" src={logo} />
-        <div className="logout" onClick={logout}>
-          logout
-        </div>
       </div>
       <nav>
         <ul className="NavbarList">
           <li>
-            <a href="/">الرئيسية</a>
+            <div
+              onClick={() => handleClick("/")}
+              className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
+            >
+              <div className="font-bold group-hover:opacity-50 duration-300">
+                الرئيسية
+              </div>
+            </div>
           </li>
           <li>
-            <a href="#">عن المجلة </a>
+            <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
+              <div className="font-bold group-hover:opacity-50 duration-300">
+                عن المجلة
+              </div>
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="text-forest group-hover:text-darkpastal duration-300"
+              />
+            </div>{" "}
             <ul className="NavbarDropdown">
               <li>
                 <a href="/about-tibyan">عن مجلة تبيان</a>
@@ -72,7 +92,18 @@ const Navbar = (props: Props) => {
             </ul>
           </li>
           <li>
-            <a href="/all-volumes">أعداد المجلة </a>
+            <div
+              onClick={() => handleClick("/all-volumes")}
+              className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
+            >
+              <div className="font-bold group-hover:opacity-50 duration-300">
+                اعداد المجلة
+              </div>
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="text-forest group-hover:text-darkpastal duration-300"
+              />
+            </div>
             <ul className="NavbarDropdown">
               {volumes.map((volume) => (
                 <li key={volume.title}>
@@ -82,7 +113,16 @@ const Navbar = (props: Props) => {
             </ul>
           </li>
           <li>
-            <a href="#">تعليمات النشر </a>
+            <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
+              <div className="font-bold group-hover:opacity-50 duration-300">
+                تعليمات النشر
+              </div>
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="text-forest group-hover:text-darkpastal duration-300"
+              />
+            </div>
+
             <ul className="NavbarDropdown">
               <li>
                 <a href="/publication-steps">خطوات النشر</a>
@@ -96,13 +136,45 @@ const Navbar = (props: Props) => {
             </ul>
           </li>
           <li>
-            <a href="#">تقديم الأبحاث</a>
+            <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
+              <div className="font-bold group-hover:opacity-50 duration-300">
+                عن المجلة
+              </div>
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="text-forest group-hover:text-darkpastal duration-300"
+              />
+            </div>
           </li>
           <li>
-            <a href="/MembersOfTheProgram">أعضاء هيئة التحرير</a>
+            <div
+              onClick={() => handleClick("MembersOfTheProgram")}
+              className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
+            >
+              <div className="font-bold group-hover:opacity-50 duration-300">
+                أعضاء هيئة التحرير
+              </div>
+            </div>
           </li>
           <li>
-            <a href="/CommunicateWithUs">تواصل معنا</a>
+            <div
+              onClick={() => handleClick("/CommunicateWithUs")}
+              className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
+            >
+              <div className="font-bold group-hover:opacity-50 duration-300">
+                تواصل معنا{" "}
+              </div>
+            </div>
+          </li>
+          <li>
+            <div
+              onClick={logout}
+              className="flex justify-center items-center gap-2 flex-row p-4 text-[#fff] cursor-pointer group bg-darkspring hover:opacity-50 duration-300 mt-2 rounded-lg"
+            >
+              <div className="font-bold group-hover:opacity-50 duration-300  ">
+                Logout{" "}
+              </div>
+            </div>
           </li>
         </ul>
       </nav>
