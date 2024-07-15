@@ -80,9 +80,7 @@ const ResearchesHomePage = () => {
 
     getVolumes();
   }, []);
-  useEffect(() => {
-    
-  }, [volumes]);
+  useEffect(() => {}, [volumes]);
   if (loading) {
     return <h1>loading</h1>;
   }
@@ -100,14 +98,23 @@ const ResearchesHomePage = () => {
         </p>
       </div>
       <div className="min-h-7"></div>
-
-      {researches.map((research) => (
-        <div className="flex justify-center items-center flex-wrap gap-10">
-          <img src={research.rImage} alt="" />
-          <p>{research.rTitle}</p>
-          <p>{research.publisherName}</p>
-        </div>
-      ))}
+      <div className="flex flex-wrap max-w-1140 mr-auto ml-auto gap-10">
+        {researches.map((research) => (
+          <div className="flex   gap-10 min-w-[450px] max-w-[450px] border-forest border-[1px]">
+            <img
+              className="max-w-[190px] min-w-[190px] "
+              src={research.rImage}
+              alt=""
+            />
+            <div className="flex items-start flex-col gap-8 max-w-[200px]  mt-5 relative">
+              <p className="text-[12px] ">{research.rTitle}</p>
+              <p className="font-bold text-16 ">{research.publisherName}</p>
+              <div className="max-w-[259px] max-h-[1px] min-w-[259px] min-h-[1px]  bg-background absolute right-[-10px] bottom-[30px]"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="min-h-7"></div>
     </div>
   );
 };

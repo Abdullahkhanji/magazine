@@ -82,9 +82,7 @@ const Volumes = () => {
 
     getVolumes();
   }, []);
-  useEffect(() => {
- 
-  }, [volumes]);
+  useEffect(() => {}, [volumes]);
   if (loading) {
     return <h1>loading</h1>;
   }
@@ -102,7 +100,7 @@ const Volumes = () => {
       <div className="min-h-7"></div>
       <div className="flex gap-5 items-center justify-center flex-wrap max-w-1140  mr-auto ml-auto">
         {volumes.map((volume) => (
-          <div className="max-w-[200px] min-w-[200px] text-center flex flex-col gap-5 cursor-pointer group items-center justify-center">
+          <div className="max-w-[190px] min-w-[190px] text-center flex flex-col gap-5 cursor-pointer group items-center justify-center">
             <img
               src={volume.cover}
               className="max-h-[270] max-w-[170px]  select-none group-hover:scale-110 duration-300"
