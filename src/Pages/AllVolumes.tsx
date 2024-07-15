@@ -22,6 +22,7 @@ const AllVolumes = () => {
           const researchesTemp = await Promise.all(
             docData.researches.map((research: Research) => {
               const resData: Research = {
+                Id: research.Id,
                 No: research.No,
                 rTitle: research.rTitle,
                 publisherName: research.publisherName,

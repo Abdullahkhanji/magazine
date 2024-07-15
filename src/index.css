@@ -47,6 +47,8 @@ body {
 
 .List ul li:before {
   content: url("../src/img/x-mark-green-hi.png");
+  position: absolute;
+  right: 27%;
 }
 
 .List li {
