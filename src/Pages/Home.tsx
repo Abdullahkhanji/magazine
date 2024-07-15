@@ -1,19 +1,20 @@
-import Navbar from "../Components/Navbar/Navbar";
-import Footer from "../Components/Footer/Footer";
+import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
 
-import Volumes from "../Components/Volumes/Volumes";
-import ResearchesHomePage from "../Components/ResearchesHomePage/ResearchesHomePage";
+import Volumes from '../Components/Volumes/Volumes'
+import ResearchesHomePage from '../Components/ResearchesHomePage/ResearchesHomePage'
+import Swipers from '../Components/Swiper/swiper'
 
 const Home = () => {
-  return (
-    <>
-      <Navbar />
+    return (
+        <>
+            <Navbar />
+            <Swipers />
+            <Volumes />
+            <ResearchesHomePage />
+            <Footer />
+        </>
+    )
+}
 
-      <Volumes />
-      <ResearchesHomePage />
-      <Footer />
-    </>
-  );
-};
-
-export default Home;
+export default Home

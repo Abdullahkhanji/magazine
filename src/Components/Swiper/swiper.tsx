@@ -1,11 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
 
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+// import required modules
+import { Autoplay, Pagination, Scrollbar } from 'swiper/modules'
+import { getDocs, collection, QueryDocumentSnapshot } from 'firebase/firestore'
+import { getStorage, ref, getDownloadURL } from 'firebase/storage'
 import { db } from '../../App'
-import { QueryDocumentSnapshot, collection, getDocs } from 'firebase/firestore'
-import { getDownloadURL, getStorage, ref } from 'firebase/storage'
 import { Volume, Research } from '../Volumes/Volumes'
+import 'swiper/css/pagination'
 
-const ResearchesHomePage = () => {
+export default function Swipers() {
     const [loading, setLoading] = useState(true)
     const [volumes, setVolumes] = useState<Volume[]>([])
     const [researches, setResearches] = useState<Research[]>([])
@@ -58,7 +67,7 @@ const ResearchesHomePage = () => {
 
                 // Sort allResearches by uploadDate in descending order
                 allResearches = allResearches.sort((a, b) => b.Id - a.Id)
-                allResearches = allResearches.slice(0, 8)
+                allResearches = allResearches.slice(0, 6)
 
                 setVolumes(volumeTemp)
                 setResearches(allResearches)
@@ -77,42 +86,41 @@ const ResearchesHomePage = () => {
     }
 
     return (
-        <div className="flex flex-col">
-            <div className="min-h-7"></div>
-            <div className="flex gap-2 items-center justify-center">
-                <div className="min-h-[2px] max-h-[2px] bg-forest min-w-1140 mt-2 pointer-events-none select-none max-w-1140 "></div>
-            </div>
-            <div className="min-h-7"></div>
-            <div className="flex max-w-1140">
-                <p className="text-forest font-bold text-[25px] text-center mr-auto ml-auto">
-                    تقرؤون في مجلة تبيان 2024
-                </p>
-            </div>
-            <div className="min-h-7"></div>
-            <div className="flex flex-wrap max-w-1140 gap-10  mr-auto ml-auto">
-                {researches.map((research, index) => (
-                    <div
-                        key={index}
-                        className="flex gap-10 min-w-[565px] max-w-[565px] border-forest border-[1px] rounded-md group cursor-pointer"
-                    >
-                        <div className="overflow-hidden   shadow-lg">
-                            <img
-                                className="max-w-[190px] min-w-[190px] rounded-r-md rounded-br-md pointer-events-none select-none group-hover:scale-110 transform transition-transform duration-500 "
-                                src={research.rImage}
-                                alt={research.rTitle}
-                            />
+        <>
+            <Swiper
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    dynamicBullets: true,
+                }}
+                modules={[Autoplay, Pagination, Scrollbar]}
+                className="mySwiper select-none"
+            >
+                {researches.map((research) => (
+                    <SwiperSlide>
+                        <div className="flex self-start  max-w-360 min-w-360 mr-auto ml-auto flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer">
+                            <div className="overflow-hidden group-hover:rounded-lg  shadow-lg">
+                                <img
+                                    className="max-w-[355x] min-w-[355px] rounded-tr-lg rounded-tl-lg max-h-360 min-h-360 group-hover:scale-110 transform transition-transform duration-500 "
+                                    src={research.rImage}
+                                    alt={research.publisherName}
+                                />
+                            </div>
+                            <div className="min-h-8"></div>
+                            <div className="self-start flex flex-col mr-2 gap-4">
+                                <p>{research.rTitle}</p>
+                                <div className="flex flex-col">
+                                    <p className="font-bold text-[18px]">{research.publisherName}</p>
+                                    <div className="min-h-[1px] max-w-360 min-w-360 bg-forest mr-[-8px] text-16"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex items-start flex-col gap-8 max-w-[200px] mt-5 relative">
-                            <p className="text-[12px]">{research.rTitle}</p>
-                            <p className="font-bold text-16">{research.publisherName}</p>
-                            <div className="max-w-[259px] max-h-[1px] min-w-[259px] min-h-[1px] bg-background absolute right-[-10px] bottom-[30px]"></div>
-                        </div>
-                    </div>
+                    </SwiperSlide>
                 ))}
-            </div>
-            <div className="min-h-7"></div>
-        </div>
+            </Swiper>
+        </>
     )
 }
-
-export default ResearchesHomePage
