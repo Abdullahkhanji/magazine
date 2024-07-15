@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
+
 import Home from "./Pages/Home";
-import Navbar from "./Components/Navbar/Navbar";
+
 import PublicationStandards from "./Pages/PublicationStandards";
 import PublicationSteps from "./Pages/PublicationSteps";
 import PublicationEthics from "./Pages/PublicationEthics";
@@ -11,13 +11,11 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import AllVolumes from "./Pages/AllVolumes";
 import VolumePage from "./Pages/VolumePage";
 import AboutTibyan from "./Pages/AboutTibyan";
-import CommunicateWithUs from "./Pages/CommunicateWithUs"
-<<<<<<< HEAD
-import MembersOfTheProgram from "./Pages/MembersOfTheProgram"
-=======
-import ResearchesPage from "./Pages/ResearchesPage";
+import CommunicateWithUs from "./Pages/CommunicateWithUs";
 
->>>>>>> 863f74be1d698de79976d7f09c17de362ace2254
+import MembersOfTheProgram from "./Pages/MembersOfTheProgram";
+
+import ResearchesPage from "./Pages/ResearchesPage";
 
 export const router = createBrowserRouter([
   {
@@ -50,22 +48,26 @@ export const router = createBrowserRouter([
   },
   {
     path: "/all-volumes",
-    element: <AllVolumes/>
+    element: <AllVolumes />,
   },
   {
     path: "/volume-page/:id",
-    element: <VolumePage/>
-  },{
+    element: <VolumePage />,
+  },
+  {
     path: "/about-tibyan",
-    element: <AboutTibyan/>
-  },{
+    element: <AboutTibyan />,
+  },
+  {
     path: "/research-page/:vid/:id",
-    element: <ResearchesPage/>
-  },{
+    element: <ResearchesPage />,
+  },
+  {
     path: "/CommunicateWithUs",
-    element: <CommunicateWithUs/>
-  },{
+    element: <CommunicateWithUs />,
+  },
+  {
     path: "/MembersOfTheProgram",
-    element: <MembersOfTheProgram/>
-  }
+    element: <MembersOfTheProgram />,
+  },
 ]);
