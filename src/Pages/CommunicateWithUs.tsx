@@ -12,7 +12,7 @@ const CommunicateWithUs = () => {
                 <div>
 
                     <div className="pr-80 ">
-                        <div>
+                        <div >
                             <div className="AltHeader">
                                 <h2 >Communicate with us</h2>
                                 <p className="text-20  pr-200 pt-6 ">For any suggestions or enquiries, feel free to contact us through Midad whatsapp or Tel. No. of the center</p>

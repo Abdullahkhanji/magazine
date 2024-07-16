@@ -73,27 +73,36 @@ const ResearchesPage = () => {
       <div className="Header">
         <h1>{research?.rTitle}</h1>
       </div>
-      <div className="max-w-[75%] mr-auto ml-auto mt-14 mb-14 flex justify-center relative">
-        <section className="">
+      <div className="mr-auto ml-auto mb-28">
+        <section className="relative">
           {research?.rImage ? (
-            <img className="w-100%] h-[100%] rounded-xl shadow-2xl blur-sm backdrop-brightness-0 brightness-50 pointer-events-none select-none" src={research.rImage} alt={research.rTitle} />
+            <div className="relative max-w-[70%] mr-auto ml-auto pt-10 max-h-640 ">
+              <img
+                className="w-[100%] max-w-[%25]  max-h-640  h-auto object-cover shadow-lg rounded-lg backdrop-brightness-0 brightness-50  pointer-events-none object-center select-none"
+                src={research.rImage}
+                alt={research.rTitle}
+              />
+              <h1 className="absolute inset-0 flex items-center pr-[22%] pb-24 justify-start  text-72  text-fff">{research.rTitle}</h1>
+            </div>
           ) : (
             <div>No Image Available</div>
           )}
         </section>
-
-        <section className="absolute pt-24 text-logoColor max-w-[60%] ">
-          <h1 className="text-48 flex justify-center pb-24 ">{research?.rTitle}</h1>
-
-          <div className="text-24">
-          يسر هيئة تحرير مجلة تبيان للعلوم التربوية والاجتماعية، التي تصدر عن مركز مداد للدراسات والبحوث التربوية، أن تُقدّم للقراء الكرام العدد السابع من المجلة، وهو العدد الأول من المجلد الرابع للعام 2024. وقد احتوى هذا العدد على سبعة أبحاث متميزة، تناولت مواضيع مهمة وحديثة في مجالات العلوم التربوية والنفسية والاجتماعية، وتم نشرها بعد مرورها بعملية التحكيم العلمي الدقيقة والموضوعية، والتعديل اللغوي والفني، وفقاً للمعايير الأكاديمية المتبعة في المجلة.
-          {research?.summary}
-          </div>
+        <section className="flex justify-around mt-14 shadow-lg rounded-lg max-w-[70%] p-10 mr-auto ml-auto">
+          <p className="text-24">{research?.publisherName}</p>
+          <p className="text-24">{research?.publisherJob}</p>
+          <p className="text-24">{research?.publisherEmail}</p>
         </section>
 
+        <section className="max-w-[70%] text-wrap  mt-20 mr-auto ml-auto shadow-lg rounded-lg p-24 ">
+          <div className="text-24">
+            {research?.summary}
+          </div>
+        </section>
       </div>
       <Footer />
     </>
   );
 };
+
 export default ResearchesPage;

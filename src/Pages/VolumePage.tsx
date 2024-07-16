@@ -48,34 +48,33 @@ const VolumePage = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-lightceladon m-6 rounded-lg  ">
-        <div className="">
-          <h2 className="text-32 text-fff  p-10 pr-24 pt-12 ">
-            {volume?.title}
-          </h2>
-        </div>
+      <div className="Header">
+        <h1>{volume?.title}</h1>
+      </div>
+      <div className="shadow-lg m-20 rounded-lg max-w-[95%] mr-auto ml-auto p-10 pt-16 pb-16">
+
         <div className="flex justify-center">
           <div className="">
-            <section className="p-10 mr-640 ">
+            <section className="p-10 mr-640 pt-6 ">
               <a href="/any">
-                <button className=" text-20 text-white bg-[#15803d] duration-300 hover:bg-[#166534] focus:outline-none focus:ring-4 focus:ring-[#86efac] font-medium rounded-sm  px-24 py-2.5 text-center me-2 mb-2 dark:bg-[#86efac]dark:hover:bg-[#15803d] dark:focus:ring-[#166534] ">
+                <button className=" text-20 text-fff px-28 text-nowrap bg-[#15803d] duration-500 hover:bg-[#166534] focus:outline-none focus:ring-4 focus:ring-[#86efac] font-medium  rounded-md   py-5   dark:bg-[#26a345] dark:hover:bg-[#15803d] dark:focus:ring-[#166534] ">
                   تصفح العد الأول من المجلد
                 </button>
               </a>
             </section>
             {volume?.researches.map((research: Research) => (
-              <section className="pr-8 mr-[20%]">
+              <section className="pr-8 mr-[20%] ">
                 <a href={`/research-page/${id}/${research.Id}`}>
-                  <button className=" p-10  text-28  hover:text-background duration-300">
-                  {research.rTitle}
+                  <button className=" p-10  text-28 pt-12 hover:text-background duration-500">
+                    {research.rTitle}
                   </button>
                 </a>
                 <p className="text-20 pt-5 ">{research.publisherName}</p>
               </section>
             ))}
           </div>
-          <div className="flex justify-end pl-10  m-10 ">
-            <img className=" w-1/2 p-10  " src={volume?.cover} alt="" />
+          <div className="flex justify-end pl-14  m-10  ">
+            <img className=" w-[70%] p-10 shadow-sm " src={volume?.cover} alt="" />
           </div>
         </div>
       </div>
