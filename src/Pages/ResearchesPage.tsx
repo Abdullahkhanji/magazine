@@ -82,7 +82,7 @@ const ResearchesPage = () => {
                 src={research.rImage}
                 alt={research.rTitle}
               />
-              <h1 className="absolute inset-0 flex items-center pr-[22%] pb-24 justify-start  text-72  text-fff">{research.rTitle}</h1>
+              <h1 className="absolute inset-0 flex items-end pr-[22%]  pb-20 justify-start   text-72  text-fff">{research.rTitle}</h1>
             </div>
           ) : (
             <div>No Image Available</div>

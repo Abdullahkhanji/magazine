@@ -96,6 +96,7 @@ const config = {
       light: "#6EDE8A",
       celadon: "#92E6A7",
       lightceladon: "#B7EFC5",
+      adressBg: "#fafafa",
     },
     inset: {
       0: "0px",
