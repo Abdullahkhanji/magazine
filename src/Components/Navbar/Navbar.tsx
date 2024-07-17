@@ -136,7 +136,7 @@ const Navbar = (props: Props) => {
                     </li>
                     <li>
                         <div
-                            onClick={() => handleClick('MembersOfTheProgram')}
+                            onClick={() => handleClick('/MembersOfTheProgram')}
                             className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
                         >
                             <div className="font-bold group-hover:opacity-50 duration-300">أعضاء هيئة التحرير</div>

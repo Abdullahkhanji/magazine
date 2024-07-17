@@ -32,7 +32,8 @@ const Volumes = () => {
     const getVolumes = async () => {
       try {
         const storage = getStorage();
-        const getData = await getDocs(collection(db, "volumes"));
+        const getData = await getDocs(collection(db, 'volumes'));
+        let allResearches: Research[] = [];
 
         const volumeTemp = await Promise.all(
           getData.docs.map(async (doc: QueryDocumentSnapshot) => {
@@ -45,6 +46,11 @@ const Volumes = () => {
 
             const researchTemp = await Promise.all(
               docData.researches.map(async (research: Research) => {
+                if (!research.rImage) {
+                  // Skip researches without an image
+                  return null;
+                }
+
                 const resData: Research = {
                   Id: research.Id,
                   No: research.No,
@@ -53,6 +59,7 @@ const Volumes = () => {
                   publisherJob: research.publisherJob,
                   publisherEmail: research.publisherEmail,
                   summary: research.summary,
+                  rImage: research.rImage,
                 };
 
                 const covRef = ref(storage, research.rImage);
@@ -62,19 +69,27 @@ const Volumes = () => {
                 return resData;
               })
             );
-            setResearches(researchTemp);
 
             const coverRef = ref(storage, docData.cover);
             const coverURL = await getDownloadURL(coverRef);
-            index.cover = coverURL;
+            if (coverURL) {
+              index.cover = coverURL;
+            }
 
-            return index;
+            // Filter out null values (researches without images) and add to allResearches
+            allResearches = allResearches.concat(researchTemp.filter((res): res is Research => res !== null));
+
+            return index.cover ? index : null; // Return the volume only if it has a cover image
           })
         );
 
-        setVolumes(volumeTemp);
+        // Filter out null values (volumes without cover images)
+        const filteredVolumes = volumeTemp.filter((vol): vol is Volume => vol !== null);
+
+        setVolumes(filteredVolumes);
+        setResearches(allResearches);
       } catch (error) {
-        console.error("Error fetching volumes:", error);
+        console.error('Error fetching volumes:', error);
       } finally {
         setLoading(false);
       }
