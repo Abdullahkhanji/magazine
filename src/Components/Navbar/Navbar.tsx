@@ -85,7 +85,7 @@ const Navbar = (props: Props) => {
                                 <a href="/about-tibyan">عن مجلة تبيان</a>
                             </li>
                             <li>
-                                <a href="#">عن مركز مداد</a>
+                                <a href="/AboutMidad">عن مركز مداد</a>
                             </li>
                         </ul>
                     </li>

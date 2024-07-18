@@ -16,6 +16,7 @@ import CommunicateWithUs from "./Pages/CommunicateWithUs";
 import MembersOfTheProgram from "./Pages/MembersOfTheProgram";
 
 import ResearchesPage from "./Pages/ResearchesPage";
+import AboutMidad from "./Pages/AboutMidad";
 
 export const router = createBrowserRouter([
   {
@@ -69,5 +70,9 @@ export const router = createBrowserRouter([
   {
     path: "/MembersOfTheProgram",
     element: <MembersOfTheProgram />,
+  },
+  {
+    path: "/AboutMidad",
+    element: <AboutMidad/>,
   },
 ]);
