@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // import required modules
 import { Autoplay, Pagination, Scrollbar } from 'swiper/modules'
@@ -80,6 +81,36 @@ export default function Swipers() {
 
         getVolumes()
     }, [])
+    //       const [swiperRef, setSwiperRef] = useState(null);
+
+    //   let appendNumber = 4;
+    //   let prependNumber = 1;
+
+    //   const prepend2 = () => {
+    //     swiperRef.prependSlide([
+    //       '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
+    //       '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
+    //     ]);
+    //   };
+
+    //   const prepend = () => {
+    //     swiperRef.prependSlide(
+    //       '<div class="swiper-slide">Slide ' + --prependNumber + '</div>'
+    //     );
+    //   };
+
+    //   const append = () => {
+    //     swiperRef.appendSlide(
+    //       '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>'
+    //     );
+    //   };
+
+    //   const append2 = () => {
+    //     swiperRef.appendSlide([
+    //       '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
+    //       '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
+    //     ]);
+    //   };
 
     if (loading) {
         return <h1>Loading...</h1>
@@ -88,6 +119,7 @@ export default function Swipers() {
     return (
         <>
             <Swiper
+                slidesPerView={3}
                 centeredSlides={true}
                 autoplay={{
                     delay: 2500,
@@ -96,8 +128,9 @@ export default function Swipers() {
                 pagination={{
                     dynamicBullets: true,
                 }}
+                navigation={true}
                 modules={[Autoplay, Pagination, Scrollbar]}
-                className="mySwiper select-none"
+                className="mySwiper select-none w-1280 mt-20"
             >
                 {researches.map((research) => (
                     <SwiperSlide>
