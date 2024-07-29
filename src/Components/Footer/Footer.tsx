@@ -25,7 +25,7 @@ const Footer = (props: Props) => {
           <button className="Button rounded-lg select-none">
             قراءة المزيد
           </button>
-          <p className="Copyright">Copyright Midad Center</p>
+
         </li>
         <li className="Contact">
           <ul className="ContactList">
@@ -52,6 +52,7 @@ const Footer = (props: Props) => {
           </ul>
         </li>
       </ul>
+      <p className="Copyright">Copyright Midad Center</p>
     </div>
   );
 };
