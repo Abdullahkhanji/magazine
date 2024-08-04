@@ -1,7 +1,7 @@
 import React, { useId, useState } from "react";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../App";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { Research, Volume } from "./../Components/Volumes/Volumes";
@@ -12,6 +12,7 @@ type Props = {};
 const AddVolume = (props: Props) => {
   const storage = getStorage();
   const initialResearch: Research = {
+    volumeID: "",
     Id: 0,
     No: 0,
     rTitle: "",
@@ -27,6 +28,7 @@ const AddVolume = (props: Props) => {
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
   const [file, setFile] = useState("");
+  const [volumeID, setVolumeID] = useState('');
 
   const addResearch = () => {
     const id = new Date().getTime();
@@ -40,6 +42,12 @@ const AddVolume = (props: Props) => {
       cover,
       file,
       researches: searchData,
+    }).then(async (data) => {
+      setVolumeID(data.id)
+    })
+    const updatedResearches = searchData.forEach((research) => (research.volumeID = volumeID))
+    await updateDoc(doc(db, "volumes", volumeID), {
+      researches: updatedResearches,
     });
   };
 

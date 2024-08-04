@@ -39,6 +39,7 @@ export default function Swipers() {
                         const researchTemp = await Promise.all(
                             docData.researches.map(async (research: Research) => {
                                 const resData: Research = {
+                                    volumeID: research.volumeID,
                                     Id: research.Id,
                                     No: research.No,
                                     rTitle: research.rTitle,

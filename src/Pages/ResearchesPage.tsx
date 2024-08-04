@@ -23,6 +23,7 @@ const ResearchesPage = () => {
         for (const research of docData.researches) {
           if (research.Id === Number(id)) {
             const index: Research = {
+              volumeID: research.volumeID,
               Id: research.Id,
               No: research.No,
               rTitle: research.rTitle,

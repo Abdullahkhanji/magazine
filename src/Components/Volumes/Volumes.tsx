@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../App";
 import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
+import { To, useNavigate } from "react-router";
 
 export interface Research {
+  volumeID: string;
   Id: number;
   No: number;
   rTitle: string;
@@ -27,8 +29,11 @@ const Volumes = () => {
   const [loading, setLoading] = useState(true);
   const [volumes, setVolumes] = useState<Volume[]>([]);
   const [researches, setResearches] = useState<Research[]>([]);
-
-  useEffect(() => {
+  const navigate = useNavigate()
+  const handleClick = (path: To) => {
+      navigate(path)
+  }
+  useEffect(() => { 
     const getVolumes = async () => {
       try {
         const storage = getStorage();
@@ -52,6 +57,7 @@ const Volumes = () => {
                 }
 
                 const resData: Research = {
+                  volumeID: research.volumeID,
                   Id: research.Id,
                   No: research.No,
                   rTitle: research.rTitle,
@@ -115,7 +121,7 @@ const Volumes = () => {
       <div className="min-h-7"></div>
       <div className="flex gap-5 items-center justify-center flex-wrap max-w-1140  mr-auto ml-auto">
         {volumes.map((volume) => (
-          <div className="max-w-[190px] min-w-[190px] text-center flex flex-col gap-5 cursor-pointer group items-center justify-center">
+          <div className="max-w-[190px] min-w-[190px] text-center flex flex-col gap-5 cursor-pointer group items-center justify-center" onClick={() => handleClick(`/volume-page/${volume.id}`)}>
             <img
               src={volume.cover}
               className="max-h-[270] max-w-[170px]  select-none group-hover:scale-110 duration-300"

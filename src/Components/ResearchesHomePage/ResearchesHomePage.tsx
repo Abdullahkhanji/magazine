@@ -4,11 +4,16 @@ import { db } from '../../App'
 import { QueryDocumentSnapshot, collection, getDocs } from 'firebase/firestore'
 import { getDownloadURL, getStorage, ref } from 'firebase/storage'
 import { Volume, Research } from '../Volumes/Volumes'
+import { To, useNavigate } from 'react-router'
 
 const ResearchesHomePage = () => {
     const [loading, setLoading] = useState(true)
     const [volumes, setVolumes] = useState<Volume[]>([])
     const [researches, setResearches] = useState<Research[]>([])
+    const navigate = useNavigate()
+    const handleClick = (path: To) => {
+        navigate(path)
+    }
 
     useEffect(() => {
         const getVolumes = async () => {
@@ -29,6 +34,7 @@ const ResearchesHomePage = () => {
                         const researchTemp = await Promise.all(
                             docData.researches.map(async (research: Research) => {
                                 const resData: Research = {
+                                    volumeID: research.volumeID,
                                     Id: research.Id,
                                     No: research.No,
                                     rTitle: research.rTitle,
@@ -94,6 +100,7 @@ const ResearchesHomePage = () => {
                     <div
                         key={index}
                         className="flex gap-10 min-w-[565px] max-w-[565px] border-forest border-[1px] rounded-md group cursor-pointer"
+                        onClick={() => handleClick('/')}
                     >
                         <div className="overflow-hidden   shadow-lg">
                             <img
