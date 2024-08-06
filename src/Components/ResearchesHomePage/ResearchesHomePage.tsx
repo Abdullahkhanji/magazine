@@ -34,7 +34,7 @@ const ResearchesHomePage = () => {
                         const researchTemp = await Promise.all(
                             docData.researches.map(async (research: Research) => {
                                 const resData: Research = {
-                                    volumeID: research.volumeID,
+                                    volumeID: doc.id,
                                     Id: research.Id,
                                     No: research.No,
                                     rTitle: research.rTitle,
@@ -65,7 +65,7 @@ const ResearchesHomePage = () => {
                 // Sort allResearches by uploadDate in descending order
                 allResearches = allResearches.sort((a, b) => b.Id - a.Id)
                 allResearches = allResearches.slice(0, 8)
-
+                console.log(allResearches)
                 setVolumes(volumeTemp)
                 setResearches(allResearches)
             } catch (error) {
@@ -100,7 +100,7 @@ const ResearchesHomePage = () => {
                     <div
                         key={index}
                         className="flex gap-10 min-w-[565px] max-w-[565px] border-forest border-[1px] rounded-md group cursor-pointer"
-                        onClick={() => handleClick('/')}
+                        onClick={() => handleClick(`/research-page/${research.volumeID}/${research.Id}`)}
                     >
                         <div className="overflow-hidden   shadow-lg">
                             <img

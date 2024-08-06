@@ -14,11 +14,16 @@ import { getStorage, ref, getDownloadURL } from 'firebase/storage'
 import { db } from '../../App'
 import { Volume, Research } from '../Volumes/Volumes'
 import 'swiper/css/pagination'
+import { To, useNavigate } from 'react-router'
 
 export default function Swipers() {
     const [loading, setLoading] = useState(true)
     const [volumes, setVolumes] = useState<Volume[]>([])
     const [researches, setResearches] = useState<Research[]>([])
+    const navigate = useNavigate()
+    const handleClick = (path: To) => {
+        navigate(path)
+    }
 
     useEffect(() => {
         const getVolumes = async () => {
@@ -39,7 +44,7 @@ export default function Swipers() {
                         const researchTemp = await Promise.all(
                             docData.researches.map(async (research: Research) => {
                                 const resData: Research = {
-                                    volumeID: research.volumeID,
+                                    volumeID: doc.id,
                                     Id: research.Id,
                                     No: research.No,
                                     rTitle: research.rTitle,
@@ -67,7 +72,6 @@ export default function Swipers() {
                     })
                 )
 
-                // Sort allResearches by uploadDate in descending order
                 allResearches = allResearches.sort((a, b) => b.Id - a.Id)
                 allResearches = allResearches.slice(0, 6)
 
@@ -82,36 +86,6 @@ export default function Swipers() {
 
         getVolumes()
     }, [])
-    //       const [swiperRef, setSwiperRef] = useState(null);
-
-    //   let appendNumber = 4;
-    //   let prependNumber = 1;
-
-    //   const prepend2 = () => {
-    //     swiperRef.prependSlide([
-    //       '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
-    //       '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
-    //     ]);
-    //   };
-
-    //   const prepend = () => {
-    //     swiperRef.prependSlide(
-    //       '<div class="swiper-slide">Slide ' + --prependNumber + '</div>'
-    //     );
-    //   };
-
-    //   const append = () => {
-    //     swiperRef.appendSlide(
-    //       '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>'
-    //     );
-    //   };
-
-    //   const append2 = () => {
-    //     swiperRef.appendSlide([
-    //       '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
-    //       '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
-    //     ]);
-    //   };
 
     if (loading) {
         return <h1>Loading...</h1>
@@ -135,7 +109,7 @@ export default function Swipers() {
             >
                 {researches.map((research) => (
                     <SwiperSlide>
-                        <div className="flex self-start  max-w-360 min-w-360 mr-auto ml-auto flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer">
+                        <div onClick={() => handleClick(`/research-page/${research.volumeID}/${research.Id}`)} className="flex self-start  max-w-360 min-w-360 mr-auto ml-auto flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer">
                             <div className="overflow-hidden group-hover:rounded-lg  shadow-lg">
                                 <img
                                     className="max-w-[355x] min-w-[355px] rounded-tr-lg rounded-tl-lg max-h-360 min-h-360 group-hover:scale-110 transform transition-transform duration-500 "

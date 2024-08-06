@@ -28,7 +28,7 @@ const AddVolume = (props: Props) => {
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
   const [file, setFile] = useState("");
-  const [volumeID, setVolumeID] = useState('');
+
 
   const addResearch = () => {
     const id = new Date().getTime();
@@ -42,13 +42,7 @@ const AddVolume = (props: Props) => {
       cover,
       file,
       researches: searchData,
-    }).then(async (data) => {
-      setVolumeID(data.id)
     })
-    const updatedResearches = searchData.forEach((research) => (research.volumeID = volumeID))
-    await updateDoc(doc(db, "volumes", volumeID), {
-      researches: updatedResearches,
-    });
   };
 
   const setSearchImage = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
