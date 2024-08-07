@@ -5,19 +5,6 @@ import { QueryDocumentSnapshot, collection, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { To, useNavigate } from "react-router";
 
-export interface Research {
-  volumeID: string;
-  Id: number;
-  No: number;
-  rTitle: string;
-  publisherName: string;
-  publisherJob: string;
-  publisherEmail: string;
-  summary: string;
-  rImage?: string;
-  rFile?: string;
-}
-
 export interface Volume {
   id: string;
   title: string;
@@ -25,6 +12,24 @@ export interface Volume {
   cover?: string;
   file?: string;
 }
+
+export interface Research {
+  volumeID: string;
+  Id: number;
+  No: number;
+  rTitle: string;
+  authors: Author[];
+  summary: string;
+  rImage?: string;
+  rFile?: string;
+}
+
+export interface Author {
+  name: string,
+  job: string,
+  email: string,
+}
+
 const Volumes = () => {
   const [loading, setLoading] = useState(true);
   const [volumes, setVolumes] = useState<Volume[]>([]);
@@ -61,9 +66,7 @@ const Volumes = () => {
                   Id: research.Id,
                   No: research.No,
                   rTitle: research.rTitle,
-                  publisherName: research.publisherName,
-                  publisherJob: research.publisherJob,
-                  publisherEmail: research.publisherEmail,
+                  authors: research.authors,
                   summary: research.summary,
                   rImage: research.rImage,
                 };

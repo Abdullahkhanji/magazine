@@ -38,9 +38,7 @@ const ResearchesHomePage = () => {
                                     Id: research.Id,
                                     No: research.No,
                                     rTitle: research.rTitle,
-                                    publisherName: research.publisherName,
-                                    publisherJob: research.publisherJob,
-                                    publisherEmail: research.publisherEmail,
+                                    authors: research.authors,
                                     summary: research.summary,
                                 }
 
@@ -110,7 +108,7 @@ const ResearchesHomePage = () => {
                             />
                         </div>
                         <div className="flex items-start flex-col gap-8 max-w-[200px] mt-5 relative">
-                            <p className="text-[12px]">{research.publisherName}</p>
+                            <p className="text-[12px]">{research.rTitle}</p>
                             <p className="font-bold text-16">{research.rTitle}</p>
                             <div className="max-w-[259px] max-h-[1px] min-w-[259px] min-h-[1px] bg-background absolute right-[-10px] bottom-[30px]"></div>
                         </div>

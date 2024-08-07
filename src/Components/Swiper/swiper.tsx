@@ -48,9 +48,7 @@ export default function Swipers() {
                                     Id: research.Id,
                                     No: research.No,
                                     rTitle: research.rTitle,
-                                    publisherName: research.publisherName,
-                                    publisherJob: research.publisherJob,
-                                    publisherEmail: research.publisherEmail,
+                                    authors: research.authors,
                                     summary: research.summary,
                                 }
 
@@ -114,14 +112,14 @@ export default function Swipers() {
                                 <img
                                     className="max-w-[355x] min-w-[355px] rounded-tr-lg rounded-tl-lg max-h-360 min-h-360 group-hover:scale-110 transform transition-transform duration-500 "
                                     src={research.rImage}
-                                    alt={research.publisherName}
+                                    alt={research.rTitle}
                                 />
                             </div>
                             <div className="min-h-8"></div>
                             <div className="self-start flex flex-col mr-2 gap-4">
                                 <p>{research.rTitle}</p>
                                 <div className="flex flex-col">
-                                    <p className="font-bold text-[18px]">{research.publisherName}</p>
+                                    <p className="font-bold text-[18px]">{research.rTitle}</p>
                                     <div className="min-h-[1px] max-w-360 min-w-360 bg-forest mr-[-8px] text-16"></div>
                                 </div>
                             </div>

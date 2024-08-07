@@ -106,7 +106,8 @@ body {
     padding: 25px;
 }
 
-.logout {}
+.logout {
+}
 
 nav {
     margin: 0 auto;
@@ -130,7 +131,7 @@ nav .NavbarList {
     display: inline-block;
 }
 
-.NavbarList li>a:only-child:after {
+.NavbarList li > a:only-child:after {
     content: '';
 }
 
@@ -195,7 +196,6 @@ nav .NavbarList {
     flex-direction: column;
 
     overflow: hidden;
-
 }
 
 .Footer p {
@@ -256,7 +256,6 @@ nav .NavbarList {
 }
 
 @media (max-width: 768px) {
-
     .About,
     .Contact {
         width: 80%;
@@ -284,7 +283,6 @@ nav .NavbarList {
     margin-left: auto;
     padding-bottom: 20px;
     padding-top: 30px;
-
 }
 
 .VolumeInfo {
@@ -332,14 +330,14 @@ nav .NavbarList {
     margin: 10px;
     border-radius: 7px;
     max-width: 230px;
-
 }
 
 .ResearchInfo {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
     justify-content: center;
-
+    max-width: 40%;
 }
 
 .ResearchInfo textarea {
@@ -538,7 +536,7 @@ nav .NavbarList {
 }
 
 .AddVoulumeInput {
-    font-family: "SF Pro";
+    font-family: 'SF Pro';
     max-width: 190px;
     padding: 0.875rem;
     font-size: 1rem;
@@ -546,19 +544,17 @@ nav .NavbarList {
     border-radius: 0.5rem;
     outline: none;
     transition: ease 0.25s;
-  text-align: center;
+    text-align: center;
 }
 
 .SummaryInput {
-    font-family: "SF Pro";
+    font-family: 'SF Pro';
     font-size: 1rem;
     border: 1.5px solid #000;
     border-radius: 0.5rem;
-    outline: none;
-    transition: ease 0.25s;
 
 
-
+    width: 200px;
 }
 
 .AddVoulumeInput :focus {

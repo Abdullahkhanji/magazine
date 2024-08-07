@@ -69,7 +69,7 @@ const VolumePage = () => {
                     {research.rTitle}
                   </button>
                 </a>
-                <p className="text-20 pt-5 ">{research.publisherName}</p>
+                <p className="text-20 pt-5 ">{research.rTitle}</p>
               </section>
             ))}
           </div>

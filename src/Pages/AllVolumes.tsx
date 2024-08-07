@@ -26,9 +26,7 @@ const AllVolumes = () => {
                 Id: research.Id,
                 No: research.No,
                 rTitle: research.rTitle,
-                publisherName: research.publisherName,
-                publisherJob: research.publisherJob,
-                publisherEmail: research.publisherEmail,
+                authors: research.authors,
                 summary: research.summary,
               };
 

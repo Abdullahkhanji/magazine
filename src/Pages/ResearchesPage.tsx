@@ -27,9 +27,7 @@ const ResearchesPage = () => {
               Id: research.Id,
               No: research.No,
               rTitle: research.rTitle,
-              publisherName: research.publisherName,
-              publisherEmail: research.publisherEmail,
-              publisherJob: research.publisherJob,
+              authors: research.authors,
               summary: research.summary,
             };
 
@@ -90,9 +88,9 @@ const ResearchesPage = () => {
           )}
         </section>
         <section className="flex justify-around mt-14 shadow-lg rounded-lg max-w-[70%] p-10 mr-auto ml-auto">
-          <p className="text-24">{research?.publisherName}</p>
-          <p className="text-24">{research?.publisherJob}</p>
-          <p className="text-24">{research?.publisherEmail}</p>
+          <p className="text-24">{research?.rTitle}</p>
+          <p className="text-24">{research?.rTitle}</p>
+          <p className="text-24">{research?.rTitle}</p>
         </section>
 
         <section className="max-w-[70%] text-wrap  mt-20 mr-auto ml-auto shadow-lg rounded-lg p-24 ">
