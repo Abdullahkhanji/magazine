@@ -97,13 +97,14 @@ body {
 
 .LogoBar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .logo {
     width: 220px;
     length: 140px;
     padding: 25px;
+    margin-left: 43%;
 }
 
 .logout {

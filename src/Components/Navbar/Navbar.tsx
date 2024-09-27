@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import logo from '../../img/logo.png'
 
 import '../../index.css'
-import { getAuth, signOut } from 'firebase/auth'
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
 import { db } from '../../App'
 import { getDownloadURL, getStorage, ref } from 'firebase/storage'
 import { Volume } from '../Volumes/Volumes'
@@ -16,7 +16,7 @@ type Props = {}
 
 const Navbar = (props: Props) => {
     const navigate = useNavigate()
-
+    const [loggedIn, setLoggedIn] = useState(false)
     const handleClick = (path: To) => {
         navigate(path)
     }
@@ -47,19 +47,23 @@ const Navbar = (props: Props) => {
     }, [])
     useEffect(() => {
         console.log(volumes)
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setLoggedIn(true)
+            } else setLoggedIn(false)
+        })
     }, [volumes])
     return (
         <div className="Navbar flex-[999] ">
-            <div
-                onClick={logout}
-                className="flex justify-center items-center  text-[#dc2626] cursor-pointer group bg-[#9a1a1a] hover:opacity-70 duration-300 mt-2 rounded-lg w-[50px]  absolute left-[10px] max-h-[50px] min-h-[50px]"
-            >
-                <div className="font-bold group-hover:opacity-70 duration-300  ">
-                    <FontAwesomeIcon icon={faRightFromBracket} />
-                </div>
-            </div>
-
             <div onClick={() => handleClick('/')} className="LogoBar select-none cursor-pointer">
+                {loggedIn && (
+                    <div
+                        onClick={logout}
+                        className="flex items-center cursor-pointer hover:opacity-70 duration-300 mr-[5%]"
+                    >
+                        logout
+                    </div>
+                )}
                 <img className="logo select-none" src={logo} />
             </div>
             <nav>
