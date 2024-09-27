@@ -86,7 +86,13 @@ body {
 }
 
 /* Navbar */
-
+#language-picker-select{
+    background-color: #25a244;
+    margin-right: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
 body {
     margin: 0;
 }
@@ -105,9 +111,6 @@ body {
     length: 140px;
     padding: 25px;
     margin-left: 43%;
-}
-
-.logout {
 }
 
 nav {

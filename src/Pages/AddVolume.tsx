@@ -26,67 +26,82 @@ const AddVolume = () => {
         rImage: '',
         rFile: '',
     }
-
-    const [searchData, setSearchData] = useState<Research[]>([])
-    const [title, setTitle] = useState('')
     const [cover, setCover] = useState('')
     const [file, setFile] = useState('')
-
-    const addResearch = () => {
-        const id = new Date().getTime()
-        const newResearch = { ...initialResearch, Id: id }
-        setSearchData([...searchData, newResearch])
-    }
-    const removeResearch = (index: number) => {
-        const researches = [...searchData]
-        researches.splice(index, 1)
-        setSearchData(researches)
-    }
-
     const addVolume = async () => {
-        await addDoc(collection(db, 'volumes'), {
-            title,
+        await addDoc(collection(db, 'volumesENG'), {
+            title: titleENG,
             cover,
             file,
-            researches: searchData,
-        })
+            researches: searchDataENG,
+            id: new Date().getTime()
+        });
+        await addDoc(collection(db, 'volumesAR'), {
+            title: titleAR,
+            cover,
+            file,
+            researches: searchDataAR,
+            id: new Date().getTime()
+        });
+        await addDoc(collection(db, 'volumesTR'), {
+            title: titleTR,
+            cover,
+            file,
+            researches: searchDataTR,
+            id: new Date().getTime()
+        });
+    }
+    //ENG
+
+    const [titleENG, setTitleENG] = useState('')
+    const [searchDataENG, setSearchDataENG] = useState<Research[]>([])
+
+    const addResearchENG = () => {
+        const id = new Date().getTime()
+        const newResearch = { ...initialResearch, Id: id }
+        setSearchDataENG([...searchDataENG, newResearch])
+    }
+    const removeResearchENG = (index: number) => {
+        const researches = [...searchDataENG]
+        researches.splice(index, 1)
+        setSearchDataENG(researches)
     }
 
-    const handleAuthorChange = (
+    const handleAuthorChangeENG = (
         researchIndex: number,
         authorIndex: number,
         field: 'name' | 'job' | 'email',
         value: any
     ) => {
-        const updatedSearchData = [...searchData]
+        const updatedSearchData = [...searchDataENG]
         updatedSearchData[researchIndex].authors[authorIndex][field] = value
-        setSearchData(updatedSearchData)
+        setSearchDataENG(updatedSearchData)
     }
 
-    const addAuthorField = (researchIndex: number) => {
-        const updatedSearchData = [...searchData]
+    const addAuthorFieldENG = (researchIndex: number) => {
+        const updatedSearchData = [...searchDataENG]
         updatedSearchData[researchIndex].authors.push({
             name: '',
             job: '',
             email: '',
         })
-        setSearchData(updatedSearchData)
+        setSearchDataENG(updatedSearchData)
     }
 
-    const removeAuthorField = (researchIndex: number, authorIndex: number) => {
-        const updatedSearchData = [...searchData]
+    const removeAuthorFieldENG = (researchIndex: number, authorIndex: number) => {
+        const updatedSearchData = [...searchDataENG]
         updatedSearchData[researchIndex].authors.splice(authorIndex, 1)
-        setSearchData(updatedSearchData)
+        setSearchDataENG(updatedSearchData)
     }
 
-    const setSearchImage = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
+    const setSearchImageENG = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
         const file = e.target.files?.[0]
         if (file) {
-            const sCoverRef = ref(storage, `researchCover/${searchData[i].Id}.${file.name.split('.').pop()}`)
+            const sCoverRef = ref(storage, `researchCover/${searchDataENG[i].Id}.${file.name.split('.').pop()}`)
             try {
                 await uploadBytes(sCoverRef, file)
-                setSearchData(
-                    searchData.map((research, index) =>
+                setSearchDataENG(
+                    searchDataENG.map((research, index) =>
                         index === i ? { ...research, rImage: sCoverRef.fullPath } : research
                     )
                 )
@@ -96,14 +111,168 @@ const AddVolume = () => {
         }
     }
 
-    const setSearchFile = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
+    const setSearchFileENG = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
         const file = e.target.files?.[0]
         if (file) {
-            const sFileRef = ref(storage, `researchFile/${searchData[i].Id}.pdf`)
+            const sFileRef = ref(storage, `researchFile/${searchDataENG[i].Id}.pdf`)
             try {
                 await uploadBytes(sFileRef, file)
-                setSearchData(
-                    searchData.map((research, index) =>
+                setSearchDataENG(
+                    searchDataENG.map((research, index) =>
+                        index === i ? { ...research, rFile: sFileRef.fullPath } : research
+                    )
+                )
+            } catch (error) {
+                console.error('Error uploading file:', error)
+            }
+        }
+    }
+
+    //   AR
+
+    const [titleAR, setTitleAR] = useState('')
+    const [searchDataAR, setSearchDataAR] = useState<Research[]>([])
+
+    const addResearchAR = () => {
+        const id = new Date().getTime()
+        const newResearch = { ...initialResearch, Id: id }
+        setSearchDataAR([...searchDataAR, newResearch])
+    }
+    const removeResearchAR = (index: number) => {
+        const researches = [...searchDataAR]
+        researches.splice(index, 1)
+        setSearchDataAR(researches)
+    }
+
+    const handleAuthorChangeAR = (
+        researchIndex: number,
+        authorIndex: number,
+        field: 'name' | 'job' | 'email',
+        value: any
+    ) => {
+        const updatedSearchData = [...searchDataAR]
+        updatedSearchData[researchIndex].authors[authorIndex][field] = value
+        setSearchDataAR(updatedSearchData)
+    }
+
+    const addAuthorFieldAR = (researchIndex: number) => {
+        const updatedSearchData = [...searchDataAR]
+        updatedSearchData[researchIndex].authors.push({
+            name: '',
+            job: '',
+            email: '',
+        })
+        setSearchDataAR(updatedSearchData)
+    }
+
+    const removeAuthorFieldAR = (researchIndex: number, authorIndex: number) => {
+        const updatedSearchData = [...searchDataAR]
+        updatedSearchData[researchIndex].authors.splice(authorIndex, 1)
+        setSearchDataAR(updatedSearchData)
+    }
+
+    const setSearchImageAR = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
+        const file = e.target.files?.[0]
+        if (file) {
+            const sCoverRef = ref(storage, `researchCover/${searchDataAR[i].Id}.${file.name.split('.').pop()}`)
+            try {
+                await uploadBytes(sCoverRef, file)
+                setSearchDataAR(
+                    searchDataAR.map((research, index) =>
+                        index === i ? { ...research, rImage: sCoverRef.fullPath } : research
+                    )
+                )
+            } catch (error) {
+                console.error('Error uploading image:', error)
+            }
+        }
+    }
+
+    const setSearchFileAR = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
+        const file = e.target.files?.[0]
+        if (file) {
+            const sFileRef = ref(storage, `researchFile/${searchDataAR[i].Id}.pdf`)
+            try {
+                await uploadBytes(sFileRef, file)
+                setSearchDataAR(
+                    searchDataAR.map((research, index) =>
+                        index === i ? { ...research, rFile: sFileRef.fullPath } : research
+                    )
+                )
+            } catch (error) {
+                console.error('Error uploading file:', error)
+            }
+        }
+    }
+
+    //   TR
+
+    const [titleTR, setTitleTR] = useState('')
+    const [searchDataTR, setSearchDataTR] = useState<Research[]>([])
+
+    const addResearchTR = () => {
+        const id = new Date().getTime()
+        const newResearch = { ...initialResearch, Id: id }
+        setSearchDataTR([...searchDataTR, newResearch])
+    }
+    const removeResearchTR = (index: number) => {
+        const researches = [...searchDataTR]
+        researches.splice(index, 1)
+        setSearchDataTR(researches)
+    }
+
+    const handleAuthorChangeTR = (
+        researchIndex: number,
+        authorIndex: number,
+        field: 'name' | 'job' | 'email',
+        value: any
+    ) => {
+        const updatedSearchData = [...searchDataTR]
+        updatedSearchData[researchIndex].authors[authorIndex][field] = value
+        setSearchDataTR(updatedSearchData)
+    }
+
+    const addAuthorFieldTR = (researchIndex: number) => {
+        const updatedSearchData = [...searchDataTR]
+        updatedSearchData[researchIndex].authors.push({
+            name: '',
+            job: '',
+            email: '',
+        })
+        setSearchDataTR(updatedSearchData)
+    }
+
+    const removeAuthorFieldTR = (researchIndex: number, authorIndex: number) => {
+        const updatedSearchData = [...searchDataTR]
+        updatedSearchData[researchIndex].authors.splice(authorIndex, 1)
+        setSearchDataTR(updatedSearchData)
+    }
+
+    const setSearchImageTR = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
+        const file = e.target.files?.[0]
+        if (file) {
+            const sCoverRef = ref(storage, `researchCover/${searchDataTR[i].Id}.${file.name.split('.').pop()}`)
+            try {
+                await uploadBytes(sCoverRef, file)
+                setSearchDataTR(
+                    searchDataTR.map((research, index) =>
+                        index === i ? { ...research, rImage: sCoverRef.fullPath } : research
+                    )
+                )
+            } catch (error) {
+                console.error('Error uploading image:', error)
+            }
+        }
+    }
+
+    const setSearchFileTR = async (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
+        const file = e.target.files?.[0]
+        if (file) {
+            const sFileRef = ref(storage, `researchFile/${searchDataTR[i].Id}.pdf`)
+            try {
+                await uploadBytes(sFileRef, file)
+                setSearchDataTR(
+                    searchDataTR.map((research, index) =>
                         index === i ? { ...research, rFile: sFileRef.fullPath } : research
                     )
                 )
@@ -192,8 +361,8 @@ const AddVolume = () => {
                             <input
                                 type="text"
                                 placeholder="عدد المجلة"
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
+                                value={titleAR}
+                                onChange={(e) => setTitleAR(e.target.value)}
                                 className="AddVoulumeInput"
                             />
                             <div className="flex gap-4 pt-12">
@@ -217,11 +386,11 @@ const AddVolume = () => {
                             </div>
                         </div>
                         <div className="Research" id="Research">
-                            {searchData.map((research, i) => (
+                            {searchDataAR.map((research, i) => (
                                 <div key={research.Id} className="ResearchInfo">
                                     <div className="w-full">
                                         <FontAwesomeIcon
-                                            onClick={() => removeResearch(i)}
+                                            onClick={() => removeResearchAR(i)}
                                             icon={faX}
                                             className="cursor-pointer"
                                         />
@@ -238,8 +407,8 @@ const AddVolume = () => {
                                             className="AddVoulumeInput"
                                             value={research.rTitle}
                                             onChange={(e) =>
-                                                setSearchData(
-                                                    searchData.map((res, index) =>
+                                                setSearchDataAR(
+                                                    searchDataAR.map((res, index) =>
                                                         index === i ? { ...res, rTitle: e.target.value } : res
                                                     )
                                                 )
@@ -253,12 +422,12 @@ const AddVolume = () => {
                                                 <FontAwesomeIcon
                                                     icon={faMinus}
                                                     className="cursor-pointer"
-                                                    onClick={() => removeAuthorField(i, authorIndex)}
+                                                    onClick={() => removeAuthorFieldAR(i, authorIndex)}
                                                 />
                                                 <FontAwesomeIcon
                                                     icon={faPlus}
                                                     className="pr-3 cursor-pointer"
-                                                    onClick={() => addAuthorField(i)}
+                                                    onClick={() => addAuthorFieldAR(i)}
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
@@ -270,7 +439,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.name}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'name', e.target.value)
+                                                        handleAuthorChangeAR(i, authorIndex, 'name', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -283,7 +452,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.job}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'job', e.target.value)
+                                                        handleAuthorChangeAR(i, authorIndex, 'job', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -296,7 +465,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.email}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'email', e.target.value)
+                                                        handleAuthorChangeAR(i, authorIndex, 'email', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -310,8 +479,8 @@ const AddVolume = () => {
                                             className="SummaryInput"
                                             value={research.summary}
                                             onChange={(e) =>
-                                                setSearchData(
-                                                    searchData.map((res, index) =>
+                                                setSearchDataAR(
+                                                    searchDataAR.map((res, index) =>
                                                         index === i ? { ...res, summary: e.target.value } : res
                                                     )
                                                 )
@@ -327,7 +496,7 @@ const AddVolume = () => {
                                                 className="AddImage"
                                                 type="file"
                                                 accept="image/jpeg, image/png"
-                                                onChange={(e) => setSearchImage(e, i)}
+                                                onChange={(e) => setSearchImageAR(e, i)}
                                             />
                                         </div>
                                         <div className="flex flex-col items-center mb-4 w-1/2">
@@ -338,14 +507,14 @@ const AddVolume = () => {
                                                 className="AddImage"
                                                 type="file"
                                                 accept=".pdf"
-                                                onChange={(e) => setSearchFile(e, i)}
+                                                onChange={(e) => setSearchFileAR(e, i)}
                                             />
                                         </div>
                                     </div>
                                 </div>
                             ))}
 
-                            <button className="Button" onClick={addResearch}>
+                            <button className="Button" onClick={addResearchAR}>
                                 Add Input Fields
                             </button>
                             <button className="Button" onClick={addVolume}>
@@ -362,8 +531,8 @@ const AddVolume = () => {
                             <input
                                 type="text"
                                 placeholder="Magazine Number"
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
+                                value={titleENG}
+                                onChange={(e) => setTitleENG(e.target.value)}
                                 className="AddVoulumeInput"
                             />
                             <div className="flex gap-4 pt-12">
@@ -387,11 +556,11 @@ const AddVolume = () => {
                             </div>
                         </div>
                         <div className="Research" id="Research">
-                            {searchData.map((research, i) => (
+                            {searchDataENG.map((research, i) => (
                                 <div key={research.Id} className="ResearchInfo">
                                     <div className="flex justify-items-end ml-auto">
                                         <FontAwesomeIcon
-                                            onClick={() => removeResearch(i)}
+                                            onClick={() => removeResearchENG(i)}
                                             icon={faX}
                                             className="cursor-pointer"
                                         />
@@ -408,8 +577,8 @@ const AddVolume = () => {
                                             className="AddVoulumeInput"
                                             value={research.rTitle}
                                             onChange={(e) =>
-                                                setSearchData(
-                                                    searchData.map((res, index) =>
+                                                setSearchDataENG(
+                                                    searchDataENG.map((res, index) =>
                                                         index === i ? { ...res, rTitle: e.target.value } : res
                                                     )
                                                 )
@@ -423,12 +592,12 @@ const AddVolume = () => {
                                                 <FontAwesomeIcon
                                                     icon={faMinus}
                                                     className="cursor-pointer"
-                                                    onClick={() => removeAuthorField(i, authorIndex)}
+                                                    onClick={() => removeAuthorFieldENG(i, authorIndex)}
                                                 />
                                                 <FontAwesomeIcon
                                                     icon={faPlus}
                                                     className="pr-3 cursor-pointer"
-                                                    onClick={() => addAuthorField(i)}
+                                                    onClick={() => addAuthorFieldENG(i)}
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
@@ -440,7 +609,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.name}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'name', e.target.value)
+                                                        handleAuthorChangeENG(i, authorIndex, 'name', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -453,7 +622,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.job}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'job', e.target.value)
+                                                        handleAuthorChangeENG(i, authorIndex, 'job', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -466,7 +635,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.email}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'email', e.target.value)
+                                                        handleAuthorChangeENG(i, authorIndex, 'email', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -480,8 +649,8 @@ const AddVolume = () => {
                                             className="SummaryInput"
                                             value={research.summary}
                                             onChange={(e) =>
-                                                setSearchData(
-                                                    searchData.map((res, index) =>
+                                                setSearchDataENG(
+                                                    searchDataENG.map((res, index) =>
                                                         index === i ? { ...res, summary: e.target.value } : res
                                                     )
                                                 )
@@ -497,7 +666,7 @@ const AddVolume = () => {
                                                 className="AddImage"
                                                 type="file"
                                                 accept="image/jpeg, image/png"
-                                                onChange={(e) => setSearchImage(e, i)}
+                                                onChange={(e) => setSearchImageENG(e, i)}
                                             />
                                         </div>
                                         <div className="flex flex-col items-center mb-4 w-1/2">
@@ -508,14 +677,14 @@ const AddVolume = () => {
                                                 className="AddImage"
                                                 type="file"
                                                 accept=".pdf"
-                                                onChange={(e) => setSearchFile(e, i)}
+                                                onChange={(e) => setSearchFileENG(e, i)}
                                             />
                                         </div>
                                     </div>
                                 </div>
                             ))}
 
-                            <button className="Button" onClick={addResearch}>
+                            <button className="Button" onClick={addResearchENG}>
                                 Add Input Fields
                             </button>
                             <button className="Button" onClick={addVolume}>
@@ -532,8 +701,8 @@ const AddVolume = () => {
                             <input
                                 type="text"
                                 placeholder="Dergi Numarası"
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
+                                value={titleTR}
+                                onChange={(e) => setTitleTR(e.target.value)}
                                 className="AddVoulumeInput"
                             />
                             <div className="flex gap-4 pt-12">
@@ -558,11 +727,11 @@ const AddVolume = () => {
                             </div>
                         </div>
                         <div className="Research" id="Research">
-                            {searchData.map((research, i) => (
+                            {searchDataTR.map((research, i) => (
                                 <div key={research.Id} className="ResearchInfo">
                                     <div className="flex justify-items-end ml-auto">
                                         <FontAwesomeIcon
-                                            onClick={() => removeResearch(i)}
+                                            onClick={() => removeResearchTR(i)}
                                             icon={faX}
                                             className="cursor-pointer"
                                         />
@@ -579,8 +748,8 @@ const AddVolume = () => {
                                             className="AddVoulumeInput"
                                             value={research.rTitle}
                                             onChange={(e) =>
-                                                setSearchData(
-                                                    searchData.map((res, index) =>
+                                                setSearchDataTR(
+                                                    searchDataTR.map((res, index) =>
                                                         index === i ? { ...res, rTitle: e.target.value } : res
                                                     )
                                                 )
@@ -594,12 +763,12 @@ const AddVolume = () => {
                                                 <FontAwesomeIcon
                                                     icon={faMinus}
                                                     className="cursor-pointer"
-                                                    onClick={() => removeAuthorField(i, authorIndex)}
+                                                    onClick={() => removeAuthorFieldTR(i, authorIndex)}
                                                 />
                                                 <FontAwesomeIcon
                                                     icon={faPlus}
                                                     className="pr-3 cursor-pointer"
-                                                    onClick={() => addAuthorField(i)}
+                                                    onClick={() => addAuthorFieldTR(i)}
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
@@ -611,7 +780,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.name}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'name', e.target.value)
+                                                        handleAuthorChangeTR(i, authorIndex, 'name', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -624,7 +793,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.job}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'job', e.target.value)
+                                                        handleAuthorChangeTR(i, authorIndex, 'job', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -637,7 +806,7 @@ const AddVolume = () => {
                                                     className="AddVoulumeInput"
                                                     value={author.email}
                                                     onChange={(e) =>
-                                                        handleAuthorChange(i, authorIndex, 'email', e.target.value)
+                                                        handleAuthorChangeTR(i, authorIndex, 'email', e.target.value)
                                                     }
                                                 />
                                             </div>
@@ -651,8 +820,8 @@ const AddVolume = () => {
                                             className="SummaryInput"
                                             value={research.summary}
                                             onChange={(e) =>
-                                                setSearchData(
-                                                    searchData.map((res, index) =>
+                                                setSearchDataTR(
+                                                    searchDataTR.map((res, index) =>
                                                         index === i ? { ...res, summary: e.target.value } : res
                                                     )
                                                 )
@@ -668,7 +837,7 @@ const AddVolume = () => {
                                                 className="AddImage"
                                                 type="file"
                                                 accept="image/jpeg, image/png"
-                                                onChange={(e) => setSearchImage(e, i)}
+                                                onChange={(e) => setSearchImageTR(e, i)}
                                             />
                                         </div>
                                         <div className="flex flex-col items-center mb-4 w-1/2">
@@ -679,14 +848,14 @@ const AddVolume = () => {
                                                 className="AddImage"
                                                 type="file"
                                                 accept=".pdf"
-                                                onChange={(e) => setSearchFile(e, i)}
+                                                onChange={(e) => setSearchFileTR(e, i)}
                                             />
                                         </div>
                                     </div>
                                 </div>
                             ))}
 
-                            <button className="Button" onClick={addResearch}>
+                            <button className="Button" onClick={addResearchTR}>
                                 Girdi Alanları Ekle
                             </button>
                             <button className="Button" onClick={addVolume}>

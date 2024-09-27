@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 import logo from '../../img/logo.png'
 
@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {}
+
+export const language = createContext(null)
 
 const Navbar = (props: Props) => {
     const navigate = useNavigate()
@@ -152,6 +154,19 @@ const Navbar = (props: Props) => {
                             className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
                         >
                             <div className="font-bold group-hover:opacity-50 duration-300">تواصل معنا</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="" data-trigger-class="btn btn--subtle">
+                            <select name="language-picker-select" id="language-picker-select">
+                                <option value="ar" selected>
+                                    العربية
+                                </option>
+                                <option value="tr">Türkçe</option>
+                                <option value="eng" selected>
+                                    English
+                                </option>
+                            </select>
                         </div>
                     </li>
                 </ul>
