@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
     element: <AboutTibyan />,
   },
   {
-    path: "/research-page/:vid/:id",
+    path: "/research-page/:vid/:no",
     element: <ResearchesPage />,
   },
   {

@@ -9,19 +9,21 @@ import Navbar from "../Components/Navbar/Navbar";
 
 const ResearchesPage = () => {
   const [research, setResearch] = useState<Research | null>(null);
-  const { id, vid } = useParams();
+  const { no, vid } = useParams();
   const storage = getStorage();
+  const lang = window.localStorage.getItem('lang')
 
   const getResearchData = async () => {
     if (vid !== undefined) {
-      const docRef = doc(db, "volumes", vid);
+      const docRef = doc(db, "volumes"+lang, vid);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
         const docData = docSnap.data() as Volume;
+        console.log(docData)
 
         for (const research of docData.researches) {
-          if (research.Id === Number(id)) {
+          if (research.No === Number(no)) {
             const index: Research = {
               volumeID: research.volumeID,
               Id: research.Id,
@@ -53,6 +55,8 @@ const ResearchesPage = () => {
 
             setResearch(index);
             break;
+          }else{
+            console.log("No such Research!");
           }
         }
       } else {
@@ -63,7 +67,7 @@ const ResearchesPage = () => {
 
   useEffect(() => {
     getResearchData();
-  }, [id, vid]);
+  }, [no, vid]);
 
   return (
     <>

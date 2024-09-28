@@ -108,7 +108,7 @@ export default function Swipers() {
             >
                 {researches.map((research) => (
                     <SwiperSlide>
-                        <div onClick={() => handleClick(`/research-page/${research.volumeID}/${research.Id}`)} className="flex self-start  max-w-360 min-w-360 mr-auto ml-auto flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer">
+                        <div onClick={() => handleClick(`/research-page/${research.volumeID}/${research.No}`)} className="flex self-start  max-w-360 min-w-360 mr-auto ml-auto flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer">
                             <div className="overflow-hidden group-hover:rounded-lg  shadow-lg">
                                 <img
                                     className="max-w-[355x] min-w-[355px] rounded-tr-lg rounded-tl-lg max-h-360 min-h-360 group-hover:scale-110 transform transition-transform duration-500 "
