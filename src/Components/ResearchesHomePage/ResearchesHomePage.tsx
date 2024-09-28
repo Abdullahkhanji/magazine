@@ -10,6 +10,7 @@ const ResearchesHomePage = () => {
     const [loading, setLoading] = useState(true)
     const [volumes, setVolumes] = useState<Volume[]>([])
     const [researches, setResearches] = useState<Research[]>([])
+    const lang = window.localStorage.getItem('lang')
     const navigate = useNavigate()
     const handleClick = (path: To) => {
         navigate(path)
@@ -19,7 +20,7 @@ const ResearchesHomePage = () => {
         const getVolumes = async () => {
             try {
                 const storage = getStorage()
-                const getData = await getDocs(collection(db, 'volumes'))
+                const getData = await getDocs(collection(db, 'volumes'+lang))
                 let allResearches: Research[] = []
 
                 const volumeTemp = await Promise.all(

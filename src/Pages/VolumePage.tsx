@@ -15,6 +15,8 @@ const VolumePage = () => {
     const [loggedIn, setLoggedIn] = useState(false)
     const param = useParams()
     const auth = getAuth()
+    const lang = window.localStorage.getItem('lang')
+
 
     const id = param.id
     const deleteVolume = async (id: any) => {
@@ -25,7 +27,7 @@ const VolumePage = () => {
     const getVolumeData = async () => {
         if (id != undefined) {
             const storage = getStorage()
-            let docRef = doc(db, 'volumes', id)
+            let docRef = doc(db, 'volumes'+lang, id)
             let docSnap = await getDoc(docRef)
             if (docSnap.exists()) {
                 const docData = docSnap.data()
@@ -54,7 +56,6 @@ const VolumePage = () => {
     }
     useEffect(() => {
         getVolumeData()
-        console.log(volume)
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setLoggedIn(true)

@@ -1,7 +1,7 @@
 import React, { useId, useState } from 'react'
 import Footer from '../Components/Footer/Footer'
 import Navbar from '../Components/Navbar/Navbar'
-import { addDoc, collection, doc, updateDoc } from 'firebase/firestore'
+import { addDoc, collection, doc, setDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../App'
 import { getStorage, ref, uploadBytes } from 'firebase/storage'
 import { Author, Research, Volume } from './../Components/Volumes/Volumes'
@@ -29,21 +29,22 @@ const AddVolume = () => {
     const [cover, setCover] = useState('')
     const [file, setFile] = useState('')
     const addVolume = async () => {
-        await addDoc(collection(db, 'volumesENG'), {
+        const ID = new Date().getTime().toString()
+        await setDoc(doc(db, 'volumesENG', ID), {
             title: titleENG,
             cover,
             file,
             researches: searchDataENG,
             id: new Date().getTime()
         });
-        await addDoc(collection(db, 'volumesAR'), {
+        await setDoc(doc(db, 'volumesAR', ID), {
             title: titleAR,
             cover,
             file,
             researches: searchDataAR,
             id: new Date().getTime()
         });
-        await addDoc(collection(db, 'volumesTR'), {
+        await setDoc(doc(db, 'volumesTR', ID), {
             title: titleTR,
             cover,
             file,

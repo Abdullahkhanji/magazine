@@ -14,9 +14,9 @@ import { faCaretDown, faRightFromBracket } from '@fortawesome/free-solid-svg-ico
 
 type Props = {}
 
-export const language = createContext(null)
-
 const Navbar = (props: Props) => {
+    const [lang, setLang] = useState(window.localStorage.getItem('lang'))
+
     const navigate = useNavigate()
     const [loggedIn, setLoggedIn] = useState(false)
     const handleClick = (path: To) => {
@@ -28,6 +28,33 @@ const Navbar = (props: Props) => {
     }
 
     const [volumes, setVolumes] = useState<Volume[]>([])
+    useEffect(() => {
+        if(window.localStorage.getItem('lang') == lang){
+            if (lang) {
+                window.localStorage.setItem('lang', lang)
+                console.log(lang)
+            } else {
+                setLang('AR')
+                if (lang) {
+                    window.localStorage.setItem('lang', lang)
+                    console.log(lang)
+                }
+            }
+        }else{
+            if (lang) {
+                window.localStorage.setItem('lang', lang)
+                console.log(lang)
+                window.location.reload();
+            } else {
+                setLang('AR')
+                if (lang) {
+                    window.localStorage.setItem('lang', lang)
+                    console.log(lang)
+                }
+            }
+        }
+
+    }, [lang])
 
     useEffect(() => {
         const getVolumes = async () => {
@@ -158,15 +185,45 @@ const Navbar = (props: Props) => {
                     </li>
                     <li>
                         <div className="" data-trigger-class="btn btn--subtle">
-                            <select name="language-picker-select" id="language-picker-select">
-                                <option value="ar" selected>
-                                    العربية
-                                </option>
-                                <option value="tr">Türkçe</option>
-                                <option value="eng" selected>
-                                    English
-                                </option>
-                            </select>
+                            {lang == 'AR' && (
+                                <select
+                                    name="language-picker-select"
+                                    id="language-picker-select"
+                                    onChange={(e) => setLang(e.target.value)}
+                                >
+                                    <option value="AR" selected>
+                                        العربية
+                                    </option>
+                                    <option value="TR">Türkçe</option>
+                                    <option value="ENG">English</option>
+                                </select>
+                            )}
+                            {lang == 'ENG' && (
+                                <select
+                                    name="language-picker-select"
+                                    id="language-picker-select"
+                                    onChange={(e) => setLang(e.target.value)}
+                                >
+                                    <option value="AR">العربية</option>
+                                    <option value="TR">Türkçe</option>
+                                    <option value="ENG" selected>
+                                        English
+                                    </option>
+                                </select>
+                            )}
+                            {lang == 'TR' && (
+                                <select
+                                    name="language-picker-select"
+                                    id="language-picker-select"
+                                    onChange={(e) => setLang(e.target.value)}
+                                >
+                                    <option value="AR">العربية</option>
+                                    <option value="TR" selected>
+                                        Türkçe
+                                    </option>
+                                    <option value="ENG">English</option>
+                                </select>
+                            )}
                         </div>
                     </li>
                 </ul>
