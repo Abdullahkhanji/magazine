@@ -1,0 +1,45 @@
+{
+
+    "Navbar": {
+        "home": "Ana sayfa",
+        "aboutUs": "Hakkımızda",
+        "aboutTibyan": "Tibyan dergisi hakkında",
+        "aboutMidad": "MIDAD Araştırma merkezi hakkında",
+        "magazines": "Dergi sayıları",
+        "postingins": "Yayın talimatları",
+        "pubstand": "Yayın standartları",
+        "pubethics": "Yayın etiği",
+        "Pubsteps": "Yayın adımları",
+        "respledge": "Araştırma sunma",
+        "members": "Yayın kurulu üyeleri",
+        "callus": "Bizi ara"
+    },
+    "AboutMidad": {
+        "header": "MIDAD Araştırma Merkezi",
+        "introduction": "Bağımsız bir akademik araştırma merkezi olan MIDAD Araştırma Merkezi 2020 yılında kurulmuştur ve akademik araştırmalar ve toplumsal iyileşme konularına odaklanmaktadır. Merkez, toplumların gelişimine ve sürdürülebilir kalkınmaya katkı sağlayacak geleceğe yönelik planların hazırlanmasında esas alınabilecek bilimsel temellere dayanan çalışmalar ve danışmanlık hizmetleri sunarak hükümetler, sivil toplum kuruluşları ve diğer paydaşlara yardımcı olmaktadır. ",
+        "vision": "Visyon",
+        "visiont": "Toplumsal kurumlar ve ilgili akademik taraflarda bilgi ile karar alma süreçleri arasındaki boşluğu daraltarak, derinlemesine ve profesyonel analizler ve stratejik araştırmalar sunmak.",
+        "mission": "Misyon",
+        "missiont": "Bilişsel gelişim üzerine çalışmak, toplumsal iyileşmeye dair sorunlara bilimsel ve pratik çözümler üretmek, toplumsal sorunların çözümüne katkıda bulunan seçkin bilimsel araştırmaları teşvik etmek için çabalamak, uluslararası deneyimlerden ve akademik çalışmalardan yararlanarak kalkınmayı desteklemek amacıyla ulusal ve bölgesel ortaklıklar kurmak.",
+        "values": "Değerler",
+        "valuest": "Kalite ve mükemmeliyet, akademik özgürlük, bilimsel yöntem, sürekli iyileştirme, toplumsal değerlere ve kültürel özgünlüğe saygı.",
+        "areasOfWork": "Çalışma Alanları:",
+        "first": "Araştırma ve Çalışma Birimi:",
+        "firstt": "Bilimsel ve hakemli dergiler ve kapsamlı uzmanlık çalışmaları yayımlar, atölye çalışmaları, seminerler ve akademik konferanslar düzenler. Aynı zamanda politika ve kararlarda gerekli toplumsal etkiyi yaratmak amacıyla karar vericilere bilimsel raporlar ve danışmanlıklar sunarak kalkınma hedeflerine ulaşmaya çabalar. ",
+        "second": "Toplumsal Gelişim Birimi:",
+        "secondt": "Çeşitli alanlarda çalışan araştırmacıların, uzman akademisyenlerin ve sivil toplum kuruluşlarının etkinliğini ve verimliliğini artırmayı, onlara güvenilir bilgi sağlamayı, yanlış anlamaları düzeltmeyi, insan kaynaklarına yatırım yapmayı ve geliştirmeyi amaçlar.",
+        "third": "Özel Hizmetler Birimi:",
+        "thirdt": "Merkez, yerel toplulukların değerlerine uygun olarak müşteriler tarafından belirlenen standartlara ve gereksinimlere göre bir dizi ücretli hizmet sunar. Bu hizmetler şunları içerir:",
+        "third1": "Araştırmalar ve saha raporları.",
+        "third2": "Ölçek ve anket tasarlama.",
+        "third3": "Özel müfredatlar oluşturma.",
+        "third4": "Eğitim kılavuzları ve programlarını tasarlanması.",
+        "third5": "Uzmanlık gerektiren eğitim programlarının uygulanması.",
+        "third6": "Çeşitli kurumların ihtiyaçlarına yönelik danışmanlık hizmetleri ve geliştirme çözümleri."
+    },
+    "Footer": {
+        "about": "Sınır Tanımayan Eğitim Vakfı/Midad'a bağlı Midad Araştırma Merkezi tarafından Arapça, İngilizce ve Türkçe olarak yayınlanan ve Türkiye Cumhuriyeti Kültür Bakanlığı tarafından lisanslı, süreli, hakemli bilimsel bir dergidir.",
+        "readMore": "Devamını oku",
+        "contact": "İletişim bilgileri"
+    }
+}

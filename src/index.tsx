@@ -4,13 +4,37 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './Routing';
+import i18next from 'i18next';
+import global_en from "./translations/ENG/global.json"
+import global_ar from "./translations/AR/global.json"
+import global_tr from "./translations/TR/global.json"
+import { I18nextProvider } from 'react-i18next';
+
+i18next.init({
+  interpolation: {escapeValue: false},
+  lng: window.localStorage.getItem('lang')?.toString(),
+  resources: {
+    ENG: {
+      global: global_en
+    },
+    AR: {
+      global: global_ar
+    },
+    TR: {
+      global: global_tr
+    }
+  }
+})
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
 
+  <I18nextProvider i18n={i18next}>
     <RouterProvider router={router}/>
+  </I18nextProvider>
+
 
 );
 

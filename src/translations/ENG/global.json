@@ -1,0 +1,44 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "aboutUs": "About us",
+        "aboutTibyan": "About Tibyan journal",
+        "aboutMidad": "About Midad Center for Studies",
+        "magazines": "Magazine issues",
+        "postingins": "Posting instructions",
+        "pubstand": "Publication standards",
+        "pubethics": "Publication ethics",
+        "Pubsteps": "Publication steps",
+        "respledge": "Research pledge",
+        "members": "editorial board members",
+        "callus": "Call us"
+    },
+    "AboutMidad": {
+        "header": "Midad Center for Studies",
+        "introduction": "Midad Center for Studies is an independent academic research center established in 2020, specialized in academic studies and research, as well as community recovery issues. The center aims to provide governments, organizations, and active entities with studies and consultations based on scientific foundations reliable for future planning, contributing to community development and achieving sustainable growth.",
+        "vision": "Vision",
+        "visiont": "To bridge the gap between knowledge and decision-making in community institutions and related academic entities, and offer deep and professional strategic analyses and studies.",
+        "mission": "Mission",
+        "missiont": "To work on cognitive development and innovate scientific and practical solutions to community recovery issues, while striving to enhance distinguished scientific research that contributes to addressing societal challenges. The center aims to build local and regional partnerships to foster development based on leveraging international expertise and academic studies.",
+        "values": "Values",
+        "valuest": "Quality and excellence, academic freedom, scientific methodology, continuous improvement, and respect for community values and cultural privacy.",
+        "areasOfWork": "Areas of work",
+        "first": "First, Research and Studies Unit:",
+        "firstt": "This unit publishes scientific and peer-reviewed journals, extensive specialized studies, organizes workshops and quality seminars, and conducts scientific research conferences. It also provides reports and scientific consultations to decision-makers, aiming to create the desired societal impact in policy-making and decision-making, thereby achieving development goals.",
+        "second": "Second, Community Development Unit:",
+        "secondt": "This unit aims to enhance the effectiveness and efficiency of researchers, specialized academics, and community institutions in various fields. It provides reliable information, corrects misconceptions, and invests in developing human resources.",
+        "third": "Third, Special Services Unit:",
+        "thirdt": "The center offers a number of paid services based on criteria and requirements from clients, in line with the values of local communities. These services include:",
+        "third1": "Research and field studies and reports.",
+        "third2": "Designing scales and questionnaires.",
+        "third3": "Designing specialized curricula.",
+        "third4": "Creating training manuals and packages.",
+        "third5": "Implementing specialized training programs.",
+        "third6": "Developmental consultations and solutions that meet the needs of various institutions."
+    },
+    "Footer": {
+        "about": "“Tabyan” is a peer-reviewed scientific journal issued by Midad Center for Studies, affiliated with the Foundation of Education Without Borders / Midad. The journal is published in Arabic, English, and Turkish. It is licensed by the Ministry of Culture of the Republic of Türkiye.",
+        "readMore": "Read more",
+        "contact": "Contact information"
+    }
+}

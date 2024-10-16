@@ -11,10 +11,12 @@ import { QueryDocumentSnapshot, collection, doc, getDoc, getDocs } from 'firebas
 import { To, useNavigate, useParams } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { useTranslation } from 'react-i18next'
 
 type Props = {}
 
 const Navbar = (props: Props) => {
+    const [t, i18n] = useTranslation('global')
     const [lang, setLang] = useState(window.localStorage.getItem('lang'))
 
     const navigate = useNavigate()
@@ -26,34 +28,42 @@ const Navbar = (props: Props) => {
     const logout = () => {
         signOut(auth)
     }
+    const handleChangeLang = (language: string) => {
+        // i18n.changeLanguage(language)
+        setLang(language)
+    }
 
     const [volumes, setVolumes] = useState<Volume[]>([])
     useEffect(() => {
-        if(window.localStorage.getItem('lang') == lang){
+        if (window.localStorage.getItem('lang') == lang) {
             if (lang) {
                 window.localStorage.setItem('lang', lang)
+
+
                 console.log(lang)
             } else {
                 setLang('AR')
+
                 if (lang) {
                     window.localStorage.setItem('lang', lang)
                     console.log(lang)
                 }
             }
-        }else{
+        } else {
             if (lang) {
                 window.localStorage.setItem('lang', lang)
+
                 console.log(lang)
-                window.location.reload();
+                window.location.reload()
             } else {
                 setLang('AR')
+
                 if (lang) {
                     window.localStorage.setItem('lang', lang)
                     console.log(lang)
                 }
             }
         }
-
     }, [lang])
 
     useEffect(() => {
@@ -102,12 +112,12 @@ const Navbar = (props: Props) => {
                             onClick={() => handleClick('/')}
                             className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
                         >
-                            <div className="font-bold group-hover:opacity-50 duration-300 ">الرئيسية</div>
+                            <div className="font-bold group-hover:opacity-50 duration-300 ">{t('Navbar.home')}</div>
                         </div>
                     </li>
                     <li>
                         <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
-                            <div className="font-bold group-hover:opacity-50 duration-300">عن المجلة</div>
+                            <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.aboutUs')}</div>
                             <FontAwesomeIcon
                                 icon={faCaretDown}
                                 className="text-forest group-hover:text-darkpastal duration-300"
@@ -115,10 +125,10 @@ const Navbar = (props: Props) => {
                         </div>{' '}
                         <ul className="NavbarDropdown z-30">
                             <li>
-                                <a href="/about-tibyan">عن مجلة تبيان</a>
+                                <a href="/about-tibyan">{t('Navbar.aboutTibyan')}</a>
                             </li>
                             <li>
-                                <a href="/AboutMidad">عن مركز مداد</a>
+                                <a href="/AboutMidad">{t('Navbar.aboutMidad')}</a>
                             </li>
                         </ul>
                     </li>
@@ -127,7 +137,7 @@ const Navbar = (props: Props) => {
                             onClick={() => handleClick('/all-volumes')}
                             className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
                         >
-                            <div className="font-bold group-hover:opacity-50 duration-300">اعداد المجلة</div>
+                            <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.magazines')}</div>
                             <FontAwesomeIcon
                                 icon={faCaretDown}
                                 className="text-forest group-hover:text-darkpastal duration-300"
@@ -143,7 +153,7 @@ const Navbar = (props: Props) => {
                     </li>
                     <li>
                         <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
-                            <div className="font-bold group-hover:opacity-50 duration-300">تعليمات النشر</div>
+                            <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.postingins')}</div>
                             <FontAwesomeIcon
                                 icon={faCaretDown}
                                 className="text-forest group-hover:text-darkpastal duration-300"
@@ -152,19 +162,19 @@ const Navbar = (props: Props) => {
 
                         <ul className="NavbarDropdown z-30">
                             <li>
-                                <a href="/publication-steps">خطوات النشر</a>
+                                <a href="/publication-steps">{t('Navbar.pubsteps')}</a>
                             </li>
                             <li>
-                                <a href="/publication-standards">معايير النشر</a>
+                                <a href="/publication-standards">{t('Navbar.pubstand')}</a>
                             </li>
                             <li>
-                                <a href="/publication-ethics">أخلاقيات النشر</a>
+                                <a href="/publication-ethics">{t('Navbar.pubethics')}</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
-                            <div className="font-bold group-hover:opacity-50 duration-300">تقديم الابحاث</div>
+                            <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.respledge')}</div>
                         </div>
                     </li>
                     <li>
@@ -172,7 +182,7 @@ const Navbar = (props: Props) => {
                             onClick={() => handleClick('/MembersOfTheProgram')}
                             className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
                         >
-                            <div className="font-bold group-hover:opacity-50 duration-300">أعضاء هيئة التحرير</div>
+                            <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.members')}</div>
                         </div>
                     </li>
                     <li>
@@ -180,7 +190,7 @@ const Navbar = (props: Props) => {
                             onClick={() => handleClick('/CommunicateWithUs')}
                             className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
                         >
-                            <div className="font-bold group-hover:opacity-50 duration-300">تواصل معنا</div>
+                            <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.callus')}</div>
                         </div>
                     </li>
                     <li>
@@ -189,11 +199,10 @@ const Navbar = (props: Props) => {
                                 <select
                                     name="language-picker-select"
                                     id="language-picker-select"
-                                    onChange={(e) => setLang(e.target.value)}
+                                    defaultValue={'AR'}
+                                    onChange={(e) => handleChangeLang(e.target.value)}
                                 >
-                                    <option value="AR" selected>
-                                        العربية
-                                    </option>
+                                    <option value="AR">العربية</option>
                                     <option value="TR">Türkçe</option>
                                     <option value="ENG">English</option>
                                 </select>
@@ -202,25 +211,23 @@ const Navbar = (props: Props) => {
                                 <select
                                     name="language-picker-select"
                                     id="language-picker-select"
-                                    onChange={(e) => setLang(e.target.value)}
+                                    defaultValue={'ENG'}
+                                    onChange={(e) => handleChangeLang(e.target.value)}
                                 >
                                     <option value="AR">العربية</option>
                                     <option value="TR">Türkçe</option>
-                                    <option value="ENG" selected>
-                                        English
-                                    </option>
+                                    <option value="ENG">English</option>
                                 </select>
                             )}
                             {lang == 'TR' && (
                                 <select
                                     name="language-picker-select"
                                     id="language-picker-select"
-                                    onChange={(e) => setLang(e.target.value)}
+                                    defaultValue={'TR'}
+                                    onChange={(e) => handleChangeLang(e.target.value)}
                                 >
                                     <option value="AR">العربية</option>
-                                    <option value="TR" selected>
-                                        Türkçe
-                                    </option>
+                                    <option value="TR">Türkçe</option>
                                     <option value="ENG">English</option>
                                 </select>
                             )}

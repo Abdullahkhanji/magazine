@@ -20,7 +20,7 @@ const ResearchesHomePage = () => {
         const getVolumes = async () => {
             try {
                 const storage = getStorage()
-                const getData = await getDocs(collection(db, 'volumes'+lang))
+                const getData = await getDocs(collection(db, 'volumes' + lang))
                 let allResearches: Research[] = []
 
                 const volumeTemp = await Promise.all(
