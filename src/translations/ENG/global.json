@@ -8,10 +8,24 @@
         "postingins": "Posting instructions",
         "pubstand": "Publication standards",
         "pubethics": "Publication ethics",
-        "Pubsteps": "Publication steps",
+        "pubsteps": "Publication steps",
         "respledge": "Research pledge",
         "members": "editorial board members",
         "callus": "Call us"
+    },
+    "AboutTibyan": {
+        "header": "Tabyan Journal for Islamic and Arabic Studies",
+        "introduction": "“Tabyan” is a peer-reviewed scientific journal issued by Midad Center for Studies, affiliated with the Foundation of Education Without Borders / Midad. The journal is published in Arabic, English, and Turkish. It is licensed by the Ministry of Culture of the Republic of Türkiye. It focuses on studies in Islamic and Arabic sciences reflecting originality, contemporaneity, and seriousness, and contributing to the development of its knowledge field. The journal is issued electronically every six months, and dedicated to disseminating research and studies on topics related to the development and the construction of Islamic knowledge, culture, and the Arabic language.",
+        "objectives": "Objectives of the Journal",
+        "o1": "-Publishing Innovative Research: To publish new and distinguished researches submitted by researchers in the fields of Islamic and Arabic sciences, after undergoing scientific review by specialists.",
+        "o2": "-Issuing Special Issues: To publish special issues or files that focus on important and specific topics, contributing to shedding light on particular issues and deepening understanding of them.",
+        "o3": "-Analyzing Global Challenges from an Islamic Perspective: To publish researches that provide Islamic insights on contemporary global issues and challenges, such as wars, humanitarian crises, and epidemics, aiming to offer solutions based on Islamic values and principles.",
+        "o4": "-Studying the Arabic Language in Contemporary Context: To study the role of the Arabic language in facing contemporary challenges, such globalization impact, linguistic interference, and challenges in preserving linguistic and cultural identity amidst the dominance of foreign languages.",
+        "o5": "-Supporting Applied Linguistic Studies: To encourage and publish applied research in fields such as translation, computational linguistics, and language communication, enhancing the use of Arabic in new and diverse areas.",
+        "o6": "-Keeping Up with Technological Developments in Islamic and Arabic Studies: To encourage and publish researches exploring the impact of modern technology and artificial intelligence on Islamic communities, and the role of Islamic sciences in addressing such challenges.",
+        "o7": "-Addressing Ethical and Social Issues: To publish researches that address contemporary ethical issues, such as human rights, social justice, and research ethics, while providing Islamic contributions in these areas.",
+        "o8": "-Enhancing Global Awareness of Contemporary Islamic Issues: To provide in-depth analyses of the threats facing Islamic communities today, such as Islamophobia, extremism, and migration, from a scientific perspective that seeks to correct misconceptions and offer constructive solutions.",
+        "o9": "-Connecting with Global Research Centers: To establish partnerships with research centers and global databases, enhancing the accessibility of published research to a broader mass and achieving wider dissemination of the journal."
     },
     "AboutMidad": {
         "header": "Midad Center for Studies",
@@ -36,9 +50,128 @@
         "third5": "Implementing specialized training programs.",
         "third6": "Developmental consultations and solutions that meet the needs of various institutions."
     },
+    "PublicationSteps": {
+        "header": "Publication Steps",
+        "p1": "1.The submitted research is to be sent to the journal via the official email or through its website.",
+        "p2": "2.Initial review of the research format is to be done by the editorial board to ensure compliance with the journal’s submission guidelines.",
+        "p3": "3.The author is to be informed of the results of the initial review by the journal’s editorial board.",
+        "p4": "4.The research is to be sent to reviewers.",
+        "p5": "5.The author is notified via email of the final review results.",
+        "p6": "6.The author is requested to make revisions based on the reviewers' comments, if any.",
+        "p7": "7.A document is sent to the author confirming the acceptance of their research for publication.",
+        "p8": "8.Researches are published in the journal according to their chronological sequence of submission."
+    },
+    "PublicationStandards": {
+        "header": "Publication Criteria",
+        "p1": "-The first page must include the title of the research, the name(s) of the author(s), their affiliation, address, email, and date of the research realization. To ensure integrity in the review process, the author(s) must not mention their names in the body of the research or provide any indication of their identity. If they wish to acknowledge those who assisted in the research, this should be done on a separate page.",
+        "p2": "-A summary of the research must be provided in Arabic, with a maximum of 200 words, and a summary in English, with a maximum of 250 words. Each summary should be on a separate page and must include the title of the research and five relevant keywords in both Arabic and English, without mentioning the author(s) or any personal information.",
+        "p3": "-The research must not exceed 30 pages in total, including references, tables, and figures, excluding appendices.",
+        "p4": "-The writing format should be as follows: A4 page size, with 1.5 line spacing, and margins of at least 2 cm on the top, bottom, and sides of the page (including margins, references, excerpts, tables, and appendices).",
+        "p5": "-The writing style in Arabic should be Traditional Arabic, font size 14, and in English, it should be Times New Roman, font size 14.",
+        "p6": "-If the researcher has used any data collection tools, a complete copy of that tool must be included with the submission."
+    },
+    "PublicationEthics": {
+        "header": "Publication Ethics",
+        "first": "First: Researcher Responsibilities:",
+        "f1": "1. The researcher is to adhere to the standards, guidelines, and rules of publication set by the Tibiān Journal for Islamic and Arabic Studies, and comply with the principles and standards of research ethics and scientific publishing. ",
+        "f2": "2. The researcher is to respect scientific integrity and intellectual property rights by ensuring that the research is free from plagiarism of previous works and from unauthorized appropriation of others' works.",
+        "f3": "3. In cases of co-authorship, the researcher is to obtain the consent of all co-researchers and specify the contributions of each participant in the research preparation.",
+        "f4": "4. The researcher should not submit a paper that has been published in whole or in part in any form or language. They should also not submit the paper to another entity while it is under consideration by the journal. If accepted for publication, the researcher should not republish it without prior written consent from the journal.",
+        "f5": "5. The researcher is to disclose any potential conflicts of interest that may arise from the research, and must declare the source of any financial support for their research.",
+        "f6": "6. If the researcher discovers a significant error in their published work, they must notify the editor-in-chief to correct or remove the error.",
+        "f7": "7. The research published in the journal reflects the opinions of the researchers and does not necessarily represent the views of the editorial board or the Midad Center for Studies. The researcher is fully responsible for the content of the research.",
+        "originality": "Originality and Plagiarism:",
+        "o1": "Authors are to ensure that the submitted work is original. If the authors have adopted the work or words of others, they must cite or quote them properly. The Tibiān Journal uses effective plagiarism detection software to verify the originality of research. A similarity index of 1-10% is acceptable. Similarity above 10% will not be recognized for publication.",
+        "second": "Second: Reviewer Responsibilities:",
+        "s1": "1. Reviewers should respond to the initial acceptance letter for review within three days of receiving it, and upon agreeing to review, they should complete the review within a maximum of two weeks from the date of acceptance.",
+        "s2": "2. Reviewers must maintain scientific integrity in reviewing research without bias.",
+        "s3": "3. Reviewers must decline to review research that falls outside their area of expertise or for which they do not have sufficient knowledge.",
+        "s4": "4. Reviewers must treat the research received for review as confidential documents and must not disclose or discuss them with others except as authorized by the editor-in-chief.",
+        "s5": "5. Reviewers are prohibited from exploiting research under review for personal gain or for the benefit of others without just cause.",
+        "s6": "6. Reviewers must provide detailed feedback on the research according to the established review form and should not limit themselves to general assessments. Comments should address the research, not the researcher personally.",
+        "s7": "7. If a reviewer identifies instances of plagiarism or unauthorized appropriation in the material under reviewing, they must indicate the sections where this occurred and provide supporting evidence.",
+        "third": "Third: Editorial Board Responsibilities:",
+        "t1": "1. The editorial board is responsible for ensuring the quality of the scientific papers submitted for publication and forwarding them to qualified reviewers with expertise in the research topic.",
+        "t2": "2. The editorial board is to ensure geographical diversity among reviewers, ensuring they do not all belong to a single academic institution.",
+        "t3": "3. The editorial board should consider any request from the researcher to exclude any reviewer prior to the appointment of reviewers, if they are convinced of the reasons and justifications provided. Additionally, the editorial board should require all reviewers to disclose any conflicts of interest before agreeing to undertake the review process.",
+        "t4": "4. The editorial board must exert authority provided fairly, objectively, and justly, and must not discriminate against researchers based on unlawful considerations.",
+        "t5": "5. The editorial board must provide a reasonable opportunity for researchers to respond to reviewers' comments regarding their research.",
+        "t6": "6. The editorial board must maintain confidentiality and safeguard information related to the research and researchers while in the review process.",
+        "t7": "7. The editor-in-chief is to notify the author of the approved scientific material regarding its acceptance for publication and the specific issue in which it will be published."
+    },
+    "CommunicateWithUs": {
+        "header": "Call us",
+        "altheader": "For any suggestions or enquiries, feel free to contact us through Midad whatsapp or Tel. No. of the center",
+        "adress": "Adress"
+    },
     "Footer": {
         "about": "“Tabyan” is a peer-reviewed scientific journal issued by Midad Center for Studies, affiliated with the Foundation of Education Without Borders / Midad. The journal is published in Arabic, English, and Turkish. It is licensed by the Ministry of Culture of the Republic of Türkiye.",
         "readMore": "Read more",
         "contact": "Contact information"
+    },
+    "MembersOfTheProgram": {
+        "header": "Members of the program",
+        "header1": "Editor in chief",
+        "header2": "Members",
+        "name": "Dr. Majid Alaywi ",
+        "expertise": "Hadith and Its Sciences",
+        "title": "Dean of The Dep. Of Sharia / Aleppo University",
+        "members": [
+            {
+                "name": "Prof. Dr. Deyauldin Qalish",
+                "title": "Faculty member / Aleppo University",
+                "expertise": "Rhetorics and Criticism"
+            },
+            {
+                "name": "Prof. Dr. Ahmad Natouf",
+                "title": "Faculty member / Qatar University",
+                "expertise": "Literature and Rhetorics"
+            },
+            {
+                "name": "Prof. Dr. Ahmad Muath Olwan Hakki",
+                "title": "Dean in-action of the Faculty of Sharia and Islamic Studies / Sharja University (former)",
+                "expertise": "Islamic Creed"
+            },
+            {
+                "name": "Prof. Dr. Ahmad Idrees Ta’an",
+                "title": "Faculty member / Aleppo University",
+                "expertise": "Fiqh and Fundamentals"
+            },
+            {
+                "name": "Prof. Dr. Hasan Khattaf",
+                "title": "Faculty member / University of Qatar",
+                "expertise": "Islamic Creed"
+            },
+            {
+                "name": "Dr. Abdulbadie Al-Nirabany",
+                "title": "Lecturer at the University of Kahramanmaraş Sütçü İmam",
+                "expertise": "Arabic"
+            },
+            {
+                "name": "Prof. Dr. Mahmod Nafisa",
+                "title": "Vice Dean of the Faculty of Theology / Gaziantep University/ Izaz",
+                "expertise": "Islamic Philosophy"
+            },
+            {
+                "name": "Dr. Mohamed Nour Hamdan",
+                "title": "Faculty member / Faculty of Theology – Gaziantep University / Izaz",
+                "expertise": "Fiqh and Fundamentals"
+            },
+            {
+                "name": "Dr. Abdulmohaymin Dirshoy",
+                "title": "Deputy Director of Midad Center for Studies",
+                "expertise": "Methodology"
+            },
+            {
+                "name": "Dr. Ahmad Al-Omar",
+                "title": "Dean of Postgraduate Studies",
+                "expertise": "Arabic"
+            }
+        ]
+    },
+    "Other": {
+        "magazineVolumes": "Magazine volumes",
+        "readTibyan": "What Awaits You in Tibyan Magazine",
+        "login": "Log in"
     }
 }

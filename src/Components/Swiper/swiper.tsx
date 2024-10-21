@@ -117,10 +117,10 @@ export default function Swipers() {
                                 />
                             </div>
                             <div className="min-h-8"></div>
-                            <div className="self-start flex flex-col mr-2 gap-4">
-                                <p>{research.rTitle}</p>
+                            <div className="self-start flex flex-col gap-4">
+                                <p className=' ms-5'>{research.rTitle}</p>
                                 <div className="flex flex-col">
-                                    <p className="font-bold text-[18px]">{research.rTitle}</p>
+                                    <p className="font-bold text-[18px]  ms-5">{research.rTitle}</p>
                                     <div className="min-h-[1px] max-w-360 min-w-360 bg-forest mr-[-8px] text-16"></div>
                                 </div>
                             </div>

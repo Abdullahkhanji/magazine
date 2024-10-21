@@ -1,67 +1,46 @@
-import React from "react";
-import Navbar from "../Components/Navbar/Navbar";
-import Footer from "../Components/Footer/Footer";
-import logo from "../img/logo.png";
-import midadLogo from "../img/midad logo.jpg";
+import React from 'react'
+import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
+import logo from '../img/logo.png'
+import midadLogo from '../img/midad logo.jpg'
+import { useTranslation } from 'react-i18next'
 
 const AboutTibyan = () => {
-  return (
-    <>
-      <Navbar />
-      <div className="Header">
-        <h1>من نحن</h1>
-      </div>
-      <div>
-        <h2 className="mr-[25%] text-3xl py-16 font-bold">
-          مجلة تبيان للدراسات الإسلامية والعربية
-        </h2>
-      </div>
-      <div className="w-2/5 mr-[29%]">
-        <p className="text-xl">
-          مجلّة علميّة دورية محكّمة، تصدر عن مركز مداد للدراسات، التابع لمؤسسة 
-            <a href="https://edumidad.org/" className="text-pigment pr-2">تعليم بلا حدود / مداد </a>،باللغتين العربية والانجليزية، ومرخصة من وزارة
-          الثقافة في الجمهورية التركية، وتُعنى المجلّة بنشر الدراسات في العلوم
-          الإسلامية والعربية، التي تتميّز بالأصالة، والمعاصرة، والجديّة، كما
-          تُسهم في تطوير الحقل المعرفي موضوع الاختصاص. تصدر المجلة بشكل الكتروني
-          كل ستة أشهر، وتهتم بنشر أبحاث ودراسات في مواضيع تسهم في بناء المعرفة
-          والثقافة الإسلامية واللغة العربية، وتسهم في التنمية.
-        </p>
-      </div>
-      <h2 className="text-3xl py-12 font-medium mr-[25%]">أهداف المجلة</h2>
-      <div className="List">
-        <ul>
-          <li>
-            نشر البحوث المبتكرة التي يقدمها الباحثون في المجالات المتعلقة
-            بالعلوم الإسلامية والعربية، وذلك بعد عرضها على المقوّمين العلميّين.
-          </li>
-          <li> نشر البحوث المترجمة القيّمة في مجالات تخصص المجلة.</li>
-          <li>
-            التعاون العلمي بين المجلة والباحثين الدوليين في مجالات تخصّص المجلة.
-          </li>
-          <li>
-            تقوم المجلة بنشر أعداد خاصّة أو ملفات خاصّة تتعلق بموضوعات مهمة
-            محدّدة.
-          </li>
-          <li>
-            تعميم الفائدة المرجوّة من نشر البحوث وغيرها بوضع أعداد المجلّة بين
-            أيدي القرّاء والباحثين على موقع المجلة في الشابكة (الإنترنت).
-          </li>
-          <li>
-            إعطاء أهمية للأبحاث التي يحتاجها المجتمع السوري خاصة في هذه المرحلة،
-            والتي تناقش قضايا الثقافة الإسلامية، والعلوم المتعلقة باللغة العربية
-            وآدابها.
-          </li>
-          <li> تحقيق شراكة مع مخزنات الأبحاث وقواعد البيانات العالمية.</li>
-        </ul>
-        <div className="flex">
-          <img className="w-2/5 h-2/5 m-14" src={logo} alt="" />
-          <img className="w-2/5 h-2/5 m-14" src={midadLogo} alt="" />
-        </div>
-      </div>
+    const [t, i18n] = useTranslation('global')
+    return (
+        <>
+            <Navbar />
+            <div className="Header">
+                <h1>{t('AboutTibyan.header')}</h1>
+            </div>
+            <div>
+                <h2 className="ms-[25%] text-3xl py-16 font-bold">{t('AboutTibyan.header')}(MLA)</h2>
+            </div>
+            <div className="w-2/5 ms-[29%]">
+                <p className="text-xl">{t('AboutTibyan.introduction')}</p>
+            </div>
+            <h2 className="text-3xl py-12 font-medium ms-[25%]">{t('AboutTibyan.objectives')}</h2>
+            <div className="List">
+                <ul>
+                    <li>{t('AboutTibyan.o1')}</li>
+                    <li>{t('AboutTibyan.o2')}</li>
+                    <li>{t('AboutTibyan.o3')}</li>
+                    <li>{t('AboutTibyan.o4')}</li>
+                    <li>{t('AboutTibyan.o5')}</li>
+                    <li>{t('AboutTibyan.o6')}</li>
+                    <li>{t('AboutTibyan.o7')}</li>
+                    <li>{t('AboutTibyan.o8')}</li>
+                    <li>{t('AboutTibyan.o9')}</li>
+                </ul>
+                <div className="flex">
+                    <img className="w-2/5 h-2/5 m-14" src={logo} alt="" />
+                    <img className="w-2/5 h-2/5 m-14" src={midadLogo} alt="" />
+                </div>
+            </div>
 
-      <Footer />
-    </>
-  );
-};
+            <Footer />
+        </>
+    )
+}
 
-export default AboutTibyan;
+export default AboutTibyan

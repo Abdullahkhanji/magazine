@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
+  const [t, i18n] = useTranslation('global')
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const auth = getAuth();
@@ -48,7 +50,7 @@ const Login = () => {
                 ></input>
               </div>
               <div className="button login__submit" onClick={handleLogin}>
-                <span className="button__text">Log In Now</span>
+                <span className="button__text">{t('Other.login')}</span>
                 <i className="button__icon fas fa-chevron-right"></i>
               </div>
             </form>

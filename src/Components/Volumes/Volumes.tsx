@@ -4,6 +4,7 @@ import { db } from '../../App'
 import { QueryDocumentSnapshot, collection, getDocs } from 'firebase/firestore'
 import { getDownloadURL, getStorage, ref } from 'firebase/storage'
 import { To, useNavigate } from 'react-router'
+import { useTranslation } from 'react-i18next'
 
 export interface Volume {
     id: string
@@ -31,6 +32,7 @@ export interface Author {
 }
 
 const Volumes = () => {
+    const [t, i18n] = useTranslation('global')
     const [loading, setLoading] = useState(true)
     const [volumes, setVolumes] = useState<Volume[]>([])
     const lang = window.localStorage.getItem('lang')
@@ -119,7 +121,7 @@ const Volumes = () => {
             <div className="min-h-7"></div>
             <div className="flex gap-2 items-center justify-center">
                 <div className="min-h-[2px]  max-h-[2px] bg-forest min-w-570 mt-2 pointer-events-none select-none"></div>
-                <p className="font-semibold mt-2 text-pigment pointer-events-none select-none">أعداد المجلة</p>
+                <p className="font-semibold mt-2 text-pigment pointer-events-none select-none">{t('Other.magazineVolumes')}</p>
                 <div className="min-h-[2px] max-h-[2px] bg-forest min-w-570 mt-2 pointer-events-none select-none"></div>
             </div>
             <div className="min-h-7"></div>

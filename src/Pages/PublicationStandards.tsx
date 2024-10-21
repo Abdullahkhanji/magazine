@@ -1,54 +1,40 @@
 import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const PublicationStandards = (props: Props) => {
+  const [t, i18n] = useTranslation('global')
   return (
     <>
       <Navbar />
       <div className="Header">
-        <h1>معايير النشر</h1>
+        <h1>{t('PublicationStandards.header')}</h1>
       </div>
       <div className="AltHeader">
-        <h2>معايير النشر</h2>
+        <h2>{t('PublicationStandards.header')}</h2>
       </div>
       <div className="List">
         <ul>
           <li>
-            يجب أن تحتوي الصفحة الأولى من البحث على عنوان البحث، واسم الباحث، أو
-            الباحثين، وجهة العمل، والعنوان، والبريد الإلكتروني، وتاريخ البحث.
-            ومن أجل ضمان سرية عملية التحكيم، فيجب عدم ذكر اسم الباحث، أو
-            الباحثين في صلب البحث، أو أية إشارات تكشف عن أشخاصهم، وعند رغبة
-            الباحث، أو الباحثين في تقديم الشكر لمن أسهم، أو ساعد في إنجاز البحث،
-            فيكون ذلك في صفحة مستقلة.
+          {t('PublicationStandards.p1')}
           </li>
           <li>
-            يجب تقديم ملخص للبحث باللغة العربية بحد أقصى (200) كلمة، وملخص
-            باللغة الإنجليزية بحد أقصى (200) كلمة، ويكون كل ملخص في صفحة مستقلة،
-            على أن يحتوي كل ملخص على عنوان للبحث، و(5) كلمات مفتاحية دالة باللغة
-            العربية والإنجليزية. وبدون ذكر أسماء أو بيانات الباحثين.
+          {t('PublicationStandards.p2')}
           </li>
           <li>
-            عدد صفحات البحث لا تتجاوز بأي حال (30 صفحة)، بما في ذلك المراجع،
-            والجدول، والأشكال، باستثناء الملاحق.
+          {t('PublicationStandards.p3')}
           </li>
           <li>
-            أنماط وصيغ الكتابة تكون كالتالي: مقاس الصفحة (A4) ، وبتباعد أسطر
-            بقدر (1.5)، وبهوامش (2 سم كحد أدنى) لكل من أعلى وأسفل وجانبي الصفحة،
-            (شاملة الهوامش، والمراجع، والمقتطفات، والجداول، والملاحق).
+          {t('PublicationStandards.p4')}
           </li>
           <li>
-            نمط الكتابة:
-            <ol>
-              <li>للغة العربية: Traditional Arabic حجم الخط 14.</li>
-              <li>للغة الإنجليزية: Times New Roman حجم الخط 14.</li>
-            </ol>
+          {t('PublicationStandards.p5')}
           </li>
           <li>
-            في حال استخدم الباحث لأداة من أدوات جمع البيانات، فعليه أن يقدم نسخة
-            كاملة من تلك الأداة، ترفق في طلب النشر.
+          {t('PublicationStandards.p6')}
           </li>
         </ul>
       </div>

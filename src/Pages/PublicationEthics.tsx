@@ -1,66 +1,58 @@
-import React from "react";
-import Footer from "../Components/Footer/Footer";
-import Navbar from "../Components/Navbar/Navbar";
+import React from 'react'
+import Footer from '../Components/Footer/Footer'
+import Navbar from '../Components/Navbar/Navbar'
+import { useTranslation } from 'react-i18next'
 
-type Props = {};
+type Props = {}
 
 const PublicationEthics = (props: Props) => {
-  return (
-    <>
-      <Navbar />
-      <div className="Header">
-        <h1>أخلاقيات النشر</h1>
-      </div>
-      <div className="AltHeader">
-        <h2>أخلاقيات النشر</h2>
-      </div>
-      <div className="List">
-        <ul>
-          <li>
-            يتعهد الباحث بأن البحث لم يسبق نشره، ولم يقدم للنشر لجهات أخرى،
-            وكذلك لن يقدم للنشر في جهة أخرى في الوقت نفسه لحين انتهاء إجراءات
-            التحكيم، ويوافق الباحث على نقل حقوق النشر والتأليف إلى المجلة بعد
-            إجازته للنشر بصورته النهائية.
-          </li>
-          <li>يُقدم صاحب البحث المادة العلمية على موقع المجلة الإلكتروني.</li>
-          <li>
-            يتم إخضاع جميع البحوث المستلمة لدراسة أولية من إدارة المجلة، للتأكد
-            من مطابقة البحث لقواعد النشر بالمجلة.
-          </li>
-          <li>
-            يتم إخضاع البحوث للدراسة المبدئية من قبل عضو هيئة تحرير في المجلة
-            والمختص في مجال البحث، لتقرير أهلية تقديم البحث للمحكّمين.
-          </li>
-          <li>
-            تخضع جميع البحوث والدراسات المقدمة للمجلة للتحكيم قبل نشرها في
-            المجلة، لمحكّمين اثنين متخصصين في مجال البحث من بلدان وجنسيات متعددة
-            من ذوي الخبرة البحثية والمكانة العلمية، وفي حال التعارض يرسل لمحكم
-            مرجح.
-          </li>
-          <li>تحرص المجلة على أن تعلو رتبة المحكم العلمية عن رتبة الباحث.</li>
-          <li>
-            يجوز لرئيس هيئة التحرير إفادة كاتب البحث غير المقبول للنشر برأي
-            المحكمين أو خلاصته دون ذكر أسماء المحكّمين، ودون أي التزام بالرد على
-            دفوع كاتب البحث.
-          </li>
-          <li>
-            يعد البحث في حكم المسحوب إذا تأخر الباحث في إجراء التعديلات المطلوبة
-            على البحث لمدة تزيد عن أسبوعين من تاريخ تسلمه الرد من المجلة؛ ما لم
-            يكن هناك عذر قهري تقدره هيئة تحرير المجلة.
-          </li>
-          <li>إذا تم الاعتذار عن قبول البحث لا تلتزم المجلة بتوضيح أسبابه.</li>
-          <li>
-            لا يجوز نشر البحث في مجلة علمية أخرى بعد إقرار نشره في المجلة.
-          </li>
-          <li>
-            تُعَبِّر المواد المقدمة للنشر عن آراء مؤلفيها، ويتحمل أصحابها
-            مسؤولية صحة المعلومات والاستنتاجات ودقتها.
-          </li>
-        </ul>
-      </div>
-      <Footer />
-    </>
-  );
-};
+    const [t, i18n] = useTranslation('global')
+    return (
+        <>
+            <Navbar />
+            <div className="Header">
+                <h1>{t('PublicationEthics.header')}</h1>
+            </div>
+            <div className="AltHeader">
+                <h2>{t('PublicationEthics.header')}</h2>
+            </div>
+            <div className="ListEthics">
+                <h2>{t('PublicationEthics.first')}</h2>
+                <ul>
+                    <li>{t('PublicationEthics.f1')}</li>
+                    <li>{t('PublicationEthics.f2')}</li>
+                    <li>{t('PublicationEthics.f3')}</li>
+                    <li>{t('PublicationEthics.f4')}</li>
+                    <li>{t('PublicationEthics.f5')}</li>
+                    <li>{t('PublicationEthics.f6')}</li>
+                    <li>{t('PublicationEthics.f7')}</li>
+                </ul>
+                <h2>{t('PublicationEthics.originality')}</h2>
+                <p>{t('PublicationEthics.o1')}</p>
+                <h2>{t('PublicationEthics.second')}</h2>
+                <ul>
+                    <li>{t('PublicationEthics.s1')}</li>
+                    <li>{t('PublicationEthics.s2')}</li>
+                    <li>{t('PublicationEthics.s3')}</li>
+                    <li>{t('PublicationEthics.s4')}</li>
+                    <li>{t('PublicationEthics.s5')}</li>
+                    <li>{t('PublicationEthics.s6')}</li>
+                    <li>{t('PublicationEthics.s7')}</li>
+                </ul>
+                <h2>{t('PublicationEthics.third')}</h2>
+                <ul>
+                    <li>{t('PublicationEthics.t1')}</li>
+                    <li>{t('PublicationEthics.t2')}</li>
+                    <li>{t('PublicationEthics.t3')}</li>
+                    <li>{t('PublicationEthics.t4')}</li>
+                    <li>{t('PublicationEthics.t5')}</li>
+                    <li>{t('PublicationEthics.t6')}</li>
+                    <li>{t('PublicationEthics.t7')}</li>
+                </ul>
+            </div>
+            <Footer />
+        </>
+    )
+}
 
-export default PublicationEthics;
+export default PublicationEthics

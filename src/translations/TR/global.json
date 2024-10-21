@@ -1,5 +1,4 @@
 {
-
     "Navbar": {
         "home": "Ana sayfa",
         "aboutUs": "Hakkımızda",
@@ -9,10 +8,24 @@
         "postingins": "Yayın talimatları",
         "pubstand": "Yayın standartları",
         "pubethics": "Yayın etiği",
-        "Pubsteps": "Yayın adımları",
+        "pubsteps": "Yayın adımları",
         "respledge": "Araştırma sunma",
         "members": "Yayın kurulu üyeleri",
         "callus": "Bizi ara"
+    },
+    "AboutTibyan": {
+        "header": "Tibyan İslam ve Arap Araştırmaları Dergisi Tanıtımı",
+        "introduction": "Sınır Tanımayan Eğitim Vakfı/Midad'a bağlı Midad Araştırma Merkezi tarafından Arapça, İngilizce ve Türkçe olarak yayınlanan ve Türkiye Cumhuriyeti Kültür Bakanlığı tarafından lisanslı, süreli, hakemli bilimsel bir dergidir. İslami ilimler ve Arap Dili alanlarında özgünlük, modernlik ve ciddiyet ile karakterize edilen ve kendi bilgi alanının gelişmesine katkıda bulunan çalışmaları yayınlamakla ilgilenmektedir. Dergi, altı ayda bir elektronik ortamda yayınlanmakta olup, kalkınma, bilgi inşası, İslam kültürü ve Arap dili ile ilgili konularda araştırma ve çalışmaların yayınlanmasını amaçlamaktadır.",
+        "objectives": "Derginin Hedefleri",
+        "o1": "-Yenilikçi Araştırmaların Yayınlanmak: İslami İlimler ve Arap Dili alanlarında araştırmacılar tarafından sunulan yeni ve seçkin araştırmaların, uzmanlar tarafından bilimsel incelemeye sunulduktan sonra yayınlamak.",
+        "o2": "-Özel Dosyalar Yayınlamak: Önemli ve spesifik konulara odaklanan özel sayılar veya dosyalar yayınlamak, belirli konuların vurgulanmasına ve bunlarla ilgili anlayışın derinleştirilmesine katkıda bulunmak.",
+        "o3": "-Küresel Problemleri İslami bir Perspektiften Analiz Etmek: İslami değer ve ilkelere dayalı çözümler sunmak amacıyla savaşlar, insani krizler ve salgın hastalıklar gibi çağdaş küresel sorunlar ve zorluklar hakkında İslami bakış açıları sunan araştırmaları yayınlamak.",
+        "o4": "-Arap Dilini Çağdaş Bağlamda İncelemek: Küreselleşmenin etkisi, dilsel örtüşme ve yabancı dillerin yayılması ışığında dilsel ve kültürel kimliği korumanın zorlukları gibi çağdaş zorluklarla yüzleşmede Arap dilinin rolünün incelemek. ",
+        "o5": "-Uygulamalı Dilbilimsel Çalışmaları Desteklemek: Çeviri, bilgisayar dilleri ve dilsel iletişim gibi alanlarda Arap dilinin yeni ve çeşitli alanlarda kullanımını artıracak şekilde uygulamalı araştırmaları teşvik etmek ve yaygınlaştırmak.",
+        "o6": "-İslami İlimler ve Arap Diline Dair Araştırmalarda Teknolojik Gelişmelere Ayak Uydurmak: Modern teknolojinin ve yapay zekanın İslam toplumları üzerindeki etkisini ve İslami bilimlerin bu zorluklarla baş etmedeki rolünü araştıran araştırmaları desteklemek ve yayınlamak.",
+        "o7": "-Etik ve Sosyal Konuları Ele Almak: İnsan hakları, sosyal adalet ve bilimsel araştırma etiği gibi çağdaş etik konuları ele alan araştırmaları yayınlamak ve bu alanlarda İslami katkılar sağlamak.",
+        "o8": "-Çağdaş İslami konulara İlişkin Küresel Farkındalığı Artırmak: İslamofobi, radikalizm ve göç gibi günümüzde İslam toplumlarının karşı karşıya olduğu sorunların, kavramları düzeltmeyi ve yapıcı çözümler sunmayı amaçlayan bilimsel bir bakış açısıyla derinlemesine analiz edilmesini sağlamak.",
+        "o9": "-Uluslararası Araştırma Merkezleriyle Bağlantı Kurmak: Yayınlanan araştırmaların daha geniş bir kitleye erişmesini ve derginin daha geniş bir alanda yayılmasını sağlamak için uluslararası araştırma merkezleri ve veri tabanlarıyla ortaklıklar kurmak. "
     },
     "AboutMidad": {
         "header": "MIDAD Araştırma Merkezi",
@@ -37,9 +50,128 @@
         "third5": "Uzmanlık gerektiren eğitim programlarının uygulanması.",
         "third6": "Çeşitli kurumların ihtiyaçlarına yönelik danışmanlık hizmetleri ve geliştirme çözümleri."
     },
+    "PublicationSteps": {
+        "header": "Yayın Adımları",
+        "p1": "1.Araştırmacı tarafından dergiye gönderilen araştırma, derginin resmi e-postası veya web sitesi aracılığıyla iletilir.",
+        "p2": "2.Araştırma formatlarının yayın kurulu tarafından ilk incelemesi ve dergide yayınlanma koşullarına uygunluğu tespit edilir.",
+        "p3": "3.Araştırmanın dergi yayın kurulu tarafından yapılan ilk inceleme sonucu araştırmacıya bildirilir.",
+        "p4": "4.Araştırma hakemlere gönderilir. ",
+        "p5": "5.Nihai tahkim sonucu e-posta yoluyla araştırmacıya bildirilir.",
+        "p6": "6.Varsa hakemlerin görüşleri doğrultusunda araştırmacıdan düzeltmeler yapması istenir. ",
+        "p7": "7.Araştırmasının yayına kabul edildiğine dair belge araştırmacıya gönderilir.",
+        "p8": "8.Araştırma dergiye gönderilme sırasına göre dergide yayınlanır."
+    },
+    "PublicationStandards": {
+        "header": "Yayın İlkeleri",
+        "p1": "-İlk sayfada araştırmanın başlığı, araştırmacının veya araştırmacıların adı, çalışma yeri, adresi, e-posta adresi ve araştırmanın tarihi yer almalıdır. Tahkim sürecinde bütünlüğün sağlanması amacıyla araştırmacı veya araştırmacılar, araştırma kapsamında isimlerini veya kimliklerini ortaya koyan herhangi bir işaret kullanamazlar. Araştırmanın tamamlanmasına katkıda bulunan veya yardımcı olan kişilere teşekkür edilmek istenirse, bu ayrı bir sayfada yapılmalıdır.",
+        "p2": "-Araştırma özeti, en fazla (200) kelimeden oluşacak şekilde Arapça ve en fazla (250) kelimeden oluşacak şekilde İngilizce olarak sunulmalıdır. Her bir özetin, araştırmacıların isimleri veya verileri belirtilmeden, araştırmanın başlığını ve Arapça ve İngilizce olarak beş önemli anahtar kelimeyi içermek koşuluyla ayrı bir sayfada sunulması gerekmektedir.",
+        "p3": "-Araştırma hiçbir durumda ekler hariç referanslar, tablo ve şekiller dahil olmak üzere (30 sayfayı) geçmemelidir.",
+        "p4": "-Yazım stilleri ve formatları şu şekilde olacaktır: sayfa boyutu (A4), satır aralığı (1,5) ve sayfanın üst, alt ve yanlarının her biri için kenar boşlukları (minimum 2 cm) (dipnotlar, referanslar, referanslar, alıntılar, tablolar ve ekler için de bu kurallar geçerlidir).",
+        "p5": "-Arapça yazı stili: Traditional Arabic: 14 Punto, İngilizce yazı stili: Times New Roman: 14 Punto şeklinde olmalıdır.",
+        "p6": "-Araştırmacının bir veri toplama aracı kullanması durumunda, bu aracın tam bir kopyasını yayın talebine ek olarak sunması gerekmektedir. "
+    },
+    "PublicationEthics": {
+        "header": "Yayın Etiği",
+        "first": "Araştırmacının Sorumlulukları:",
+        "f1": "1. Araştırmacı, Tibyan İslam ve Arap Araştırmaları Dergisi'nin belirlediği standartlara, yönergelere ve yayın kurallarına bağlı kalır ve araştırma ilkeleri ve etik standartlarının yanı sıra bilimsel yayıncılıkta ilke ve standartlarına da uyar.",
+        "f2": "2. Araştırmacı, bilimsel dürüstlük ilkelerinin gereklerini gözetmeli ve kendisine ait daha önceki çalışma ve araştırmalarından deliller sunmamayı ve başkalarının daha önceki çalışmaları ya da eserlerinden intihal yapmamayı taahhüt ederek telif haklarına saygı göstermelidir. ",
+        "f3": "3. Ortak yayın durumunda, araştırmacı diğer araştırmacıların onayını almak ve araştırmayı hazırlama sürecine kimlerin katkı sağladığını belirtmekle yükümlüdür.",
+        "f4": "4. Araştırmacı, daha önce tamamen ya da kısmen herhangi bir dilde ya da biçimde yayımlanmış bir araştırmayı tekrar sunmamalıdır. Ayrıca, araştırmayı dergi tarafından incelenmesi esnasında başka herhangi bir tarafa sunmaması gerekir. Araştırmanın yayına kabul edilmesi halinde ise araştırmacı dergiden yazılı ön onay almadan araştırmayı başka bir yerde yayımlamamalıdır. ",
+        "f5": "5. Araştırmacı, çalışmadan doğabilecek herhangi bir çıkar çatışmasını açıklamak zorundadır ve araştırması için sağlanan tüm maddi destek kaynaklarını beyan etmelidir.",
+        "f6": "6. Araştırmacı, yayımlanmış çalışmasında temel bir hata keşfederse, bu hatanın düzeltilmesi ya da kaldırılması için baş editörü bilgilendirmelidir. ",
+        "f7": "7. Dergide yayımlanan araştırmalar, araştırmacıların görüşlerini yansıtır ve derginin editör kurulunun ya da Midad Araştırmaları Merkezi'nin görüşlerini zorunlu olarak temsil etmez. Araştırmanın içeriğinden tamamen araştırmacı sorumludur.",
+        "originality": "Özgünlük ve İntihal:",
+        "o1": "Yazarlar, gönderilen çalışmanın orijinal olduğundan emin olmalı ve eğer başkalarının çalışmalarını veya sözlerini benimsemişlerse, bunlara usulüne uygun olarak atıfta bulunmalı veya alıntı yapmalıdır. Tibyan İslam ve Arap Araştırmaları Dergisi, araştırmanın orijinalliğini doğrulamak için etkili bir intihal tespit yazılımı kullanmaktadır. Araştırmada %1-10 arasında bir benzerlik derecesi kabul edilebilir. %10'un üzerinde benzerlik taşıyan araştırmalar ise yayınlanmak üzere kabul edilmeyecektir.",
+        "second": "Hakemin Sorumlulukları",
+        "s1": "1. Hakem, ilk hakemlik daveti mektubuna, mektubun kendisine ulaştığı tarihten itibaren üç gün içinde cevap vermekle, hakemliği kabul etmesi halinde ise hakemlik araştırmasını kabul tarihinden itibaren en fazla iki hafta içinde tamamlamakla yükümlüdür. ",
+        "s2": "2. Hakem, araştırmaları bilimsel tarafsızlıkla ve önyargısız bir şekilde değerlendirmek zorundadır.",
+        "s3": "3. Hakem, uzmanlık alanı dışında kalan veya yeterli tecrübeye sahip olmadığı bir konuda hakemlik yapmamayı taahhüt etmelidir.",
+        "s4": "4. Hakem, değerlendirme için aldığı araştırmaları gizli belgeler olarak değerlendirmeli ve baş editörün izni dışında bunları başkalarıyla paylaşmamalı veya tartışmamalıdır.",
+        "s5": "5. Hakem, değerlendirmesi altındaki araştırmayı hiçbir şekilde kendisi veya başkası için kişisel çıkar sağlamak amacıyla haksız yere kullanmamalıdır. ",
+        "s6": "6. Hakem, araştırmaya ilişkin yorumlarını onaylanmış hakemlik modeline uygun olarak ayrıntılı olarak sunmalı ve yalnızca genel inceleme ve değerlendirme ile yetinmemelidir. Ayrıca yorumlarını doğrudan araştırmaya yönlendirmeli ve araştırmacının şahsına hedef almamalıdır. ",
+        "s7": "7. Hakemin hakemlik yaptığı bilimsel materyalde intihal veya bilimsel alıntı hataları tespit etmesi halinde bunları açıkça belirtmesi ve intihal veya alıntı yapılan gerçekleştiği paragrafları açıklaması ve buna dair delilleri sunması gerekir. ",
+        "third": "Yayın Kurulunun Sorumlulukları",
+        "t1": "1. Yayın kurulu, yayınlanmak üzere gönderilen bilimsel araştırmanın kalitesini doğrulamayı ve onları ilgili araştırma konusunda bilimsel deneyime ve uzmanlığa sahip hakemlere yönlendirmekle yükümlüdür. ",
+        "t2": "2. Derginin yayın kurulu, hakemleri seçerken coğrafi çeşitliliği gözetmek ve hakemlerin tamamının aynı bilim kurumuna mensup olmamasını sağlamakla yükümlüdür.",
+        "t3": "3. Yayın kurulu, hakemlerin atanmasından önce, sunulan nedenler ve gerekçelere ikna olduğu takdirde araştırmacının herhangi bir hakemi baştan itibaren reddetme talebini yerine getirmekle yükümlüdür. Yayın kurulu ayrıca tüm hakemlerden hakemliği ve hakemlik prosedürlerine başlamayı kabul etmelerinden önce herhangi bir çıkar çatışması veya menfaat çelişkisi olup olmadığını açıklamalarını talep etmelidir. ",
+        "t4": "4. Yayın kurulu yetkilerini dürüst, objektif ve adil bir şekilde kullanmalı ve araştırmacılar arasında yasal olmayan nedenlerle  ayrımcılık yapmamalıdır.",
+        "t5": "5. Yayın kurulu, araştırmacılara, hakemlerin araştırmalarıyla ilgili yorumlarına yanıt vermeleri için makul bir süre tanımakla yükümlüdür. ",
+        "t6": "6. Yayın kurulu, hakemlik süreci tamamlanana kadar araştırma ve araştırmacılara ilişkin bilgilerin gizliliğini ve korunmasını sağlamalıdır.",
+        "t7": "7. Yayın kurulu başkanı, yayınlanmak üzere kabul edilen bilimsel materyalin sahibine, metnin yayınlanmasına ilişkin onayı ve yayınlanacağı belirlenen sayıyı bildirmekle yükümlüdür."
+    },
+    "CommunicateWithUs": {
+        "header": "Bizi ara",
+        "altheader": "Herhangi bir öneri veya sorunuz için, WhatsApp veya Medad telefon hattı üzerinden bizimle iletişime geçmebilirsiniz.",
+        "adress": "Adres"
+    },
     "Footer": {
         "about": "Sınır Tanımayan Eğitim Vakfı/Midad'a bağlı Midad Araştırma Merkezi tarafından Arapça, İngilizce ve Türkçe olarak yayınlanan ve Türkiye Cumhuriyeti Kültür Bakanlığı tarafından lisanslı, süreli, hakemli bilimsel bir dergidir.",
         "readMore": "Devamını oku",
         "contact": "İletişim bilgileri"
+    },
+    "MembersOfTheProgram": {
+        "header": "Yayın kurulu üyeleri",
+        "header1": "Yayın kurulu başkanı",
+        "header2": "Üyeler",
+        "name": "Dr. Majid Aliwi",
+        "expertise": "Hadis Hadis İlimleri",
+        "title": "Şeriat Fakültesi Dekanı / Halep Üniversitesi ",
+        "members": [
+            {
+                "name": "Prof. Dr. Diaa Al-Din Qalesh",
+                "title": "Öğretim Üyesi / Halep Üniversitesi",
+                "expertise": "Retorik ve Eleştiri"
+            },
+            {
+                "name": "Prof. Dr. Ahmed Natuf",
+                "title": "Öğretim Üyesi / Katar Üniversitesi",
+                "expertise": "Edebiyat ve Retorik"
+            },
+            {
+                "name": "Prof. Dr. Ahmed Muaz Elvan Hakki",
+                "title": "Şeriat ve İslam Araştırmaları Fakültesi Eski Dekan Vekili / Sharjah Üniversitesi",
+                "expertise": "İslami İlimler"
+            },
+            {
+                "name": "Prof. Dr. Ahmed İdris Taan",
+                "title": "Öğretim Üyesi / Halep Üniversitesi",
+                "expertise": "Fıkıh Usulü"
+            },
+            {
+                "name": "Prof. Dr. Hasan Hattaf",
+                "title": "Öğretim Üyesi / Katar Üniversitesi",
+                "expertise": "İslami İlimler"
+            },
+            {
+                "name": "Dr. Abdul Badi El Nirbani",
+                "title": "Öğretim Görevlisi / Kahramanmaraş Sütçü İmam Üniversitesi",
+                "expertise": "Arap Dili"
+            },
+            {
+                "name": "Prof. Dr. Mahmud Nafisa",
+                "title": "İlahiyat Fakültesi Dekan Yardımcısı / Gaziantep Üniversitesi Azez",
+                "expertise": "İslam Felsefesi"
+            },
+            {
+                "name": "Dr. Muhammed Nur Hamdan",
+                "title": "Öğretim Üyesi / Gaziantep Üniversitesi Azez",
+                "expertise": "Fıkıh Usulü"
+            },
+            {
+                "name": "Dr. Abdul Muhaymin Dershoi",
+                "title": "MIDAD Araştırma Merkezi Müdür Yardımcısı",
+                "expertise": "Araştırma Yöntem ve Teknikleri"
+            },
+            {
+                "name": "Dr. Ahmed el-Ömer",
+                "title": "Lisansüstü Eğitim Fakültesi Dekanı / Kurtarılmış Bölgelerdeki Halep Üniversitesi",
+                "expertise": "Arap Dili"
+            }
+        ]
+    },
+    "Other": {
+        "magazineVolumes": "Dergi Sayıları",
+        "readTibyan": "Tibyan dergisinde okuyacaklarınız",
+        "login": "Giriş yap"
     }
 }

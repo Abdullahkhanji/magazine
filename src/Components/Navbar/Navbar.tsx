@@ -29,7 +29,6 @@ const Navbar = (props: Props) => {
         signOut(auth)
     }
     const handleChangeLang = (language: string) => {
-        // i18n.changeLanguage(language)
         setLang(language)
     }
 
@@ -63,6 +62,12 @@ const Navbar = (props: Props) => {
                     console.log(lang)
                 }
             }
+        }
+        if(lang == 'AR'){
+            document.body.classList.toggle('rtl');
+            
+        } else{
+            document.body.classList.toggle('ltr');
         }
     }, [lang])
 
@@ -98,7 +103,7 @@ const Navbar = (props: Props) => {
                 {loggedIn && (
                     <div
                         onClick={logout}
-                        className="flex items-center cursor-pointer hover:opacity-70 duration-300 mr-[5%]"
+                        className="flex items-center cursor-pointer hover:opacity-70 duration-300 ms-[5%]"
                     >
                         logout
                     </div>
