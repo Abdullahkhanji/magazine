@@ -122,14 +122,12 @@ body.ltr {
 
 .LogoBar {
     display: flex;
-    justify-content: space-between;
 }
-
 .logo {
-    width: 220px;
-    length: 140px;
+    width: 280px;
+    length: 180px;
     padding: 25px;
-    margin-left: 43%;
+    margin-inline-start: 35%;
 }
 
 nav {

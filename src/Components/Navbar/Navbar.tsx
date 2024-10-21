@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 
-import logo from '../../img/logo.png'
+import logo from '../../img/Artboard 2@72x-100.jpg'
 
 import '../../index.css'
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
@@ -38,7 +38,6 @@ const Navbar = (props: Props) => {
             if (lang) {
                 window.localStorage.setItem('lang', lang)
 
-
                 console.log(lang)
             } else {
                 setLang('AR')
@@ -63,11 +62,10 @@ const Navbar = (props: Props) => {
                 }
             }
         }
-        if(lang == 'AR'){
-            document.body.classList.toggle('rtl');
-            
-        } else{
-            document.body.classList.toggle('ltr');
+        if (lang == 'AR') {
+            document.body.classList.toggle('rtl')
+        } else {
+            document.body.classList.toggle('ltr')
         }
     }, [lang])
 
@@ -108,6 +106,7 @@ const Navbar = (props: Props) => {
                         logout
                     </div>
                 )}
+
                 <img className="logo select-none" src={logo} />
             </div>
             <nav>
@@ -158,7 +157,9 @@ const Navbar = (props: Props) => {
                     </li>
                     <li>
                         <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
-                            <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.postingins')}</div>
+                            <div className="font-bold group-hover:opacity-50 duration-300">
+                                {t('Navbar.postingins')}
+                            </div>
                             <FontAwesomeIcon
                                 icon={faCaretDown}
                                 className="text-forest group-hover:text-darkpastal duration-300"
