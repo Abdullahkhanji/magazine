@@ -144,7 +144,7 @@ nav .NavbarList {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    display: inline-block;
+
 }
 
 .NavbarList li {
@@ -197,6 +197,8 @@ nav .NavbarList {
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: #25a244;
+        z-index: 999;
     }
 
     .NavbarDropdown {

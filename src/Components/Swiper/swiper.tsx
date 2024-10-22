@@ -110,9 +110,9 @@ export default function Swipers() {
                     <SwiperSlide>
                         <div
                             onClick={() => handleClick(`/research-page/${research.volumeID}/${research.No}`)}
-                            className="flex self-start  max-w-360 min-w-360 flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer"
+                            className="flex self-start  max-w-360 min-w-360 flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer z-10"
                         >
-                            <div className="overflow-hidden group-hover:rounded-lg  shadow-lg">
+                            <div className="overflow-hidden group-hover:rounded-lg  shadow-lg z-10">
                                 <img
                                     className="max-w-[355x] min-w-[355px] rounded-tr-lg rounded-tl-lg max-h-360 min-h-360 group-hover:scale-110 transform transition-transform duration-500 "
                                     src={research.rImage}
