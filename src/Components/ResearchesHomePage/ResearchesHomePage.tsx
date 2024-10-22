@@ -111,7 +111,6 @@ const ResearchesHomePage = () => {
                             />
                         </div>
                         <div className="flex items-start flex-col gap-8 max-w-[200px] mt-5 relative">
-                            <p className="text-[12px]">{research.rTitle}</p>
                             <p className="font-bold text-16">{research.rTitle}</p>
                             <div className="max-w-[259px] max-h-[1px] min-w-[259px] min-h-[1px] bg-background absolute start-[-10px] bottom-[30px]"></div>
                         </div>
