@@ -11,7 +11,8 @@
         "pubsteps": "Publication steps",
         "respledge": "Research pledge",
         "members": "editorial board members",
-        "callus": "Call us"
+        "callus": "Call us",
+        "addv": "Add volume"
     },
     "AboutTibyan": {
         "header": "Tabyan Journal for Islamic and Arabic Studies",
@@ -104,6 +105,10 @@
         "altheader": "For any suggestions or enquiries, feel free to contact us through Midad whatsapp or Tel. No. of the center",
         "adress": "Adress"
     },
+    "ResearchPledge": {
+        "header": "Research Pledge",
+        "about": "You can send your research to our email or phone number."
+    },
     "Footer": {
         "about": "“Tabyan” is a peer-reviewed scientific journal issued by Midad Center for Studies, affiliated with the Foundation of Education Without Borders / Midad. The journal is published in Arabic, English, and Turkish. It is licensed by the Ministry of Culture of the Republic of Türkiye.",
         "readMore": "Read more",
@@ -172,6 +177,7 @@
     "Other": {
         "magazineVolumes": "Magazine volumes",
         "readTibyan": "What Awaits You in Tibyan Magazine",
-        "login": "Log in"
+        "login": "Log in",
+        "fileButton": "Read volume"
     }
 }

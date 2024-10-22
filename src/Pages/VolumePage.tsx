@@ -9,14 +9,15 @@ import Navbar from '../Components/Navbar/Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { useTranslation } from 'react-i18next'
 
 const VolumePage = () => {
+    const [t, i18n] = useTranslation('global')
     const [volume, setVolume] = useState<Volume>()
     const [loggedIn, setLoggedIn] = useState(false)
     const param = useParams()
     const auth = getAuth()
     const lang = window.localStorage.getItem('lang')
-
 
     const id = param.id
     const deleteVolume = async (id: any) => {
@@ -27,7 +28,7 @@ const VolumePage = () => {
     const getVolumeData = async () => {
         if (id != undefined) {
             const storage = getStorage()
-            let docRef = doc(db, 'volumes'+lang, id)
+            let docRef = doc(db, 'volumes' + lang, id)
             let docSnap = await getDoc(docRef)
             if (docSnap.exists()) {
                 const docData = docSnap.data()
@@ -76,18 +77,17 @@ const VolumePage = () => {
                         <section className="p-10 mr-640 pt-6 ">
                             <a href="/any">
                                 <button className=" text-20 text-fff px-28 text-nowrap bg-[#15803d] duration-500 hover:bg-[#166534] focus:outline-none focus:ring-4 focus:ring-[#86efac] font-medium  rounded-md   py-5   dark:bg-[#26a345] dark:hover:bg-[#15803d] dark:focus:ring-[#166534] ">
-                                    تصفح العدد الأول من المجلد
+                                    {t('Other.fileButton')}
                                 </button>
                             </a>
                         </section>
                         {volume?.researches.map((research: Research) => (
                             <section className="pr-8 mr-[20%] ">
-                                <a href={`/research-page/${id}/${research.Id}`}>
-                                    <button className=" p-10  text-28 pt-12 hover:text-background duration-500">
+                                <a href={`/research-page/${id}/${research.No}`}>
+                                    <button className="text-start p-10  text-28 pt-12 hover:text-background duration-500">
                                         {research.rTitle}
                                     </button>
                                 </a>
-                                <p className="text-20 pt-5 ">{research.rTitle}</p>
                             </section>
                         ))}
                     </div>

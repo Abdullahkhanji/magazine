@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 
-import logo from '../../img/Artboard 2@72x-100.jpg'
+import logo from '../../img/newLogo.png'
 
 import '../../index.css'
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
@@ -10,7 +10,7 @@ import { Volume } from '../Volumes/Volumes'
 import { QueryDocumentSnapshot, collection, doc, getDoc, getDocs } from 'firebase/firestore'
 import { To, useNavigate, useParams } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faBars } from '@fortawesome/free-solid-svg-icons'
 import { useTranslation } from 'react-i18next'
 
 type Props = {}
@@ -71,7 +71,7 @@ const Navbar = (props: Props) => {
 
     useEffect(() => {
         const getVolumes = async () => {
-            const getData = await getDocs(collection(db, 'volumes'))
+            const getData = await getDocs(collection(db, 'volumes' + lang))
 
             const volumesTemp = getData.docs.map((doc: QueryDocumentSnapshot) => {
                 const index: Volume = {
@@ -179,7 +179,10 @@ const Navbar = (props: Props) => {
                         </ul>
                     </li>
                     <li>
-                        <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
+                        <div
+                            onClick={() => handleClick('/ResearchPledge')}
+                            className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
+                        >
                             <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.respledge')}</div>
                         </div>
                     </li>
@@ -199,6 +202,18 @@ const Navbar = (props: Props) => {
                             <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.callus')}</div>
                         </div>
                     </li>
+
+                    {loggedIn && (
+                        <li>
+                            <div
+                                onClick={() => handleClick('/add-volume')}
+                                className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
+                            >
+                                <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.addv')}</div>
+                            </div>
+                        </li>
+                    )}
+
                     <li>
                         <div className="" data-trigger-class="btn btn--subtle">
                             {lang == 'AR' && (

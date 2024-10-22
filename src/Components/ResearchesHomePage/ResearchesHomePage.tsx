@@ -101,7 +101,7 @@ const ResearchesHomePage = () => {
                     <div
                         key={index}
                         className="flex gap-10 min-w-[565px] max-w-[565px] border-forest border-[1px] rounded-md group cursor-pointer"
-                        onClick={() => handleClick(`/research-page/${research.volumeID}/${research.Id}`)}
+                        onClick={() => handleClick(`/research-page/${research.volumeID}/${research.No}`)}
                     >
                         <div className="overflow-hidden shadow-lg">
                             <img

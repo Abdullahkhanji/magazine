@@ -127,7 +127,7 @@ body.ltr {
     width: 280px;
     length: 180px;
     padding: 25px;
-    margin-inline-start: 35%;
+    margin-inline-start: 42%;
 }
 
 nav {
@@ -595,25 +595,25 @@ nav .NavbarList {
 }
 
 .ag-courses_box {
-    display: flex;              /* Enable flexbox */
-    justify-content: center;    /* Center items horizontally */
-    flex-wrap: wrap;           /* Allow items to wrap */
-    padding: 50px 0;           /* Top and bottom padding */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap */
+    padding: 50px 0; /* Top and bottom padding */
 }
 
 .ag-courses_item {
     flex: 0 1 calc(30% - 30px); /* Responsive size calculation */
-    margin: 15px;              /* Margin around each item */
-    border: solid;             /* Border for items */
-    border-radius: 28px;       /* Rounded corners */
-    overflow: hidden;          /* Hide overflow */
+    margin: 15px; /* Margin around each item */
+    border: solid; /* Border for items */
+    border-radius: 28px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
 }
 
 .ag-courses-item_link {
-    display: block;            /* Block display for link */
-    padding: 30px 40px;       /* Padding inside the link */
-    background-color: #ffffff;/* Background color */
-    position: relative;        /* Relative positioning */
+    display: block; /* Block display for link */
+    padding: 30px 40px; /* Padding inside the link */
+    background-color: #ffffff; /* Background color */
+    position: relative; /* Relative positioning */
 }
 
 .ag-courses-item_link:hover,

@@ -30,7 +30,7 @@ export default function Swipers() {
         const getVolumes = async () => {
             try {
                 const storage = getStorage()
-                const getData = await getDocs(collection(db, 'volumes'+lang))
+                const getData = await getDocs(collection(db, 'volumes' + lang))
                 let allResearches: Research[] = []
 
                 const volumeTemp = await Promise.all(
@@ -108,7 +108,10 @@ export default function Swipers() {
             >
                 {researches.map((research) => (
                     <SwiperSlide>
-                        <div onClick={() => handleClick(`/research-page/${research.volumeID}/${research.No}`)} className="flex self-start  max-w-360 min-w-360 mr-auto ml-auto flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer">
+                        <div
+                            onClick={() => handleClick(`/research-page/${research.volumeID}/${research.No}`)}
+                            className="flex self-start  max-w-360 min-w-360 flex-col border-[0.5px] max-h-[520px] min-h-[520px] rounded-tr-lg rounded-lg border-forest group cursor-pointer"
+                        >
                             <div className="overflow-hidden group-hover:rounded-lg  shadow-lg">
                                 <img
                                     className="max-w-[355x] min-w-[355px] rounded-tr-lg rounded-tl-lg max-h-360 min-h-360 group-hover:scale-110 transform transition-transform duration-500 "
@@ -118,10 +121,9 @@ export default function Swipers() {
                             </div>
                             <div className="min-h-8"></div>
                             <div className="self-start flex flex-col gap-4">
-                                <p className=' ms-5'>{research.rTitle}</p>
                                 <div className="flex flex-col">
                                     <p className="font-bold text-[18px]  ms-5">{research.rTitle}</p>
-                                    <div className="min-h-[1px] max-w-360 min-w-360 bg-forest mr-[-8px] text-16"></div>
+                                    <div className="min-h-[1px] max-w-360 min-w-360 bg-forest  text-16"></div>
                                 </div>
                             </div>
                         </div>

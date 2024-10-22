@@ -11,7 +11,8 @@
         "pubsteps": "Yayın adımları",
         "respledge": "Araştırma sunma",
         "members": "Yayın kurulu üyeleri",
-        "callus": "Bizi ara"
+        "callus": "Bizi ara",
+        "addv": "Sayı ekle"
     },
     "AboutTibyan": {
         "header": "Tibyan İslam ve Arap Araştırmaları Dergisi Tanıtımı",
@@ -104,6 +105,10 @@
         "altheader": "Herhangi bir öneri veya sorunuz için, WhatsApp veya Medad telefon hattı üzerinden bizimle iletişime geçmebilirsiniz.",
         "adress": "Adres"
     },
+    "ResearchPledge": {
+        "header": "Araştırma sunma",
+        "about": "Araştırmalarınızı email yada telefon numaramıza gönderebilirsiniz"
+    },
     "Footer": {
         "about": "Sınır Tanımayan Eğitim Vakfı/Midad'a bağlı Midad Araştırma Merkezi tarafından Arapça, İngilizce ve Türkçe olarak yayınlanan ve Türkiye Cumhuriyeti Kültür Bakanlığı tarafından lisanslı, süreli, hakemli bilimsel bir dergidir.",
         "readMore": "Devamını oku",
@@ -172,6 +177,7 @@
     "Other": {
         "magazineVolumes": "Dergi Sayıları",
         "readTibyan": "Tibyan dergisinde okuyacaklarınız",
-        "login": "Giriş yap"
+        "login": "Giriş yap",
+        "fileButton": "Sayıyı oku"
     }
 }

@@ -3,6 +3,7 @@ import Footer from '../Components/Footer/Footer'
 import { faCaretDown, faChevronDown, faGears, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useTranslation } from 'react-i18next'
+import midadLogo from '../img/لوغو المركز الجديد.png'
 
 const AboutMidad = () => {
     const [t, i18n] = useTranslation('global')
@@ -16,10 +17,7 @@ const AboutMidad = () => {
             <div className="max-w-[60%] font-semibold mr-auto ml-auto ">
                 <div className="flex justify-center mt-24">
                     {' '}
-                    <img
-                        src="https://tibyanjournal.com/wp-content/uploads/2021/03/%D9%84%D9%88%D8%BA%D9%88-%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2-2020.jpg"
-                        className="flex justify-center"
-                    />{' '}
+                    <img src={midadLogo} className="flex justify-center w-200" />{' '}
                 </div>
 
                 <h1 className="flex justify-center text-32 pt-11 pb-10 text-pigment font-semibold">

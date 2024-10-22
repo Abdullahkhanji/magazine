@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
-import logo from '../img/logo.png'
-import midadLogo from '../img/midad logo.jpg'
+import logo from '../img/newLogo.png'
+import midadLogo from '../img/لوغو المركز الجديد.png'
 import { useTranslation } from 'react-i18next'
 
 const AboutTibyan = () => {

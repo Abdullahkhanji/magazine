@@ -30,27 +30,29 @@ const AddVolume = () => {
     const [file, setFile] = useState('')
     const addVolume = async () => {
         const ID = new Date().getTime().toString()
-        await setDoc(doc(db, 'volumesENG', ID), {
-            title: titleENG,
-            cover,
-            file,
-            researches: searchDataENG,
-            id: new Date().getTime()
-        });
-        await setDoc(doc(db, 'volumesAR', ID), {
-            title: titleAR,
-            cover,
-            file,
-            researches: searchDataAR,
-            id: new Date().getTime()
-        });
-        await setDoc(doc(db, 'volumesTR', ID), {
-            title: titleTR,
-            cover,
-            file,
-            researches: searchDataTR,
-            id: new Date().getTime()
-        });
+        if (cover !== '' && file !== '') {
+            await setDoc(doc(db, 'volumesENG', ID), {
+                title: titleENG,
+                cover,
+                file,
+                researches: searchDataENG,
+                id: new Date().getTime(),
+            })
+            await setDoc(doc(db, 'volumesAR', ID), {
+                title: titleAR,
+                cover,
+                file,
+                researches: searchDataAR,
+                id: new Date().getTime(),
+            })
+            await setDoc(doc(db, 'volumesTR', ID), {
+                title: titleTR,
+                cover,
+                file,
+                researches: searchDataTR,
+                id: new Date().getTime(),
+            })
+        }
     }
     //ENG
 
@@ -59,7 +61,8 @@ const AddVolume = () => {
 
     const addResearchENG = () => {
         const id = new Date().getTime()
-        const newResearch = { ...initialResearch, Id: id }
+        const no = searchDataENG.length
+        const newResearch = { ...initialResearch, Id: id, No: no }
         setSearchDataENG([...searchDataENG, newResearch])
     }
     const removeResearchENG = (index: number) => {
