@@ -7,7 +7,8 @@ import { Volume, Research } from './../Components/Volumes/Volumes'
 import Footer from '../Components/Footer/Footer'
 import Navbar from '../Components/Navbar/Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faX } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useTranslation } from 'react-i18next'
 
@@ -70,7 +71,7 @@ const VolumePage = () => {
                 <h1>{volume?.title}</h1>
             </div>
             <div className="shadow-lg m-20 rounded-lg max-w-[95%] mr-auto ml-auto p-10 pt-16 pb-16">
-                {loggedIn && <FontAwesomeIcon onClick={() => deleteVolume(volume?.id)} icon={faX}></FontAwesomeIcon>}
+                {loggedIn && <FontAwesomeIcon onClick={() => deleteVolume(volume?.id)} icon={faTrash} className='cursor-pointer ms-[2%] text-3xl'></FontAwesomeIcon>}
 
                 <div className="flex justify-center">
                     <div className="">

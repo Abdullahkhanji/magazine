@@ -342,13 +342,13 @@ const AddVolume = () => {
         <>
             <Navbar />
             <div className="Header">
-                <h1>اضافة مجلة</h1>
+                <h1>إضافة مجلة</h1>
             </div>
 
             <div className="AddVolume">
                 <div className="m-32">
                     <button onClick={toggleContentAR} className="Button">
-                        اظهار فورم اللغة العربية
+                    إظهار فورم اللغة العربية
                     </button>
                     <button onClick={toggleContentENG} className="Button">
                         Show The Form In English
@@ -400,9 +400,9 @@ const AddVolume = () => {
                                         />
                                     </div>
                                     <div className="flex flex-col ml-auto">
-                                        <h2 className="font-semibold">Research {i + 1}</h2>
+                                        <h2 className="font-semibold">البحث {i + 1}</h2>
                                         <label htmlFor="" className="font-semibold">
-                                            Research Title
+                                            عنوان البحث
                                         </label>
                                         <input
                                             type="text"
@@ -435,7 +435,7 @@ const AddVolume = () => {
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
-                                                <label htmlFor="">Author Name</label>
+                                                <label htmlFor="">اسم الباحث</label>
                                                 <input
                                                     type="text"
                                                     name="publisherName"
@@ -448,7 +448,7 @@ const AddVolume = () => {
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
-                                                <label htmlFor="">Author Job</label>
+                                                <label htmlFor="">عمل الباحث</label>
                                                 <input
                                                     type="text"
                                                     name="publisherJob"
@@ -461,7 +461,7 @@ const AddVolume = () => {
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
-                                                <label htmlFor="">Author Email</label>
+                                                <label htmlFor="">بريد الباحث</label>
                                                 <input
                                                     type="text"
                                                     name="publisherEmail"
@@ -476,7 +476,7 @@ const AddVolume = () => {
                                         </div>
                                     ))}
                                     <div className="flex flex-col mb-4">
-                                        <label htmlFor="">Research Summary</label>
+                                        <label htmlFor="">ملخص البحث</label>
                                         <textarea
                                             name="summary"
                                             placeholder="Research Summary"
@@ -494,7 +494,7 @@ const AddVolume = () => {
                                     <div className="flex gap-4 pt-4">
                                         <div className="flex flex-col items-center mb-4 w-1/2">
                                             <label className="text-center mb-2" htmlFor="">
-                                                Research Cover
+                                                غلاف البحث
                                             </label>
                                             <input
                                                 className="AddImage"
@@ -505,7 +505,7 @@ const AddVolume = () => {
                                         </div>
                                         <div className="flex flex-col items-center mb-4 w-1/2">
                                             <label className="text-center mb-2" htmlFor="">
-                                                Research File
+                                                ملف البحث
                                             </label>
                                             <input
                                                 className="AddImage"
@@ -519,10 +519,10 @@ const AddVolume = () => {
                             ))}
 
                             <button className="Button" onClick={addResearchAR}>
-                                Add Input Fields
+                            إضافة بحث
                             </button>
                             <button className="Button" onClick={addVolume}>
-                                Add Volume
+                            إضافة المجلة
                             </button>
                         </div>
                     </div>
@@ -689,7 +689,7 @@ const AddVolume = () => {
                             ))}
 
                             <button className="Button" onClick={addResearchENG}>
-                                Add Input Fields
+                                Add research
                             </button>
                             <button className="Button" onClick={addVolume}>
                                 Add Volume
@@ -741,9 +741,9 @@ const AddVolume = () => {
                                         />
                                     </div>
                                     <div className="flex flex-col ml-auto">
-                                        <h2 className="font-semibold">Research {i + 1}</h2>
+                                        <h2 className="font-semibold">Araştırma {i + 1}</h2>
                                         <label htmlFor="" className="font-semibold">
-                                            Research Title
+                                            Araştırma başlığı
                                         </label>
                                         <input
                                             type="text"
@@ -776,7 +776,7 @@ const AddVolume = () => {
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
-                                                <label htmlFor="">Author Name</label>
+                                                <label htmlFor="">Araştırmacı adı</label>
                                                 <input
                                                     type="text"
                                                     name="publisherName"
@@ -789,7 +789,7 @@ const AddVolume = () => {
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
-                                                <label htmlFor="">Author Job</label>
+                                                <label htmlFor="">Araştırmacı  mesleği</label>
                                                 <input
                                                     type="text"
                                                     name="publisherJob"
@@ -802,7 +802,7 @@ const AddVolume = () => {
                                                 />
                                             </div>
                                             <div className="flex flex-col mb-4">
-                                                <label htmlFor="">Author Email</label>
+                                                <label htmlFor="">Araştırmacı emaili</label>
                                                 <input
                                                     type="text"
                                                     name="publisherEmail"
@@ -817,7 +817,7 @@ const AddVolume = () => {
                                         </div>
                                     ))}
                                     <div className="flex flex-col mb-4">
-                                        <label htmlFor="">Research Summary</label>
+                                        <label htmlFor="">Araştırma özeti</label>
                                         <textarea
                                             name="summary"
                                             placeholder="Research Summary"
@@ -835,7 +835,7 @@ const AddVolume = () => {
                                     <div className="flex gap-4 pt-4">
                                         <div className="flex flex-col items-center mb-4 w-1/2">
                                             <label className="text-center mb-2" htmlFor="">
-                                                Research Cover
+                                                Araştırma kapağı
                                             </label>
                                             <input
                                                 className="AddImage"
@@ -846,7 +846,7 @@ const AddVolume = () => {
                                         </div>
                                         <div className="flex flex-col items-center mb-4 w-1/2">
                                             <label className="text-center mb-2" htmlFor="">
-                                                Research File
+                                                Araştırma dosyası
                                             </label>
                                             <input
                                                 className="AddImage"
@@ -860,7 +860,7 @@ const AddVolume = () => {
                             ))}
 
                             <button className="Button" onClick={addResearchTR}>
-                                Girdi Alanları Ekle
+                                Araştırma Ekle
                             </button>
                             <button className="Button" onClick={addVolume}>
                                 Cilt Ekle

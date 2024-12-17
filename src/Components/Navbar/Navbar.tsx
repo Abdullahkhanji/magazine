@@ -62,8 +62,15 @@ const Navbar = (props: Props) => {
                 }
             }
         }
+        const languageMap = {
+            AR: "ar",
+            TR: "tr",
+            ENG: "en",
+          };
+
         if (lang == 'AR') {
             document.body.classList.toggle('rtl')
+            document.documentElement.setAttribute('lang', lang.toLocaleLowerCase().slice(0, 2));
         } else {
             document.body.classList.toggle('ltr')
         }
@@ -101,13 +108,13 @@ const Navbar = (props: Props) => {
                 {loggedIn && (
                     <div
                         onClick={logout}
-                        className="flex items-center cursor-pointer hover:opacity-70 duration-300 ms-[5%]"
+                        className="flex items-center cursor-pointer hover:opacity-70 duration-300 ms-[3%]"
                     >
                         logout
                     </div>
                 )}
 
-                <img className="logo select-none" src={logo} />
+                <img className="logo select-none " src={logo} />
             </div>
             <nav>
                 <ul className="NavbarList flex-[999]">

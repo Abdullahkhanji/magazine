@@ -14,7 +14,7 @@ const AboutTibyan = () => {
                 <h1>{t('AboutTibyan.header')}</h1>
             </div>
             <div>
-                <h2 className="ms-[25%] text-3xl py-16 font-bold">{t('AboutTibyan.header')}(MLA)</h2>
+                <h2 className="ms-[25%] text-3xl py-16 font-bold">{t('AboutTibyan.header')}</h2>
             </div>
             <div className="w-2/5 ms-[29%]">
                 <p className="text-xl">{t('AboutTibyan.introduction')}</p>

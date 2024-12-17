@@ -127,7 +127,8 @@ body.ltr {
     width: 280px;
     length: 180px;
     padding: 25px;
-    margin-inline-start: 42%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav {
