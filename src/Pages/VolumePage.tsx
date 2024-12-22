@@ -22,7 +22,9 @@ const VolumePage = () => {
 
     const id = param.id
     const deleteVolume = async (id: any) => {
-        await deleteDoc(doc(db, 'volumes', id))
+        await deleteDoc(doc(db, 'volumesAR', id))
+        await deleteDoc(doc(db, 'volumesTR', id))
+        await deleteDoc(doc(db, 'volumesENG', id))
         window.location.href = '/'
     }
 
