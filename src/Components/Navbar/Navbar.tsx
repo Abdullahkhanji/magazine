@@ -63,14 +63,14 @@ const Navbar = (props: Props) => {
             }
         }
         const languageMap = {
-            AR: "ar",
-            TR: "tr",
-            ENG: "en",
-          };
+            AR: 'ar',
+            TR: 'tr',
+            ENG: 'en',
+        }
 
         if (lang == 'AR') {
             document.body.classList.toggle('rtl')
-            document.documentElement.setAttribute('lang', lang.toLocaleLowerCase().slice(0, 2));
+            document.documentElement.setAttribute('lang', lang.toLocaleLowerCase().slice(0, 2))
         } else {
             document.body.classList.toggle('ltr')
         }
@@ -144,10 +144,7 @@ const Navbar = (props: Props) => {
                         </ul>
                     </li>
                     <li>
-                        <div
-                            onClick={() => handleClick('/all-volumes')}
-                            className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group "
-                        >
+                        <div className="flex justify-center items-center gap-2 flex-row p-020 text-[#fff] cursor-pointer group ">
                             <div className="font-bold group-hover:opacity-50 duration-300">{t('Navbar.magazines')}</div>
                             <FontAwesomeIcon
                                 icon={faCaretDown}

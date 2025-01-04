@@ -8,7 +8,6 @@ import PublicationEthics from "./Pages/PublicationEthics";
 import AddVolume from "./Pages/AddVolume";
 import Login from "./Pages/Login";
 import ProtectedRoute from "./Components/ProtectedRoute";
-import AllVolumes from "./Pages/AllVolumes";
 import VolumePage from "./Pages/VolumePage";
 import AboutTibyan from "./Pages/AboutTibyan";
 import CommunicateWithUs from "./Pages/CommunicateWithUs";
@@ -47,10 +46,6 @@ export const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
-  },
-  {
-    path: "/all-volumes",
-    element: <AllVolumes />,
   },
   {
     path: "/volume-page/:id",
