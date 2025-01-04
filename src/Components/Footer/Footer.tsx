@@ -8,18 +8,23 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 import '../../index.css'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {}
 
 const Footer = (props: Props) => {
     const [t, i18n] = useTranslation('global')
+        const navigate = useNavigate()
+        const handleClick = () => {
+            navigate("about-tibyan")
+        }
     return (
         <div className="Footer">
             <ul className="FooterList">
                 <li className="About">
                     <img className="logo cursor-pointer select-none" src={logo} alt="" />
                     <p>{t('Footer.about')}</p>
-                    <button className="Button rounded-lg select-none">{t('Footer.readMore')}</button>
+                    <button onClick={handleClick} className="Button rounded-lg select-none">{t('Footer.readMore')}</button>
                 </li>
                 <li className="Contact">
                     <ul className="ContactList">
